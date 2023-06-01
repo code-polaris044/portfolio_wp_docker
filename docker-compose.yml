@@ -1,0 +1,35 @@
+version: "3.7"
+services:
+  db:
+    image: mysql:8.0
+    container_name: mysql8_portfolio
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: portfolio
+      MYSQL_USER: wp_user
+      MYSQL_PASSWORD: password
+  WordPress:
+    image: wordpress:latest
+    container_name: wordpress_portfolio
+    restart: always
+    depends_on:
+      - db
+    ports:
+      - 10090:80
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: wp_user
+      WORDPRESS_DB_PASSWORD: password
+      WORDPRESS_DB_NAME: portfolio
+      WORDPRESS_DEBUG: 1
+    volumes:
+      - ./html:/var/www/html
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    container_name: phpmyadmin_portfolio
+    restart: always
+    depends_on:
+      - db
+    ports:
+      - 10099:80
