@@ -1,11 +1,37 @@
 <?php
-// CSS
-function mytheme_enqueue()
+
+// wp バージョン情報削除
+remove_action('wp_head', 'wp_generator');
+
+// WordPress提供のjquery.jsを読み込まない
+function no_jQuery_frontend()
 {
-	// テーマのCSS
-	wp_enqueue_style('mytheme-style', get_stylesheet_uri());
+	if (!is_admin()) {
+		wp_deregister_script('jquery');
+	}
 }
-add_action('wp_enqueue_scripts', 'mytheme_enqueue');
+add_action('wp_enqueue_scripts', 'no_jQuery_frontend');
+
+// JS・CSSファイルを読み込む
+function add_files()
+{
+	// fontawesome
+	wp_enqueue_style('fontawesomeCss', '//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css', array(), null, false);
+	wp_enqueue_script('fontawesomeJs', '//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js', array(), null, true);
+
+	// tippy.js
+	wp_enqueue_style('tippyCss', '//unpkg.com/tippy.js@6/animations/scale.css', array(), null, false);
+	wp_enqueue_script('tippyCore', '//unpkg.com/@popperjs/core@2', array(), null, true);
+	wp_enqueue_script('tippyJs', '//unpkg.com/tippy.js@6', array(), null, true);
+
+	// サイト共通JS
+	wp_enqueue_script('script', get_template_directory_uri() . '/dist/js/index.js', array(), '20230526', true);
+
+	// サイト共通のCSSの読み込み
+	wp_enqueue_style('main', get_template_directory_uri() . '/dist/css/style.css', array(), '20230526');
+}
+add_action('wp_enqueue_scripts', 'add_files');
+
 
 // ------------------------------
 // グーテンベルクCSS
@@ -15,7 +41,6 @@ function nxw_setup_theme()
 {
 	add_theme_support('wp-block-styles');
 }
-
 // ------------------------------
 // ウィジェット
 // ------------------------------
@@ -27,7 +52,6 @@ function my_theme_widgets_init()
 	));
 }
 add_action('widgets_init', 'my_theme_widgets_init');
-
 // ------------------------------
 // siteurl
 // ------------------------------
@@ -36,7 +60,6 @@ function shortcode_surl()
 {
 	return site_url();
 }
-
 // ------------------------------
 // ショートコード設定
 // ------------------------------
@@ -50,6 +73,7 @@ function themeurl_shortcode()
 	return get_bloginfo('template_url');
 }
 add_shortcode('themeurl', 'themeurl_shortcode');
+
 // ------------------------------
 // アイキャッチ画像を有効にする。
 // ------------------------------
@@ -78,11 +102,8 @@ add_filter('get_the_archive_title', function ($title) {
 	return $title;
 });
 
-// ------------------------------
-//管理画面に更新ボックスの追加
-// ------------------------------
-add_filter('wp_calculate_image_srcset_meta', '__return_null');
-
+// カテゴリーとタグのmeta descriptionからpタグを除去
+remove_filter('term_description', 'wpautop');
 
 // ------------------------------
 // 記事IDを投稿画面に表示させる
@@ -118,7 +139,6 @@ add_filter('posts_where', 'change_search_char', 10, 2);
 // ------------------------------
 //メニュー説明
 // ------------------------------
-
 function edit_menu_link($atts, $item)
 {
 	// メニュー項目が「説明」を持っている場合
@@ -190,3 +210,66 @@ add_action(
 		}
 	}
 );
+
+function change_posts_per_page($query)
+{
+	if (is_admin() || !$query->is_main_query())
+		return;
+	if ($query->is_post_type_archive('gallery')) { //カスタム投稿タイプを指定
+		$query->set('posts_per_page', -1); //表示件数を指定
+	}
+}
+add_action('pre_get_posts', 'change_posts_per_page');
+
+/* ---------- カスタム投稿のサムネイル有効 ---------- */
+
+add_theme_support('post-thumbnails');
+
+/* ---------- 「投稿」の表記変更 ---------- */
+function Change_menulabel()
+{
+	global $menu;
+	global $submenu;
+	$name = '新着情報';
+	$menu[5][0] = $name;
+	$submenu['edit.php'][5][0] = $name . '一覧';
+	$submenu['edit.php'][10][0] = '新規' . $name . '投稿';
+}
+function Change_objectlabel()
+{
+	global $wp_post_types;
+	$name = '新着情報';
+	$labels = &$wp_post_types['post']->labels;
+	$labels->name = $name;
+	$labels->singular_name = $name;
+	$labels->add_new = _x('追加', $name);
+	$labels->add_new_item = $name . 'の新規追加';
+	$labels->edit_item = $name . 'の編集';
+	$labels->new_item = '新規' . $name;
+	$labels->view_item = $name . 'を表示';
+	$labels->search_items = $name . 'を検索';
+	$labels->not_found = $name . 'が見つかりませんでした';
+	$labels->not_found_in_trash = 'ゴミ箱に' . $name . 'は見つかりませんでした';
+}
+add_action('init', 'Change_objectlabel');
+add_action('admin_menu', 'Change_menulabel');
+
+// acf/update_value/name={$field_name} - filter for a specific field based on it's name
+add_filter('acf/update_value/name=img_arrangement', 'acf_set_featured_image', 10, 3);
+add_filter('acf/update_value/name=img_bouquet', 'acf_set_featured_image', 10, 3);
+add_filter('acf/update_value/name=img_bridal', 'acf_set_featured_image', 10, 3);
+add_filter('acf/update_value/name=img_other', 'acf_set_featured_image', 10, 3);
+
+
+// topページの投稿数
+add_action('pre_get_posts', 'my_pre_get_posts_number');
+function my_pre_get_posts_number($query)
+{
+	if (is_admin() || !$query->is_main_query()) return;
+	if ($query->is_home()) {
+		$query->set('posts_per_page', 3); //3件 
+	}
+}
+
+// 画像遅延しない
+add_filter('wp_lazy_loading_enabled', '__return_false');
