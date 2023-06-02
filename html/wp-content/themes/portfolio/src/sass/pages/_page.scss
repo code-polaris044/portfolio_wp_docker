@@ -1,0 +1,16 @@
+@use "../global"as *;
+
+.pageMain {
+  .container {
+    width: min(100% - 80px, 800px);
+    margin: 0 auto;
+
+    h3 {
+      @include fz-28;
+    }
+
+    p {
+      @include fz-16;
+    }
+  }
+}
