@@ -25,7 +25,6 @@
 					<img src="<?php echo get_template_directory_uri(); ?>/dist/images/common/" alt="">
 				</a>
 			</div>
-
 			<!-- navigation -->
 			<nav id="headerNav" class="headerNav">
 				<div class="container">
@@ -39,6 +38,14 @@
 				</div>
 			</nav>
 			<div class="menuBox">
+				<?php
+				//ページタイトル
+				$test = '菅原';
+				?>
+				<?php
+				//ページタイトル
+				echo $test;
+				?>
 				<div id="menu" class="menu">
 					<span class="menuTop"></span>
 					<span class="menuBottom"></span>

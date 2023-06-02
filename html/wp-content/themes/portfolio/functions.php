@@ -72,6 +72,18 @@ function nxw_setup_theme()
 }
 
 // ------------------------------
+// メニューウィジット
+// ------------------------------
+function my_theme_widgets_init()
+{
+	register_sidebar(array(
+		'name' => 'Main Sidebar',
+		'id' => 'main-sidebar',
+	));
+}
+add_action('widgets_init', 'my_theme_widgets_init');
+
+// ------------------------------
 // siteurl
 // ------------------------------
 add_shortcode('surl', 'shortcode_surl');
