@@ -11,14 +11,6 @@
 	<meta name="format-detection" content="email=no,telephone=no,address=no">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<!-- css -->
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/dist/css/style.css?<?php echo date('YmdHi', filemtime(get_template_directory() . '/dist/css/style.css')); ?>">
-	<!-- swiper -->
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/dist/css/swiper.min.css?<?php echo date('YmdHi', filemtime(get_template_directory() . '/dist/css/swiper.min.css')); ?>">
-	<!-- fontawsome -->
-	<link href="https://use.fontawesome.com/releases/v6.1.1/css/all.css" rel="stylesheet">
-	<!-- form ajax -->
-	<script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
 	<?php wp_head(); ?>
 </head>
 

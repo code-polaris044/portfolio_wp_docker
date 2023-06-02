@@ -51,14 +51,16 @@ function add_files()
 	wp_enqueue_style('fontawesomeCss', '//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css', array(), null, false);
 	wp_enqueue_script('fontawesomeJs', '//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js', array(), null, true);
 
+	// ajaxzip3
+	wp_enqueue_script('fajaxzip3', '//ajaxzip3.github.io/ajaxzip3.js', array(), null, true);
+
 	// サイト共通JS
-	wp_enqueue_script('script', get_template_directory_uri() . '/dist/js/index.js', array(), '20230526', true);
+	wp_enqueue_script('script', get_template_directory_uri() . '/dist/js/index.js', array(), '20230602', true);
 
 	// サイト共通のCSSの読み込み
-	wp_enqueue_style('main', get_template_directory_uri() . '/dist/css/style.css', array(), '20230526');
+	wp_enqueue_style('main', get_template_directory_uri() . '/dist/css/style.css', array(), '20230602', false);
 }
 add_action('wp_enqueue_scripts', 'add_files');
-
 
 // ------------------------------
 // グーテンベルクCSS
