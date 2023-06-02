@@ -1,7 +1,39 @@
 <?php
 
+//metaタグ非常設定
 // wp バージョン情報削除
 remove_action('wp_head', 'wp_generator');
+
+// meta name='robots' content='max-image-preview:large' を非表示にする
+remove_filter('wp_robots', 'wp_robots_max_image_preview_large');
+
+// meta name="generator" を非表示にする
+remove_action('wp_head', 'wp_generator');
+
+// EditURIを非表示にする
+remove_action('wp_head', 'rsd_link');
+
+// wlwmanifestを非表示にする
+remove_action('wp_head', 'wlwmanifest_link');
+
+// 絵文字用JS・CSSを非表示にする
+remove_action('wp_head', 'print_emoji_detection_script', 7);
+remove_action('admin_print_scripts', 'print_emoji_detection_script');
+remove_action('wp_print_styles', 'print_emoji_styles');
+remove_action('admin_print_styles', 'print_emoji_styles');
+
+// dns-prefetchを非表示にする
+add_filter('wp_resource_hints', 'remove_dns_prefetch', 10, 2);
+function remove_dns_prefetch($hints, $relation_type)
+{
+	if ('dns-prefetch' === $relation_type) {
+		return array_diff(wp_dependencies_unique_hosts(), $hints);
+	}
+	return $hints;
+}
+
+//rel="next" rel="prev" を非表示にする
+remove_action('wp_head', 'adjacent_posts_rel_link_wp_head');
 
 // WordPress提供のjquery.jsを読み込まない
 function no_jQuery_frontend()
