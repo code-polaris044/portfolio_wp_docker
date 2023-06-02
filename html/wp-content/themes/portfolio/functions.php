@@ -48,11 +48,11 @@ add_action('wp_enqueue_scripts', 'no_jQuery_frontend');
 function add_files()
 {
 	// fontawesome
-	wp_enqueue_style('fontawesomeCss', '//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css', array(), null, false);
-	wp_enqueue_script('fontawesomeJs', '//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js', array(), null, true);
+	wp_enqueue_style('fontawesomeCss', '//cdnjs.cloudflare.com/ajax/libs/font-awesome/latest/css/all.min.css', array(), null, false);
+	wp_enqueue_script('fontawesomeJs', '//cdnjs.cloudflare.com/ajax/libs/font-awesome/latest/js/all.min.js', array(), null, true);
 
 	// ajaxzip3
-	wp_enqueue_script('fajaxzip3', '//ajaxzip3.github.io/ajaxzip3.js', array(), null, true);
+	wp_enqueue_script('fajaxzip3', '//ajaxzip3.github.io/ajaxzip3.js', array(), null, false);
 
 	// サイト共通JS
 	wp_enqueue_script('script', get_template_directory_uri() . '/dist/js/index.js', array(), '20230602', true);
@@ -62,25 +62,15 @@ function add_files()
 }
 add_action('wp_enqueue_scripts', 'add_files');
 
-// ------------------------------
-// グーテンベルクCSS
-// ------------------------------
+// --------------------------------
+// ブロックエディタにテーマ内のcssを反映
+// --------------------------------
 add_action('after_setup_theme', 'nxw_setup_theme');
 function nxw_setup_theme()
 {
 	add_theme_support('wp-block-styles');
 }
-// ------------------------------
-// ウィジェット
-// ------------------------------
-function my_theme_widgets_init()
-{
-	register_sidebar(array(
-		'name' => 'Main Sidebar',
-		'id' => 'main-sidebar',
-	));
-}
-add_action('widgets_init', 'my_theme_widgets_init');
+
 // ------------------------------
 // siteurl
 // ------------------------------
