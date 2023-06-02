@@ -19,11 +19,6 @@ function add_files()
 	wp_enqueue_style('fontawesomeCss', '//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css', array(), null, false);
 	wp_enqueue_script('fontawesomeJs', '//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js', array(), null, true);
 
-	// tippy.js
-	wp_enqueue_style('tippyCss', '//unpkg.com/tippy.js@6/animations/scale.css', array(), null, false);
-	wp_enqueue_script('tippyCore', '//unpkg.com/@popperjs/core@2', array(), null, true);
-	wp_enqueue_script('tippyJs', '//unpkg.com/tippy.js@6', array(), null, true);
-
 	// サイト共通JS
 	wp_enqueue_script('script', get_template_directory_uri() . '/dist/js/index.js', array(), '20230526', true);
 
