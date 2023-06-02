@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="<?php language_attributes(); ?>">
 
 <head>
 	<meta charset="<?php bloginfo('charset'); ?>">
-	<title><?php bloginfo('name'); ?></title>
 	<?php if (is_home() || is_front_page()) : ?>
 		<meta name="description" content="<?php bloginfo('description'); ?>">
 	<?php endif; ?>
@@ -16,14 +15,14 @@
 
 <?php get_header(); ?>
 
-<body id="<?php echo esc_attr($post->post_name); ?>">
+<body <?php body_class(); ?> id="id-<?php esc_attr(the_ID()); ?>">
+	<?php wp_body_open(); ?>
 	<div class="wrapper">
 		<!-- header -->
 		<header id="header" class="header">
 			<div class="logo">
 				<a href="<?php echo esc_url(home_url()); ?>/">
 					<img src="<?php echo esc_url(get_template_directory_uri()); ?>/dist/images/common/" alt="">
-
 				</a>
 			</div>
 			<!-- navigation -->
@@ -31,7 +30,7 @@
 				<div class="container">
 					<ul class="list">
 						<li class="listItem">
-							<a href="<?php echo esc_url(home_url()); ?>/about/">
+							<a href="<?php echo esc_url(home_url('about')); ?>">
 								<span class="jp">私たち</span><span class="en">About</span>
 							</a>
 						</li>

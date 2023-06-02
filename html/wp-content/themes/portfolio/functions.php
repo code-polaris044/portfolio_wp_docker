@@ -1,6 +1,21 @@
 <?php
 
-//metaタグ非常設定
+// --------------------------------
+// ページタイトル出力
+// --------------------------------
+
+function portfolio_theme_setup()
+{
+	add_theme_support('title-tag');
+}
+
+add_action('after_setup_theme', 'portfolio_theme_setup');
+
+
+// --------------------------------
+// metaタグ非常設定
+// --------------------------------
+
 // wp バージョン情報削除
 remove_action('wp_head', 'wp_generator');
 
@@ -44,7 +59,9 @@ function no_jQuery_frontend()
 }
 add_action('wp_enqueue_scripts', 'no_jQuery_frontend');
 
+// --------------------------------
 // JS・CSSファイルを読み込む
+// --------------------------------
 function add_files()
 {
 	// fontawesome
@@ -72,7 +89,7 @@ function nxw_setup_theme()
 }
 
 // ------------------------------
-// メニューウィジット
+// メニューウィジット追加
 // ------------------------------
 function my_theme_widgets_init()
 {
