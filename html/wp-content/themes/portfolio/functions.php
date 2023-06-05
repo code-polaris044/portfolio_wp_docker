@@ -78,7 +78,7 @@ function add_files()
 	//jsモジュール読み込み
 	function enqueue_module_script()
 	{
-		wp_enqueue_script('my_module_script', 'path/to/script.js', array(), null, true);
+		wp_enqueue_script('my_module_script', 'path/to/script.js', array(), null, false);
 		wp_script_add_data('my_module_script', 'type', 'module');
 	}
 	add_action('wp_enqueue_scripts', 'enqueue_module_script');
