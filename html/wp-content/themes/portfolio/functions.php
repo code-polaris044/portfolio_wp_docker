@@ -63,7 +63,18 @@ add_action('wp_enqueue_scripts', 'no_jQuery_frontend');
 // JS・CSSファイルを読み込む
 // --------------------------------
 //jsモジュール読み込み
-add_filter('script_loader_tag', 'add_defer', 10, 2);
+
+function enqueue_custom_scripts()
+{
+	wp_enqueue_script(
+		'custom-script',
+		get_template_directory_uri() . '/build/custom.js',  // ビルドされたJavaScriptファイルのパス
+		array(),  // 依存関係がない場合は空の配列
+		'1.0',  // スクリプトのバージョン
+		true  // フッターにスクリプトを配置するかどうか
+	);
+}
+add_action('wp_enqueue_scripts', 'enqueue_custom_scripts');
 
 
 function add_files()

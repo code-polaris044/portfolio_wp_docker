@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","mappings":";;;;;AAAAA,OAAO,CAACC,GAAG,CAACC,KAAK,CAAC,C","sources":["webpack://portfolio/./src/index.js"],"sourcesContent":["console.log(hello);\n"],"names":["console","log","hello"],"sourceRoot":""}
