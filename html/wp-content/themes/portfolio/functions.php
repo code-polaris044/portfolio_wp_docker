@@ -62,6 +62,10 @@ add_action('wp_enqueue_scripts', 'no_jQuery_frontend');
 // --------------------------------
 // JS・CSSファイルを読み込む
 // --------------------------------
+//jsモジュール読み込み
+add_filter('script_loader_tag', 'add_defer', 10, 2);
+
+
 function add_files()
 {
 	// fontawesome
@@ -73,16 +77,6 @@ function add_files()
 
 	// サイト共通JS
 	wp_enqueue_script('script', get_template_directory_uri() . '/dist/js/index.js', array(), '20230602', true);
-
-
-	//jsモジュール読み込み
-	function enqueue_module_script()
-	{
-		wp_enqueue_script('my_module_script', 'path/to/script.js', array(), null, false);
-		wp_script_add_data('my_module_script', 'type', 'module');
-	}
-	add_action('wp_enqueue_scripts', 'enqueue_module_script');
-
 
 	// サイト共通のCSSの読み込み
 	wp_enqueue_style('main', get_template_directory_uri() . '/dist/css/style.css', array(), '20230602', false);
