@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "say": "echo 'Hello world!!'",
     "build": "webpack",
     "watch": "webpack --watch"
   },

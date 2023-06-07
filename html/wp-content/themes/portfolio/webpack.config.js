@@ -1,8 +1,9 @@
+// CommonJSで記述
 const webpack = require("webpack");
 const path = require("path");
 
 // 'production' か 'development' を指定
-const MODE = "development";
+const MODE = "production";
 
 // ソースマップの利用有無(productionのときはソースマップを利用しない)
 const enabledSourceMap = MODE === "development";
