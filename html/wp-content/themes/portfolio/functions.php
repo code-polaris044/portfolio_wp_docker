@@ -62,21 +62,6 @@ add_action('wp_enqueue_scripts', 'no_jQuery_frontend');
 // --------------------------------
 // JS・CSSファイルを読み込む
 // --------------------------------
-//jsモジュール読み込み
-
-function enqueue_custom_scripts()
-{
-	wp_enqueue_script(
-		'custom-script',
-		get_template_directory_uri() . '/build/custom.js',  // ビルドされたJavaScriptファイルのパス
-		array(),  // 依存関係がない場合は空の配列
-		'1.0',  // スクリプトのバージョン
-		true  // フッターにスクリプトを配置するかどうか
-	);
-}
-add_action('wp_enqueue_scripts', 'enqueue_custom_scripts');
-
-
 function add_files()
 {
 	// fontawesome
@@ -88,6 +73,7 @@ function add_files()
 
 	// サイト共通JS
 	wp_enqueue_script('script', get_template_directory_uri() . '/dist/js/index.js', array(), '20230602', true);
+	// wp_enqueue_script('scriptMap', get_template_directory_uri() . '/dist/js/index.js.map', array(), '20230602', true);
 
 	// サイト共通のCSSの読み込み
 	wp_enqueue_style('main', get_template_directory_uri() . '/dist/css/style.css', array(), '20230602', false);
@@ -333,6 +319,3 @@ function my_pre_get_posts_number($query)
 		$query->set('posts_per_page', 3); //3件 
 	}
 }
-
-// 画像遅延しない
-add_filter('wp_lazy_loading_enabled', '__return_false');
