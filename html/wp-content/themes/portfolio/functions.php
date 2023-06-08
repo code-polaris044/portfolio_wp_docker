@@ -11,7 +11,6 @@ function portfolio_theme_setup()
 
 add_action('after_setup_theme', 'portfolio_theme_setup');
 
-
 // --------------------------------
 // metaタグ非常設定
 // --------------------------------
@@ -76,7 +75,7 @@ function add_files()
 	// wp_enqueue_script('scriptMap', get_template_directory_uri() . '/dist/js/index.js.map', array(), '20230602', true);
 
 	// サイト共通のCSSの読み込み
-	wp_enqueue_style('main', get_template_directory_uri() . '/dist/css/style.css', array(), '20230602', false);
+	// wp_enqueue_style('main', get_template_directory_uri() . '/dist/css/style.css', array(), '20230602', false);
 }
 add_action('wp_enqueue_scripts', 'add_files');
 

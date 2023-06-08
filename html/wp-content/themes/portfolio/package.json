@@ -10,6 +10,7 @@
   "author": "Shunya Sugawara",
   "license": "ISC",
   "devDependencies": {
+    "css-loader": "^6.8.1",
     "webpack": "^5.85.1",
     "webpack-cli": "^5.1.3"
   },

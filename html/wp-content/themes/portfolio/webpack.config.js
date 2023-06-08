@@ -15,5 +15,17 @@ module.exports = {
     filename: "js/index.js",
     publicPath: "/",
   },
+  module: {
+    rules: [
+      {
+        test: /\.css/,
+        use: [
+          {
+            loader: "css-loader",
+          },
+        ],
+      },
+    ],
+  },
   // devtool: "source-map",
 };
