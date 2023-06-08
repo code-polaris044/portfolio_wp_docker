@@ -70,11 +70,17 @@ function add_files()
 	// ajaxzip3
 	wp_enqueue_script('fajaxzip3', '//ajaxzip3.github.io/ajaxzip3.js', array(), null, false);
 
-	// サイト共通JS
-	wp_enqueue_script('script', get_template_directory_uri() . '/dist/js/index.js', array(), '20230608', true);
+	// scrollreveal
+	wp_enqueue_script('scrollreveal', '//unpkg.com/scrollreveal', array(), null, true);
+
+	// gsap
+	wp_enqueue_script('gsap', '///cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js', array(), null, true);
 
 	// サイト共通のCSSの読み込み
-	wp_enqueue_style('main', get_template_directory_uri() . '/dist/css/style.css', array(), '20230608', false);
+	wp_enqueue_style('main', get_template_directory_uri() . '/dist/css/style.css', array(), '20230609', false);
+
+	// サイト共通JS
+	wp_enqueue_script('script', get_template_directory_uri() . '/dist/js/index.js', array(), '20230609', true);
 }
 add_action('wp_enqueue_scripts', 'add_files');
 
