@@ -17,6 +17,25 @@ module.exports = {
     publicPath: "/",
   },
   devtool: "source-map",
+  module: {
+    rules: [
+      {
+        test: /\.js/,
+        exclude: /node_moudeules/,
+        use: [
+          {
+            loader: "babel-loader",
+            options: {
+              presets: [
+                ["@babel/preset-env", { targets: "> 0.25%, not dead" }],
+                "@babel/preset-react",
+              ],
+            },
+          },
+        ],
+      },
+    ],
+  },
   plugins: [
     new CopyPlugin({
       patterns: [
