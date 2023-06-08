@@ -45,9 +45,9 @@ module.exports = {
     new ImageminWebpWebpackPlugin({
       config: [
         {
-          test: /\.(png|jpe?g)$/i, // 対象ファイル
+          test: /\.(png|jpe?g)$/i,
           options: {
-            quality: 75, // 画質
+            quality: 75,
           },
         },
       ],
