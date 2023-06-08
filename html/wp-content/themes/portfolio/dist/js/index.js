@@ -16,7 +16,6 @@ __webpack_require__.r(__webpack_exports__);
   console.log(common);
 }
 
-
 /***/ }),
 
 /***/ "./src/js/parts.js":
@@ -32,7 +31,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ function __WEBPACK_DEFAULT_EXPORT__(parts) {
   console.log(parts);
 }
-
 
 /***/ })
 
@@ -106,9 +104,7 @@ __webpack_require__.r(__webpack_exports__);
 
 (0,_common_js__WEBPACK_IMPORTED_MODULE_0__["default"])("こんばんわ、common.js");
 
-
 (0,_parts_js__WEBPACK_IMPORTED_MODULE_1__["default"])("こんにちは、parts.js");
-
 }();
 /******/ })()
 ;
