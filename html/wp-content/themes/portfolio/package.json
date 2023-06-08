@@ -5,12 +5,15 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
-    "watch": "webpack --watch"
+    "postcss": "postcss dist/css/style.css --use autoprefixer --dir dist/css/ --watch",
+    "sass": "sass src/sass:dist/css/ --style=compressed --watch"
   },
   "author": "Shunya Sugawara",
   "license": "ISC",
   "devDependencies": {
-    "css-loader": "^6.8.1",
+    "autoprefixer": "^10.4.14",
+    "postcss-cli": "^10.1.0",
+    "sass": "^1.63.2",
     "webpack": "^5.85.1",
     "webpack-cli": "^5.1.3"
   },

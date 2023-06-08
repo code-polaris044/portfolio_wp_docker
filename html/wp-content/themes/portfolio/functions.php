@@ -72,10 +72,9 @@ function add_files()
 
 	// サイト共通JS
 	wp_enqueue_script('script', get_template_directory_uri() . '/dist/js/index.js', array(), '20230602', true);
-	// wp_enqueue_script('scriptMap', get_template_directory_uri() . '/dist/js/index.js.map', array(), '20230602', true);
 
 	// サイト共通のCSSの読み込み
-	// wp_enqueue_style('main', get_template_directory_uri() . '/dist/css/style.css', array(), '20230602', false);
+	wp_enqueue_style('main', get_template_directory_uri() . '/dist/css/style.css', array(), '20230602', false);
 }
 add_action('wp_enqueue_scripts', 'add_files');
 
