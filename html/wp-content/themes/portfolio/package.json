@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
     "postcss": "postcss dist/css/style.css --use autoprefixer --dir dist/css/ --watch",
     "sass": "sass src/sass:dist/css/ --style=compressed --watch"
   },

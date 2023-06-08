@@ -47,6 +47,10 @@ module.exports = {
           from: path.resolve(__dirname, "src", "images", "only"),
           to: path.resolve(__dirname, "dist", "images", "only"),
         },
+        {
+          from: path.resolve(__dirname, "src", "fonts"),
+          to: path.resolve(__dirname, "dist", "fonts"),
+        },
       ],
     }),
     new ImageminPlugin({
