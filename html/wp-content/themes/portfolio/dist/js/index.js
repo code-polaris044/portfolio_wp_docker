@@ -8013,12 +8013,19 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   App: function() { return /* binding */ App; }
+/* harmony export */ });
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 
 
-/* harmony default export */ __webpack_exports__["default"] = (App);
+const App = () => {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("h1", null, "HELLO"));
+};
+react_dom__WEBPACK_IMPORTED_MODULE_0__.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(App, null), document.getElementById("app"));
+
 
 /***/ })
 
@@ -8109,16 +8116,14 @@ var __webpack_exports__ = {};
   !*** ./src/js/index.js ***!
   \*************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _common_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./common.js */ "./src/js/common.js");
-/* harmony import */ var _parts_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./parts.js */ "./src/js/parts.js");
-/* harmony import */ var _reactApp_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./reactApp.jsx */ "./src/js/reactApp.jsx");
+/* harmony import */ var _reactApp_jsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./reactApp.jsx */ "./src/js/reactApp.jsx");
+/* harmony import */ var _common_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./common.js */ "./src/js/common.js");
+/* harmony import */ var _parts_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./parts.js */ "./src/js/parts.js");
 
 
+(0,_common_js__WEBPACK_IMPORTED_MODULE_1__["default"])("こんばんわ、common.js");
 
-(0,_common_js__WEBPACK_IMPORTED_MODULE_0__["default"])("こんばんわ、common.js");
-
-(0,_parts_js__WEBPACK_IMPORTED_MODULE_1__["default"])("こんにちは、parts.js");
-
+(0,_parts_js__WEBPACK_IMPORTED_MODULE_2__["default"])("こんにちは、parts.js");
 }();
 /******/ })()
 ;

@@ -1,4 +1,13 @@
 import ReactDOM from "react-dom";
-import * as React from "react";
+import React from "react";
 
-export default App;
+const App = () => {
+  return (
+    <div>
+      <h1>HELLO</h1>
+    </div>
+  );
+};
+
+ReactDOM.render(<App />, document.getElementById("app"));
+export { App };
