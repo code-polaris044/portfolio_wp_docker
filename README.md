@@ -1,4 +1,4 @@
 # portfolio_wp_docker
 
-ポートフォリオサイトです。
+制作中のポートフォリオサイトです。
 https://code-polaris044.sakura.ne.jp/portfolio/
