@@ -7984,8 +7984,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": function() { return /* export default binding */ __WEBPACK_DEFAULT_EXPORT__; }
 /* harmony export */ });
-/* harmony default export */ function __WEBPACK_DEFAULT_EXPORT__(common) {
-  console.log(common);
+/* harmony default export */ function __WEBPACK_DEFAULT_EXPORT__() {
+  const spinner = document.getElementById("loading");
+  spinner.classList.add("loaded");
 }
 
 /***/ }),
@@ -8121,7 +8122,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _parts_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./parts.js */ "./src/js/parts.js");
 
 
-(0,_common_js__WEBPACK_IMPORTED_MODULE_1__["default"])("こんばんわ、common.js");
+
+// windowLoadHandler関数を使用する
+(0,_common_js__WEBPACK_IMPORTED_MODULE_1__["default"])();
 
 (0,_parts_js__WEBPACK_IMPORTED_MODULE_2__["default"])("こんにちは、parts.js");
 }();

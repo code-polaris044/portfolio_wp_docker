@@ -18,6 +18,12 @@
 <body <?php body_class(); ?> id="id-<?php esc_attr(the_ID()); ?>">
 	<?php wp_body_open(); ?>
 	<div class="wrapper">
+
+		<!-- loading -->
+		<div id="loading">
+			<div class="spinner"></div>
+		</div>
+
 		<!-- header -->
 		<header id="header" class="header">
 			<div class="logo">
