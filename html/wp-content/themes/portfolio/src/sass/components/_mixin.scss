@@ -45,6 +45,15 @@
 }
 
 // font
+@mixin f-base($f, $w) {
+    font: {
+        weight: $w;
+        size: $f;
+    }
+
+    letter-spacing: .15em;
+    line-height: 1.6;
+}
 
 @mixin noto-serif-jp($f, $w) {
     font: {

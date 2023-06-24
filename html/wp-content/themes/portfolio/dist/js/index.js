@@ -7982,9 +7982,10 @@ if (false) {} else {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": function() { return /* binding */ windowLoadHandler; }
+/* harmony export */   LoadHandler: function() { return /* binding */ LoadHandler; }
 /* harmony export */ });
-function windowLoadHandler() {
+//ロード画面
+function LoadHandler() {
   const spinner = document.getElementById("loading");
   spinner.classList.add("loaded");
 }
@@ -8122,9 +8123,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _parts_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./parts.js */ "./src/js/parts.js");
 
 
-
-// windowLoadHandler関数を使用する
-(0,_common_js__WEBPACK_IMPORTED_MODULE_1__["default"])();
+//ロード画面
+window.onload = function () {
+  (0,_common_js__WEBPACK_IMPORTED_MODULE_1__.LoadHandler)();
+};
 
 (0,_parts_js__WEBPACK_IMPORTED_MODULE_2__["default"])("こんにちは、parts.js");
 }();

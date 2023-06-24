@@ -67,7 +67,7 @@ function add_files()
 	wp_enqueue_style('fontawesomeCss', '//cdnjs.cloudflare.com/ajax/libs/font-awesome/latest/css/all.min.css', array(), null, false);
 	wp_enqueue_script('fontawesomeJs', '//cdnjs.cloudflare.com/ajax/libs/font-awesome/latest/js/all.min.js', array(), null, true);
 
-	wp_enqueue_style('tailwindcss', '//cdn.tailwindcss.com', array(), null, false);
+	wp_enqueue_style('tailwindcss', '//unpkg.com/tailwindcss@^2/dist/tailwind.min.css', array(), 20230624, false);
 
 
 	// ajaxzip3

@@ -1,5 +1,6 @@
 // variable
 @use "font"as *;
+@use "sass:math";
 
 // ------------------------------
 // 変数
@@ -27,26 +28,32 @@ $front-contents-width-pc: min(100% - 80px, 840px);
 
 
 // color
-$white: #fff;
-$c-assort: #e9eee8;
-$c-bg: #f3f3f3;
-$c-text: #454545;
-$c-accent: #799874;
+$c-assort: hsl(229, 52%, 25%);
+$c-white: hsl(0, 0%, 100%);
 
 // font-family
+$f-font-awesome: "Font Awesome 5 Free",
+"Font Awesome 5 Brands";
+
+$f-roboto: 'Roboto',
+sans-serif;
+
 $f-sans: 'Noto Sans JP',
 sans-serif;
+
 $f-serif: 'Noto Serif JP',
 serif;
 
 
+
 // font-size
 $fs-normal: clamp(1.4rem, 1vw + 1rem, 1.6rem);
-$fs-c-48: clamp(2.4rem, 3vw + 1rem, 4.8rem);
 $fs-c-18: clamp(1.6rem, 1vw + 1rem, 1.8rem);
+$fs-c-20: clamp(1.6rem, 1vw + 1rem, 2.0rem);
 $fs-c-24: clamp(1.8rem, 1vw + 1rem, 2.4rem);
-$fs-c-36:clamp(2.4rem, 2vw + 1rem, 3.6rem);
 $fs-c-32:clamp(1.8rem, 2vw + 1rem, 3.2rem);
+$fs-c-36:clamp(2.4rem, 2vw + 1rem, 3.6rem);
+$fs-c-48: clamp(2.4rem, 3vw + 1rem, 4.8rem);
 $fs-c-64: clamp(3.2rem, 3vw + 1rem, 6.4rem);
 
 // url
@@ -75,6 +82,5 @@ $pd-200: 200px;
 
 
 // z-index
-$z-1: -1;
+$z9999: 9999; //最大値:ローディン画面
 $z1: 1;
-$z2: 2;

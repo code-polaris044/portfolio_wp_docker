@@ -18,24 +18,26 @@
 <body <?php body_class(); ?> id="id-<?php esc_attr(the_ID()); ?>">
 	<?php wp_body_open(); ?>
 	<div class="wrapper">
-
-		<!-- loading -->
-		<div id="loading">
-			<div class="spinner"></div>
+		<div id="loading" class="loading">
+			<div class="loading__spinner">
+				<span class="loading__title">LOADING</span>
+				<span class="loading__circle1 loading__circle"></span>
+				<span class="loading__circle2 loading__circle"></span>
+				<span class="loading__circle3 loading__circle"></span>
+			</div>
 		</div>
 
-		<!-- header -->
 		<header id="header" class="header">
 			<div class="logo">
 				<a href="<?php echo esc_url(home_url()); ?>/">
 					<img src="<?php echo esc_url(get_template_directory_uri()); ?>/dist/images/common/" alt="">
 				</a>
 			</div>
-			<!-- navigation -->
+
 			<nav id="headerNav" class="headerNav">
 				<div class="container">
 					<ul class="list">
-						<li class="listItem">
+						<li class="listItem  mb-5">
 							<a href="<?php echo esc_url(home_url('about')); ?>">
 								<span class="jp">私たち</span><span class="en">About</span>
 							</a>
