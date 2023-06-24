@@ -30,7 +30,7 @@
 		<header id="header" class="header">
 			<div class="logo">
 				<a href="<?php echo esc_url(home_url()); ?>/">
-					<img src="<?php echo esc_url(get_template_directory_uri()); ?>/dist/images/common/" alt="">
+					<img src="<?php echo esc_url(get_template_directory_uri()); ?>/dist/images/common/" alt="ロゴ">
 				</a>
 			</div>
 

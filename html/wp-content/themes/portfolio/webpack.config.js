@@ -2,6 +2,7 @@
 const path = require("path");
 const CopyPlugin = require("copy-webpack-plugin");
 const ImageminWebpWebpackPlugin = require("imagemin-webp-webpack-plugin");
+const ImageminAvifWebpackPlugin = require("imagemin-avif-webpack-plugin");
 const ImageminPlugin = require("imagemin-webpack-plugin").default;
 //10.0.0はes moduleでバグがあるため、9.0.0を使用
 const ImageminMozjpeg = require("imagemin-mozjpeg");
@@ -74,6 +75,20 @@ module.exports = {
           },
         },
       ],
+    }),
+    new ImageminAvifWebpackPlugin({
+      config: [
+        {
+          test: /\.(jpe?g|png)/,
+          options: {
+            quality: 75,
+          },
+        },
+      ],
+      overrideExtension: true,
+      detailedLogs: false,
+      silent: false,
+      strict: true,
     }),
   ],
 };
