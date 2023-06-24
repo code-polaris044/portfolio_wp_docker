@@ -7982,10 +7982,9 @@ if (false) {} else {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": function() { return /* export default binding */ __WEBPACK_DEFAULT_EXPORT__; }
+/* harmony export */   "default": function() { return /* binding */ windowLoadHandler; }
 /* harmony export */ });
-/* harmony default export */ function __WEBPACK_DEFAULT_EXPORT__() {
-  //loading画面
+function windowLoadHandler() {
   const spinner = document.getElementById("loading");
   spinner.classList.add("loaded");
 }
@@ -8121,6 +8120,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _reactApp_jsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./reactApp.jsx */ "./src/js/reactApp.jsx");
 /* harmony import */ var _common_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./common.js */ "./src/js/common.js");
 /* harmony import */ var _parts_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./parts.js */ "./src/js/parts.js");
+
 
 
 // windowLoadHandler関数を使用する
