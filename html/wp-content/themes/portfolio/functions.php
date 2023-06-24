@@ -1,5 +1,12 @@
 <?php
 
+function body_hook()
+{
+	echo '<!--Google Analytics,Cookie配置予定-->';
+}
+
+add_action('wp_body_open', 'body_hook');
+
 // --------------------------------
 // ページタイトル出力
 // --------------------------------
