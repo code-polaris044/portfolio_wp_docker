@@ -40,9 +40,9 @@
 				</div>
 
 
-				<nav id="header__nav" class="header__nav">
-					<div class="header__navWrap">
-						<div class="hamburger">
+				<nav id="l-header__nav" class="l-header__nav">
+					<div class="l-header__navWrap">
+						<div class="l-hamburger">
 							<span></span>
 							<span></span>
 							<span></span>
@@ -53,6 +53,10 @@
 							'menu_class' => 'l-menu',
 						)); ?>
 					</div>
+
 				</nav>
+			</div>
+			<div id="app">
+
 			</div>
 		</header>

@@ -3,12 +3,14 @@ import { addLoadedClass } from "./common.js";
 import React from "react";
 import { createRoot } from "react-dom/client";
 
-const App = () => {
+function App() {
   return (
-    <div>
-      <h1>HELLO</h1>
+    <div id="app">
+      <div className="App">
+        <ScrollToTop smooth color="#000" />
+        <h1>Scroll To See Magic</h1>
+        <p style={{ marginTop: "200vh" }}>You Have Reached Bottom</p>
+      </div>
     </div>
   );
-};
-
-createRoot(document.getElementById("app")).render(<App />);
+}

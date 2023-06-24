@@ -33495,10 +33495,22 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const App = () => {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("h1", null, "HELLO"));
-};
-(0,react_dom_client__WEBPACK_IMPORTED_MODULE_2__.createRoot)(document.getElementById("app")).render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(App, null));
+// import ScrollToTop from "react-scroll-to-top";
+
+function App() {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", {
+    id: "app"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", {
+    className: "App"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(ScrollToTop, {
+    smooth: true,
+    color: "#000"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("h1", null, "Scroll To See Magic"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("p", {
+    style: {
+      marginTop: "200vh"
+    }
+  }, "You Have Reached Bottom")));
+}
 }();
 /******/ })()
 ;
