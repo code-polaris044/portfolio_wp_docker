@@ -13,6 +13,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    color: $c-white;
+    @include f-base($fs-c-20, 500);
 
     .loading__spinner {
         position: relative;
@@ -64,10 +66,8 @@
     transform: translate(-50%, -50%);
     width: 100%;
     z-index: $z1;
-    color: $c-white;
     text-align: center;
     animation: text-fade 300ms infinite linear;
-    @include f-base($fs-c-20, 500);
 }
 
 // 回転アニメーション
