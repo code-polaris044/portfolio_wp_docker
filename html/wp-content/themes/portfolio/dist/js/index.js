@@ -8123,7 +8123,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _parts_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./parts.js */ "./src/js/parts.js");
 
 
-
 // windowLoadHandler関数を使用する
 (0,_common_js__WEBPACK_IMPORTED_MODULE_1__["default"])();
 

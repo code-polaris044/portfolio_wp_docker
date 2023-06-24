@@ -20,7 +20,7 @@
 	<div class="wrapper">
 
 		<!-- loading -->
-		<div id="loading">
+		<div id="loading ">
 			<div class="spinner"></div>
 		</div>
 

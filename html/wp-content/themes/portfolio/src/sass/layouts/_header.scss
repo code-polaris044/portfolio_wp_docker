@@ -5,6 +5,10 @@
     height: 100vh;
     transition: all 1s;
     background-color: #0bd;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
 }
 
 .spinner {
@@ -29,6 +33,6 @@
 }
 
 .loaded {
-    opacity: 0;
+    opacity: 1;
     visibility: hidden;
 }
