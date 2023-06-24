@@ -1,12 +1,5 @@
 <?php
 
-function body_hook()
-{
-	echo '<!--Google Analytics,Cookie配置予定-->';
-}
-
-add_action('wp_body_open', 'body_hook');
-
 // --------------------------------
 // ページタイトル出力
 // --------------------------------
@@ -68,14 +61,23 @@ add_action('wp_enqueue_scripts', 'no_jQuery_frontend');
 // --------------------------------
 // JS・CSSファイルを読み込む
 // --------------------------------
+
+// できたら設定
+function body_hook()
+{
+	echo '<!--Google Analytics,Cookie配置予定-->';
+}
+
+add_action('wp_body_open', 'body_hook');
+
 function add_files()
 {
 	// fontawesome
 	wp_enqueue_style('fontawesomeCss', '//cdnjs.cloudflare.com/ajax/libs/font-awesome/latest/css/all.min.css', array(), null, false);
 	wp_enqueue_script('fontawesomeJs', '//cdnjs.cloudflare.com/ajax/libs/font-awesome/latest/js/all.min.js', array(), null, true);
 
+	// ftailwind
 	wp_enqueue_style('tailwindcss', '//unpkg.com/tailwindcss@^2/dist/tailwind.min.css', array(), 20230624, false);
-
 
 	// ajaxzip3
 	wp_enqueue_script('fajaxzip3', '//ajaxzip3.github.io/ajaxzip3.js', array(), null, false);
