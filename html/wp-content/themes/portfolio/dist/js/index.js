@@ -7985,6 +7985,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": function() { return /* export default binding */ __WEBPACK_DEFAULT_EXPORT__; }
 /* harmony export */ });
 /* harmony default export */ function __WEBPACK_DEFAULT_EXPORT__() {
+  //loading画面
   const spinner = document.getElementById("loading");
   spinner.classList.add("loaded");
 }
