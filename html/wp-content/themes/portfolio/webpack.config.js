@@ -11,7 +11,7 @@ const ImageminMozjpeg = require("imagemin-mozjpeg");
 
 module.exports = {
   mode: "development",
-  entry: "./src/js/index.js",
+  entry: "./src/js/index.jsx",
   output: {
     path: path.resolve(__dirname, "./dist"),
     filename: "js/index.js",
@@ -21,8 +21,8 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js/,
-        exclude: /node_moudeules/,
+        test: /\.(js|jsx)$/i,
+        exclude: /node_modules/,
         use: [
           {
             loader: "babel-loader",

@@ -73,8 +73,8 @@ add_action('wp_body_open', 'body_hook');
 function add_files()
 {
 	// fontawesome
-	wp_enqueue_style('fontawesomeCss', '//cdnjs.cloudflare.com/ajax/libs/font-awesome/latest/css/all.min.css', array(), null, false);
-	wp_enqueue_script('fontawesomeJs', '//cdnjs.cloudflare.com/ajax/libs/font-awesome/latest/js/all.min.js', array(), null, true);
+	wp_enqueue_script('fontawesomeJs', '//kit.fontawesome.com/ebc2ff5fc3.js', array(), null, true);
+
 
 	// ftailwind
 	wp_enqueue_style('tailwindcss', '//unpkg.com/tailwindcss@^2/dist/tailwind.min.css', array(), 20230624, false);

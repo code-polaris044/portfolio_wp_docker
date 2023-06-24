@@ -27,36 +27,32 @@
 			</div>
 		</div>
 
-		<header id="header" class="header">
-			<div class="logo">
-				<a href="<?php echo esc_url(home_url()); ?>/">
-					<img src="<?php echo esc_url(get_template_directory_uri()); ?>/dist/images/common/" alt="ロゴ">
-				</a>
-			</div>
+		<header id="l-header" class="l-header">
+			<div class="l-headerWrap">
+				<div class="l-logo">
+					<a href="<?php echo esc_url(home_url()); ?>/">
+						<picture class="l-logo__picture">
+							<source type="image/avif" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/dist/images/common/logo.avif">
+							<source type="image/webp" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/dist/images/common/logo.webp">
+							<img src="<?php echo esc_url(get_template_directory_uri()); ?>/dist/images/common/logo.png" alt="ロゴ">
+						</picture>
+					</a>
+				</div>
 
-			<nav id="headerNav" class="headerNav">
-				<div class="container">
-					<ul class="list">
-						<li class="listItem  mb-5">
-							<a href="<?php echo esc_url(home_url('about')); ?>">
-								<span class="jp">私たち</span><span class="en">About</span>
-							</a>
-						</li>
-					</ul>
-				</div>
-			</nav>
-			<div class="menuBox">
-				<?php
-				//ページタイトル
-				$test = '菅原';
-				?>
-				<?php
-				//ページタイトル
-				echo $test;
-				?>
-				<div id="menu" class="menu">
-					<span class="menuTop"></span>
-					<span class="menuBottom"></span>
-				</div>
+
+				<nav id="header__nav" class="header__nav">
+					<div class="header__navWrap">
+						<div class="hamburger">
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+						<?php
+						wp_nav_menu(array(
+							'menu' => 'menu',
+							'menu_class' => 'l-menu',
+						)); ?>
+					</div>
+				</nav>
 			</div>
 		</header>
