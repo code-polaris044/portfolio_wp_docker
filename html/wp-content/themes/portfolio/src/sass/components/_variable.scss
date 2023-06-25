@@ -28,12 +28,13 @@ $front-contents-width-pc: min(100% - 80px, 840px);
 
 
 // color
-$c-teat: hsla(0, 0%, 20%);
+$c-teat: hsla(213, 6%, 32%);
 $c-assort: hsl(229, 52%, 25%);
 $c-assort-btn:hsl(232, 22%, 87%);
 $c-white: hsl(0, 0%, 100%);
+$c-base:hsla(252, 100%, 99%);
 $c-base-reverse: hsla(184, 100%, 87%);
-$c-accent: #61551F;
+$c-accent: hsl(49, 52%, 25%);
 
 // font-family 
 $f-font-awesome: "Font Awesome 5 Free",
@@ -47,8 +48,6 @@ sans-serif;
 
 $f-serif: 'Noto Serif JP',
 serif;
-
-
 
 // font-size
 $fs-normal: clamp(1.4rem, 1vw + 1rem, 1.6rem);
@@ -83,8 +82,8 @@ $pd-100: 100px;
 $pd-50: 50px;
 $pd-200: 200px;
 
-
-
 // z-index
-$z9999: 9999; //最大値:ローディン画面
-$z1: 1;
+$z9999: 9999; //#loading 最大値
+$z1: 1; //loading__title 
+$z2: 2; //l-sp__menu.active
+$z3: 3; //l-hamburger
