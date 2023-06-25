@@ -1,4 +1,8 @@
-import { addLoadedClass } from "./common.js";
+import { toggleHamburger, addLoadedClass } from "./common.js";
+
+document.querySelector(".l-hamburger").addEventListener("click", function () {
+  toggleHamburger();
+});
 
 import React from "react";
 import { createRoot } from "react-dom/client";

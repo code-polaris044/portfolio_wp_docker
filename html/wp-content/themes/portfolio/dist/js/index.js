@@ -10,15 +10,23 @@
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   addLoadedClass: function() { return /* binding */ addLoadedClass; }
+/* harmony export */   addLoadedClass: function() { return /* binding */ addLoadedClass; },
+/* harmony export */   toggleHamburger: function() { return /* binding */ toggleHamburger; }
 /* harmony export */ });
 
 
+// ロード画面
 const addLoadedClass = () => {
   const spinner = document.getElementById("loading");
   spinner.classList.add("loaded");
 };
 window.addEventListener("load", addLoadedClass);
+
+// ハンバーガー
+function toggleHamburger() {
+  document.querySelector(".l-hamburger").classList.toggle("active");
+  document.querySelector(".l-sp__menu").classList.toggle("active");
+}
 
 /***/ }),
 
@@ -33486,6 +33494,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
 
+document.querySelector(".l-hamburger").addEventListener("click", function () {
+  (0,_common_js__WEBPACK_IMPORTED_MODULE_0__.toggleHamburger)();
+});
 
 
 function App() {

@@ -58,6 +58,12 @@
 							'menu_class' => 'l-menu',
 						));
 						?>
+						<?php
+						wp_nav_menu(array(
+							'menu' => 'menu',
+							'menu_class' => 'l-sp__menu',
+						));
+						?>
 					</div>
 				</nav>
 			</div>
