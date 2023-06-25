@@ -124,6 +124,9 @@
     margin: 0 auto;
     color: $c-teat;
 
+    @include tab {
+        width: min(100% - 40px, $tab);
+    }
 
     .l-headerWrap {
         height: 100%;

@@ -29,7 +29,7 @@
 
 		<header id="l-header" class="l-header">
 			<div class="l-headerWrap">
-				<div class="l-header__leftWrap ">
+				<div class="l-header__leftWrap">
 					<div class="l-logo">
 						<a href="<?php echo esc_url(home_url()); ?>/">
 							<picture class="l-logo__picture">

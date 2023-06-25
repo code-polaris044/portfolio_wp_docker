@@ -17,7 +17,7 @@ $tab: 960px;
 $sp: 560px;
 
 // コンテンツ幅
-$common-contents-width-pc: min(100% - 80px, 1080px);
+$common-contents-width-pc: min(100% - 80px, 1120px);
 $common-contents-width-tab: min(100% - 40px, 960px);
 $common-contents-width-sp: min(100% - 40px, 560px);
 $common-article-width-pc: min(100% - 80px, 640px);
@@ -54,6 +54,7 @@ $fs-normal: clamp(1.4rem, 1vw + 1rem, 1.6rem);
 $fs-c-18: clamp(1.6rem, 1vw + 1rem, 1.8rem);
 $fs-c-20: clamp(1.6rem, 1vw + 1rem, 2.0rem);
 $fs-c-24: clamp(1.8rem, 1vw + 1rem, 2.4rem);
+$fs-c-28: clamp(1.8rem, 1vw + 1rem, 2.8rem);
 $fs-c-32:clamp(1.8rem, 2vw + 1rem, 3.2rem);
 $fs-c-36:clamp(2.4rem, 2vw + 1rem, 3.6rem);
 $fs-c-48: clamp(2.4rem, 3vw + 1rem, 4.8rem);

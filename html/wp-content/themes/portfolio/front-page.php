@@ -4,11 +4,11 @@
     <section class="p-mv">
       <div class="p-mvWrap">
         <picture class="p-mv__imgWrap">
-          <source type="image/avif" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/dist/images/only/mv1.avif">
-          <source type="image/webp" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/dist/images/only/mv1.webp">
-          <img src="<?php echo esc_url(get_template_directory_uri()); ?>/dist/images/only/mv1.png" alt="mv1">
+          <source type="image/avif" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/dist/images/only/mv1.avif" class="p-mv__img1">
+          <source type="image/webp" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/dist/images/only/mv1.webp" class="p-mv__img1">
+          <img src="<?php echo esc_url(get_template_directory_uri()); ?>/dist/images/only/mv1.png" alt="mv1" class="p-mv__img1">
         </picture>
-        <div class="r">
+        <div class="p-mv__limp">
           <h1 class="p-mv__title">
             SHUNYA SUGAWARA’s<br>
             profile website.
