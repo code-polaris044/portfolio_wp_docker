@@ -28,11 +28,13 @@ $front-contents-width-pc: min(100% - 80px, 840px);
 
 
 // color
+$c-teat: hsla(0, 0%, 20%);
 $c-assort: hsl(229, 52%, 25%);
 $c-assort-btn:hsl(232, 22%, 87%);
 $c-white: hsl(0, 0%, 100%);
+$c-base-reverse: hsla(184, 100%, 87%);
 
-// font-family
+// font-family 
 $f-font-awesome: "Font Awesome 5 Free",
 "Font Awesome 5 Brands";
 
