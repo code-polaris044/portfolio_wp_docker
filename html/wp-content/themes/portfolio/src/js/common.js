@@ -1,11 +1,4 @@
-//ロード画面
-// window.addEventListener("load", (event) => {
-//   const spinner = document.getElementById("loading");
-//   spinner.classList.add("loaded");
-//   console.log("ページが完全に読み込まれました");
-// });
-
-// index.js
+"use strict";
 
 export const addLoadedClass = () => {
   const spinner = document.getElementById("loading");
@@ -13,3 +6,8 @@ export const addLoadedClass = () => {
 };
 
 window.addEventListener("load", addLoadedClass);
+
+document.querySelector(".hamburger").addEventListener("click", function () {
+  this.classList.toggle("active");
+  document.querySelector(".l-pc__menu").classList.toggle("active");
+});
