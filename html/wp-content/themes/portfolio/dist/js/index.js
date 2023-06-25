@@ -33495,8 +33495,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-// import ScrollToTop from "react-scroll-to-top";
-
 function App() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("div", {
     id: "app"
