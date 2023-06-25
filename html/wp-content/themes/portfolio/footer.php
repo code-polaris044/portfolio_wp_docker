@@ -11,7 +11,6 @@
       <ul class="list">
         <li class="listItem">
           <a href="<?php echo esc_url(home_url()); ?>/about/">
-            <span class="jp">私たち</span><span class="en">About</span>
           </a>
         </li>
       </ul>
@@ -19,7 +18,7 @@
 
   </div>
 
-  <p class="copy">&copy;2022 inc.</p>
+  <p class="l-copy">&copy;2023 Shunya Sugawara</p>
 
 </footer>
 <!-- wrapper -->

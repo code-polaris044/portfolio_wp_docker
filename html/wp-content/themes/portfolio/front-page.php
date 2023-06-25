@@ -1,12 +1,11 @@
 <?php get_header(); ?>
-<main class="topMain">
+<main class="p-front__main">
+  <div class="p-frontWrap">
+    <div class="mv">
 
-  <section class="topMv">
-  </section>
+    </div>
 
-
-
-
+  </div>
 </main>
 
 
