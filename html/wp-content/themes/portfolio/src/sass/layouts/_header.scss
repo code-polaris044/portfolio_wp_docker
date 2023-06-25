@@ -1,9 +1,5 @@
 @use "../components/"as *;
 
-main {
-    height: 3000px;
-}
-
 //ローディング画面
 #loading {
     width: 100vw;
@@ -372,18 +368,54 @@ main {
 }
 
 .l-sp__menu.active {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
-    background: $c-base-reverse;
-    position: absolute;
-    top: $h-tab-h;
-    left: 0;
-    transition: 0.5s;
-    z-index: 2;
-    padding: 60px 0;
+    display: none;
 
+    @include tab {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10;
+        align-items: center;
+        background: $c-base-reverse;
+        position: absolute;
+        top: $h-tab-h;
+        left: 0;
+        transition: 0.5s;
+        z-index: 2;
+        padding: 60px 0;
 
+        .l-menu__item {
+            @include f-base($fs-normal, 400);
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 3s;
+
+            a {
+                display: block;
+                padding: 10px 0;
+                position: relative;
+                color: currentColor;
+                width: 100%;
+                height: 100%;
+                transition: transform 3s;
+
+                &:hover {
+                    background: $c-assort;
+                    color: $c-white;
+                    letter-spacing: .5em;
+                }
+            }
+        }
+    }
+}
+
+// sp current
+.home .l-sp__menu>.l-menu__item:nth-child(1),
+.category-news .l-sp__menu>.l-menu__item:nth-child(2),
+.page-id-28 .l-sp__menu>.l-menu__item:nth-child(3),
+.post-type-archive-gallery .l-sp__menu>.l-menu__item:nth-child(4),
+.page-id-31 .l-sp__menu>.l-menu__item:nth-child(5) {
+    background: rgba($c-accent, .8);
+    color: $c-white;
 }
