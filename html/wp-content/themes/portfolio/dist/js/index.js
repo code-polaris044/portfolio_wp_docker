@@ -12,14 +12,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   addLoadedClass: function() { return /* binding */ addLoadedClass; }
 /* harmony export */ });
-//ロード画面
-// window.addEventListener("load", (event) => {
-//   const spinner = document.getElementById("loading");
-//   spinner.classList.add("loaded");
-//   console.log("ページが完全に読み込まれました");
-// });
 
-// index.js
 
 const addLoadedClass = () => {
   const spinner = document.getElementById("loading");

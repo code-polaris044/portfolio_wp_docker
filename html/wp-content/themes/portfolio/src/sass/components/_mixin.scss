@@ -176,16 +176,15 @@
 
 //ボタン
 
-@mixin p-naoto__btn($y, $x, $color, $bg) {
+@mixin btn($y, $x, $color, $bg, $c-hover) {
     transition: all .3s;
     display: inline-block;
     line-height: 1.6;
     letter-spacing: .1em;
 
     font: {
-        family: $f-sans;
-        weight: 400;
-        size: $fs-c-18;
+        family: $f-roboto;
+        weight: 300;
     }
 
     padding: $x $y;
@@ -193,12 +192,11 @@
     background: $bg;
 
     &:hover {
-        background: $c-text;
+        background: $c-hover;
     }
 
     @include tab {
-        padding: calc($x/2) calc($y/2);
-        margin-bottom: $mb-20;
+        padding: calc($x/1.6) calc($y/1.6);
     }
 }
 
