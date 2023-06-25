@@ -45,8 +45,6 @@
 						</a>
 					</div>
 				</div>
-
-
 				<nav id="l-header__nav" class="l-header__nav">
 					<div class="l-header__navWrap">
 						<div class="l-hamburger">
@@ -61,7 +59,6 @@
 						));
 						?>
 					</div>
-
 				</nav>
 			</div>
 		</header>

@@ -208,9 +208,47 @@
 
 //ヘッダーナビ
 .l-header__nav {
-    display: flex;
+    // display: flex;
+    // background: blue;
 }
 
 .l-menu {
     display: flex;
+    gap: 10px;
+}
+
+.l-menu__item {
+    font-size: 1.8rem;
+
+    a {
+        padding: 20px 10px;
+        position: relative;
+    }
+
+    a::after {
+        position: absolute;
+        left: 0;
+        content: '';
+        width: 100%;
+        height: 2px;
+        background: hsla(0, 0%, 0%, 0.8);
+        bottom: -1px;
+        transform: scale(0, 1);
+        transform-origin: center top;
+        transition: transform 0.3s;
+    }
+
+    a:hover::after {
+        transform: scale(1, 1);
+    }
+}
+
+.l-menu__item:not(:first-child, :nth-child(2), :nth-child(3), :nth-child(4)) {
+    background: red;
+
+    a {
+        padding: 10px 20px;
+        position: relative;
+        background: blue;
+    }
 }
