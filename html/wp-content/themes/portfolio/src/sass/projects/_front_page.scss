@@ -346,7 +346,7 @@
 .wrap {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 1fr;
+    // grid-template-rows: 1fr;
     width: 100%;
     max-width: $common-contents-width-pc;
     margin: 0 auto;
@@ -376,7 +376,8 @@
         grid-row: 1;
         position: relative;
 
-        img {
+        img,
+        source {
             width: 100%;
             height: auto;
 
@@ -386,5 +387,26 @@
                 right: 0;
             }
         }
+    }
+}
+
+.p-front__contactWrap {
+    padding: 100px 0 100px;
+    display: flex;
+}
+
+.p-front__map {
+    flex: 1;
+    margin-left: calc(50% - 50vw);
+    margin-right: 50vw;
+
+
+    iframe {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        aspect-ratio: 16/9;
+        border: 2px solid black;
+        border-radius: 0 25px 25px 0 ;
     }
 }
