@@ -5,6 +5,7 @@
     width: min(100% - 80px, $pc-m);
     margin: 0 auto;
     position: relative;
+    height: 100%;
 
     @include tab {
         width: min(100% - 40px, $tab);
@@ -13,11 +14,9 @@
 
 .p-mv__picture {
     display: block;
-    flex: 1;
     margin-right: calc(50% - 50vw);
     margin-left: 20vw;
     aspect-ratio: 16/9;
-
 
     @include tab {
         margin-left: 10vw;
@@ -86,5 +85,57 @@
 
     75% {
         border-radius: 100% 69% 100% 83% / 68% 99% 53% 93%;
+    }
+}
+
+/*スクロールダウン全体の場所*/
+.p-scrolldown1 {
+    position: absolute;
+    right: 0px;
+    bottom: 10px;
+    height: 50px;
+    writing-mode: vertical-rl;
+}
+
+/*Scrollテキストの描写*/
+.p-scrolldown1 span {
+    position: absolute;
+    right: -5px;
+    top: -35px;
+    color: $c-white;
+    font-size: 1.2rem;
+    letter-spacing: 0.05em;
+
+}
+
+/* 線の描写 */
+.p-scrolldown1::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 1px;
+    height: 30px;
+    background: $c-white;
+    animation: pathmove 1.4s ease-in-out infinite;
+    opacity: 0;
+}
+
+/*高さ・位置・透過が変化して線が上から下に動く*/
+@keyframes pathmove {
+    0% {
+        height: 0;
+        top: 0;
+        opacity: 0;
+    }
+
+    30% {
+        height: 30px;
+        opacity: 1;
+    }
+
+    100% {
+        height: 0;
+        top: 50px;
+        opacity: 0;
     }
 }
