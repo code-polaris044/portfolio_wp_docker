@@ -8,7 +8,7 @@ let txt2 = "span.two",
 gsap
   .timeline({
     defaults: {
-      duration: 300,
+      duration: 200,
     },
     scrollTrigger: {
       trigger: ".wrap",

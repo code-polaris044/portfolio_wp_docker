@@ -33498,7 +33498,7 @@ let txt2 = "span.two",
   img4 = "img.four";
 gsap.timeline({
   defaults: {
-    duration: 300
+    duration: 200
   },
   scrollTrigger: {
     trigger: ".wrap",
