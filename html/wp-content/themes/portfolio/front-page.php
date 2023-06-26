@@ -1,13 +1,14 @@
 <?php get_header(); ?>
 <main class="p-front__main">
   <div class="p-frontWrap">
-    <section class="p-mv u-mb__50">
+    <section class="p-mv u-mb__1">
       <div class="p-mvWrap">
-        <picture class="p-mv__picture">
-          <source type="image/avif" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/dist/images/only/mv1.avif" class="p-mv__img">
-          <source type="image/webp" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/dist/images/only/mv1.webp" class="p-mv__img">
-          <img src="<?php echo esc_url(get_template_directory_uri()); ?>/dist/images/only/mv1.png" alt="mv1" class="p-mv__img">
-        </picture>
+        <div class="p-slide">
+          <div class="p-slide__image"></div>
+          <div class="p-slide__image"></div>
+          <div class="p-slide__image"></div>
+        </div>
+
         <div class="p-mv__limp">
           <h1 class="p-mv__title">
             SHUNYA SUGAWARA’s<br>
@@ -15,6 +16,24 @@
           </h1>
         </div>
         <div class="p-scrolldown1"><span>Scroll</span></div>
+      </div>
+    </section>
+    <section class="p-front__news">
+      <div class="p-front__newsWrap">
+        <?php if (have_posts()) : ?>
+          <?php while (have_posts()) : the_post(); ?>
+            <p class="date"><?php echo get_the_date('Y.m.d'); ?></p>
+            <h2><?php the_title(); ?></h2>
+            <div class="singleNews__cotntainerContent"><?php the_content(); ?></div>
+          <?php endwhile; ?>
+        <?php else : ?>
+          <p>投稿がありません</p>
+        <?php endif; ?>
+      </div>
+    </section>
+    <section class="p-front__introduction">
+      <div class="p-front__introductionWrap">
+
       </div>
     </section>
   </div>

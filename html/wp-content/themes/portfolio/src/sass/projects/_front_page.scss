@@ -2,110 +2,99 @@
 
 // mv
 .p-mvWrap {
-    width: min(100% - 80px, $pc-m);
-    margin: 0 auto;
-    position: relative;
-    height: 100%;
-
-    @include tab {
-        width: min(100% - 40px, $tab);
-    }
-}
-
-.p-mv__picture {
-    display: block;
-    margin-right: calc(50% - 50vw);
-    margin-left: 20vw;
-    aspect-ratio: 16/9;
-
-    @include tab {
-        margin-left: 10vw;
-    }
-
-    .p-mv__img {
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-    }
-}
-
-.splide-outer {
-    max-width: 960px;
-    margin: auto;
-}
-
-.splide__slide img {
     width: 100%;
+    height: auto;
 }
 
-.splide__track {
-    max-height: 200px;
-}
-
-.p-mv__limp {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-    background: $c-assort;
-    width: 40%;
-    height: 80%;
-    transform-origin: 50% 50%;
-    border-radius: 71% 29% 22% 78% / 62% 67% 33% 38%;
-    border: 3px solid $c-white;
-    animation: move 8s linear infinite;
+.p-slide {
+    width: 100vw;
+    height: calc(100vh - $h-pc-h);
+    position: relative;
     overflow: hidden;
-    z-index: 1;
-    display: grid;
-    place-content: center;
-    color: $c-white;
+}
 
-    @include sp {
-        width: 50%;
-        height: 95%;
-        border: 1px solid $c-white;
-    }
+.p-slide__image {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - $h-pc-h);
+    opacity: 0;
+    animation: slider-1 24s linear infinite;
+    z-index: 0;
 
-    .p-mv__title {
-        font-size: $fs-c-28;
-        letter-spacing: .15em;
-        line-height: 1.8;
 
-        @include tab {
-            text-align: center;
-        }
+    @include tab {
+        background-position: center;
+        width: 100vw;
+        height: 80vh;
     }
 }
 
-// アメーバアニメーション
-@keyframes move {
-    50% {
-        border-radius: 70% 20% 59% 41% / 62% 21% 79% 28%;
+.p-slide__image:nth-child(1) {
+    background-image: image-set(url("#{$only-path}mv1.avif") type("image/avif"),
+        url("#{$only-path}mv1.webp") type("image/webp"),
+        url("#{$only-path}mv1.png") type("image/png"));
+    animation-delay: -2s;
+}
+
+.p-slide__image:nth-child(2) {
+    background-image: image-set(url("#{$only-path}mv2.avif") type("image/avif"),
+        url("#{$only-path}mv2.webp") type("image/webp"),
+        url("#{$only-path}mv2.png") type("image/png"));
+    animation-delay: 6s;
+}
+
+.p-slide__image:nth-child(3) {
+    background-image: image-set(url("#{$only-path}mv3.avif") type("image/avif"),
+        url("#{$only-path}mv3.webp") type("image/webp"),
+        url("#{$only-path}mv3.png") type("image/png"));
+    animation-delay: 14s;
+}
+
+@keyframes slider-1 {
+    0% {
+        opacity: 0;
     }
 
-    75% {
-        border-radius: 100% 69% 100% 83% / 68% 99% 53% 93%;
+    4.16% {
+        opacity: 1;
+    }
+
+    33.33% {
+        opacity: 1;
+    }
+
+    41.66% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
     }
 }
+
 
 /*スクロールダウン全体の場所*/
 .p-scrolldown1 {
     position: absolute;
-    right: 0px;
-    bottom: 10px;
+    left: 50%;
+    bottom: 0px;
     height: 50px;
-    writing-mode: vertical-rl;
+
 }
 
 /*Scrollテキストの描写*/
 .p-scrolldown1 span {
     position: absolute;
-    right: -5px;
-    top: -35px;
-    color: $c-white;
+    left: -15px;
+    top: -15px;
+    color: white;
     font-size: 1.2rem;
     letter-spacing: 0.05em;
-
 }
 
 /* 線の描写 */
@@ -115,7 +104,7 @@
     top: 0;
     width: 1px;
     height: 30px;
-    background: $c-white;
+    background: white;
     animation: pathmove 1.4s ease-in-out infinite;
     opacity: 0;
 }
