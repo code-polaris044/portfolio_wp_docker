@@ -42,12 +42,20 @@
       <div class="prev"></div>
       <div class="next"></div>
     </div>
-    <section class="wrap">
-      <div class="title">
-        <span class="one">Efficacious</span>
-        <span class="two">Craven</span>
-        <span class="three">Intelligent</span>
-        <span class="four">Dazzling</span>
+
+    <section class="p-front__fade wrap u-mb__100">
+      <div class="p-front__fade__title title">
+        <span class="one">
+          <h2 class="u-mb__50">自己紹介</h2>
+          <p>氏名: 菅原俊哉</p>
+          <p>生年月日: 1995年9月16日</p>
+          <p>住所: 札幌市 北区 新琴似</p>
+          <p>好きな食べ物: カプレーゼ</p>
+          <p>趣味: 読書</p>
+        </span>
+        <span class="two">職務経歴</span>
+        <span class="three">制作実績</span>
+        <span class="four">サイト情報</span>
       </div>
       <div class="images">
         <img src="https://source.unsplash.com/dwKiHoqqxk8/400x350" alt="" class="one">
@@ -56,8 +64,13 @@
         <img src="https://source.unsplash.com/jvoZ-Aux9aw/400x350" alt="" class="four">
       </div>
     </section>
+
   </div>
 </main>
+
+
+
+
 
 
 
