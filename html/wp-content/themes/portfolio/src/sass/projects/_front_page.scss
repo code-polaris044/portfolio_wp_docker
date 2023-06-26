@@ -11,22 +11,36 @@
     }
 }
 
-.p-mv__imgWrap {
+.p-mv__picture {
     display: block;
     flex: 1;
     margin-right: calc(50% - 50vw);
     margin-left: 20vw;
     aspect-ratio: 16/9;
 
+
     @include tab {
         margin-left: 10vw;
     }
 
-    .p-mv__img1 {
+    .p-mv__img {
         width: 100%;
         height: auto;
         object-fit: cover;
     }
+}
+
+.splide-outer {
+    max-width: 960px;
+    margin: auto;
+}
+
+.splide__slide img {
+    width: 100%;
+}
+
+.splide__track {
+    max-height: 200px;
 }
 
 .p-mv__limp {
@@ -49,7 +63,8 @@
 
     @include sp {
         width: 50%;
-        height: 90%;
+        height: 95%;
+        border: 1px solid $c-white;
     }
 
     .p-mv__title {
