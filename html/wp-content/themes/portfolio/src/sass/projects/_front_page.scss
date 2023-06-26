@@ -14,9 +14,6 @@
 }
 
 .p-slide__image {
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
     position: absolute;
     top: 0;
     left: 0;
@@ -25,13 +22,6 @@
     opacity: 0;
     animation: slider-1 24s linear infinite;
     z-index: 0;
-
-
-    @include tab {
-        background-position: center;
-        width: 100vw;
-        height: 80vh;
-    }
 }
 
 .p-slide__image:nth-child(1) {
@@ -39,6 +29,9 @@
         url("#{$only-path}mv1.webp") type("image/webp"),
         url("#{$only-path}mv1.png") type("image/png"));
     animation-delay: -2s;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
 }
 
 .p-slide__image:nth-child(2) {
@@ -46,6 +39,9 @@
         url("#{$only-path}mv2.webp") type("image/webp"),
         url("#{$only-path}mv2.png") type("image/png"));
     animation-delay: 6s;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
 }
 
 .p-slide__image:nth-child(3) {
@@ -53,6 +49,9 @@
         url("#{$only-path}mv3.webp") type("image/webp"),
         url("#{$only-path}mv3.png") type("image/png"));
     animation-delay: 14s;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
 }
 
 @keyframes slider-1 {
@@ -77,37 +76,147 @@
     }
 }
 
+.p-mv__title {
+    color: $c-white;
+    @include f-base($fs-c-64, 400);
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    span {
+        color: transparent;
+        animation: blur 10s ease-out infinite;
+    }
+
+    span:nth-child(1) {
+        animation-delay: 0.2s;
+    }
+
+    span:nth-child(2) {
+        animation-delay: 0.4s;
+    }
+
+    span:nth-child(3) {
+        animation-delay: 0.6s;
+    }
+
+    span:nth-child(4) {
+        animation-delay: 0.8s;
+    }
+
+}
+
+
+
+@keyframes blur {
+    0% {
+        text-shadow: 0 0 100px #fff;
+        opacity: 0;
+    }
+
+    5% {
+        text-shadow: 0 0 90px #fff;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    20% {
+        text-shadow: 0 0 0px #fff;
+    }
+
+    80% {
+        text-shadow: 0 0 0px #fff;
+    }
+
+    85% {
+        opacity: 1;
+    }
+
+    95% {
+        text-shadow: 0 0 90px #fff;
+    }
+
+    100% {
+        text-shadow: 0 0 100px #fff;
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes blur {
+    0% {
+        text-shadow: 0 0 100px #fff;
+        opacity: 0;
+    }
+
+    5% {
+        text-shadow: 0 0 90px #fff;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    20% {
+        text-shadow: 0 0 0px #fff;
+    }
+
+    80% {
+        text-shadow: 0 0 0px #fff;
+    }
+
+    85% {
+        opacity: 1;
+    }
+
+    95% {
+        text-shadow: 0 0 90px #fff;
+    }
+
+    100% {
+        text-shadow: 0 0 100px #fff;
+        opacity: 0;
+    }
+}
+
 
 /*スクロールダウン全体の場所*/
-.p-scrolldown1 {
+.p-front__scrollDown {
     position: absolute;
     left: 50%;
     bottom: 0px;
     height: 50px;
 
+    @include tab {
+        bottom: 40px;
+    }
+
+    /*Scrollテキストの描写*/
+    span {
+        position: absolute;
+        left: -15px;
+        top: -15px;
+        color: $c-white;
+        font-size: 1.2rem;
+        letter-spacing: 0.05em;
+    }
+
+    /* 線の描写 */
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 1px;
+        height: 30px;
+        background: $c-white;
+        animation: pathmove 1.4s ease-in-out infinite;
+        opacity: 0;
+    }
 }
 
-/*Scrollテキストの描写*/
-.p-scrolldown1 span {
-    position: absolute;
-    left: -15px;
-    top: -15px;
-    color: white;
-    font-size: 1.2rem;
-    letter-spacing: 0.05em;
-}
-
-/* 線の描写 */
-.p-scrolldown1::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    width: 1px;
-    height: 30px;
-    background: white;
-    animation: pathmove 1.4s ease-in-out infinite;
-    opacity: 0;
-}
 
 /*高さ・位置・透過が変化して線が上から下に動く*/
 @keyframes pathmove {
@@ -126,5 +235,156 @@
         height: 0;
         top: 50px;
         opacity: 0;
+    }
+}
+
+// ニュース
+.p-front__news__picker {
+    position: relative;
+    height: 66px;
+    background-color: $c-white;
+    border-radius: 3em;
+    width: min(100% - 40px, 1080px);
+    margin: 0 auto;
+    border: 1px $c-assort solid;
+
+    @include sp {
+        width: min(100% - 0px, 1080px);
+        font-size: 16px;
+    }
+
+    .sliderbox {
+        overflow: hidden;
+        width: 100%;
+        height: 66px;
+    }
+
+    /* 矢印 */
+    .prev {
+        position: absolute;
+        top: 60%;
+        right: 40px;
+        width: 10px;
+        height: 10px;
+        border-bottom: 2px solid $c-text;
+        border-left: 2px solid $c-text;
+        cursor: pointer;
+        transform: translateY(-50%) rotate(-45deg);
+
+        &:hover {
+            scale: (1.1);
+        }
+    }
+
+    .next {
+        position: absolute;
+        top: 40%;
+        right: 40px;
+        width: 10px;
+        height: 10px;
+        border-bottom: 2px solid $c-text;
+        border-right: 2px solid $c-text;
+        cursor: pointer;
+        transform: translateY(-50%) rotate(-135deg);
+
+        &:hover {
+            scale: (1.1);
+        }
+    }
+
+}
+
+
+.sliderlist__item {
+    width: 100%;
+    height: 66px;
+    display: flex;
+    align-items: center;
+
+    @include tab {
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .slider__date {
+        padding: 0 40px;
+
+        .slider__date__link {
+            color: $c-text;
+            @include noto-sans-jp($fs-normal, 400);
+
+            &:hover {
+                color: $c-accent;
+            }
+
+        }
+
+        @include tab {
+            padding: 0 20px;
+        }
+    }
+
+    .slider__text {
+        padding: 0 40px;
+
+        .slider__text__link {
+            color: $c-text;
+            @include noto-sans-jp($fs-normal, 400);
+
+            &:hover {
+                color: $c-accent;
+            }
+        }
+
+        @include sp {
+            padding: 0 20px;
+        }
+    }
+}
+
+.wrap {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 1fr;
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 64px 0;
+}
+
+.title {
+    grid-column: 1 / 5;
+    grid-row: 1;
+    position: relative;
+    font-size: 3.6rem;
+    font-weight: bold;
+    letter-spacing: 0.025em;
+    line-height: 1.1;
+    z-index: 2;
+
+    span {
+        &:not(:first-child) {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+}
+
+.images {
+    grid-column: 4 / -1;
+    grid-row: 1;
+    position: relative;
+
+    img {
+        width: 100%;
+        height: auto;
+
+        &:not(:first-child) {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
     }
 }
