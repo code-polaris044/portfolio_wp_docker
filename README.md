@@ -2,7 +2,7 @@
 
 制作中のポートフォリオサイトです。(製作中)
 
-https://code-polaris044.sakura.ne.jp/portfolio/
+<del>https://code-polaris044.sakura.ne.jp/portfolio/</del>
 
 テーマフォルダ<br>
 https://github.com/code-polaris044/portfolio_wp_docker/tree/main/html/wp-content/themes
