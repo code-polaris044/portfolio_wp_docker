@@ -1,3 +1,39 @@
+// ScrollReveal;
+
+ScrollReveal({
+  reset: true,
+  distance: "60px",
+  duration: 2000, //2sかけてアニメーション
+  delay: 200 /* 0.2s後に発動 */,
+});
+
+ScrollReveal().reveal(".main-title, .section-title", {
+  delay: 200,
+  origin: "left",
+});
+ScrollReveal().reveal(".sec-01 .image, .info", {
+  delay: 600,
+  origin: "bottom",
+});
+ScrollReveal().reveal(".text-box", {
+  delay: 700,
+  origin: "right",
+});
+ScrollReveal().reveal(".media-icons i", {
+  delay: 500,
+  origin: "bottom",
+  interval: 200,
+});
+ScrollReveal().reveal(".sec-02 .image, .sec-03 .image", {
+  delay: 500,
+  origin: "top",
+});
+ScrollReveal().reveal(".media-info li", {
+  delay: 500,
+  origin: "left",
+  interval: 200,
+});
+
 let txt2 = "span.two",
   txt3 = "span.three",
   txt4 = "span.four",
