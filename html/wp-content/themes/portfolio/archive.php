@@ -23,7 +23,7 @@
                 <figcaption class="post-explanation__wrap">
                   <div class="post-link__wrap">
                     <button class="post-category_btn">
-                      <a href="<?php echo esc_url(home_url()); ?>/blog/" class="btn_link">
+                      <a href="<?php echo esc_url(home_url()); ?>/news/" class="btn_link">
                         <?php
                         $categories = get_the_category();
                         if (!empty($categories)) {
@@ -32,7 +32,7 @@
                         ?>
                       </a>
                     </button>
-                    <a href="<?php echo esc_url(home_url()); ?>/blog/" class="date_link">
+                    <a href="<?php echo esc_url(home_url()); ?>/news/" class="date_link">
                       <time class="post-list_date" datetime="<?php echo get_the_date('Y-m-d'); ?>" itemprop=”datepublished”><?php echo get_the_date('Y年m月d日'); ?></time>
                     </a>
                   </div>
