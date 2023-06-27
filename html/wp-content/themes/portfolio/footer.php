@@ -18,7 +18,7 @@
           </a>
         </li>
         <li class="sns__item">
-          <a href="https://github.com/code-polaris044" target="_blank" rel="noopener noreferrer" class="l-sns__link">
+          <a href="https://www.instagram.com/polaris.044/" target="_blank" rel="noopener noreferrer" class="l-sns__link">
             <i class="fa-brands fa-instagram"></i>
           </a>
         </li>

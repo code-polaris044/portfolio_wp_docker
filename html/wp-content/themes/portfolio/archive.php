@@ -1,44 +1,65 @@
 <?php get_header(); ?>
 
-<main class="newsMain">
-  <section class="newsArchive">
-    <h1>
-      <span class="en">News</span>
-      <span class="jp"><?php the_archive_title(); ?></span>
-    </h1>
-
-    <div>
-      <?php if (have_posts()) : ?>
-        <dl>
+<main class="blogArchiveMain">
+  <!-- <section class="s_underlayer_common">
+    <?php
+    include('underlayer_mv/template02.php');
+    ?>
+  </section> -->
+  <section class="blog-archive">
+    <div class="post-list_wrap">
+      <ul class="post-list">
+        <?php if (have_posts()) : ?>
           <?php while (have_posts()) : the_post(); ?>
-            <div>
-              <dt><?php echo get_the_date('Y.m.d'); ?></dt>
-              <dd>
-                <a href="<?php the_permalink(); ?>"><?php the_title(); ?>
-                  <i class="fa-solid fa-angle-right"></i>
+            <li class="post-list__item">
+              <figure class="post-list__item_wrap">
+                <a href="<?php the_permalink(); ?>" class="thumbnail_link post_bm_8">
+                  <?php if (has_post_thumbnail()) : ?>
+                    <?php the_post_thumbnail(); ?>
+                  <?php else : ?>
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/common/noimage.jpg" alt="noimage" class="wp-post-image">
+                  <?php endif; ?>
                 </a>
-              </dd>
-            </div>
+                <figcaption class="post-explanation__wrap">
+                  <div class="post-link__wrap">
+                    <button class="post-category_btn">
+                      <a href="<?php echo esc_url(home_url()); ?>/blog/" class="btn_link">
+                        <?php
+                        $categories = get_the_category();
+                        if (!empty($categories)) {
+                          echo esc_html($categories[0]->name);
+                        }
+                        ?>
+                      </a>
+                    </button>
+                    <a href="<?php echo esc_url(home_url()); ?>/blog/" class="date_link">
+                      <time class="post-list_date" datetime="<?php echo get_the_date('Y-m-d'); ?>" itemprop=”datepublished”><?php echo get_the_date('Y年m月d日'); ?></time>
+                    </a>
+                  </div>
+                  <div class="post-title_wrap">
+                    <a href="<?php the_permalink(); ?>" class="post-title_link">
+                      <?php the_title(); ?>
+                    </a>
+                  </div>
+                </figcaption>
+              </figure>
+            </li>
           <?php endwhile; ?>
-        </dl>
-        <?php the_posts_pagination(
-          array(
-            'prev_text' => '<i class="fa-solid fa-angle-left"></i>前のページ',
-            'next_text' => '次のページ<i class="fa-solid fa-angle-right"></i>',
-          )
-        ); ?>
-      <?php else : ?>
-        <p>投稿がありません。</p>
-      <?php endif; ?>
-
-    </div>
-
-
-
-
+      </ul>
+    <?php else : ?>
+      <p class="post_none">投稿がありません。</p>
+    <?php endif; ?>
   </section>
-
-
+  <section class="post_pagination">
+    <?php the_posts_pagination(
+      array(
+        'mid_size' => 1,
+        'prev_text' => '<span class="pagination-angle-left-sp">前の9件</span>',
+        'next_text' => '<span class="pagination-angle-right-sp">次の9件</span>',
+        'show_all' => false,
+      )
+    ); ?>
+  </section>
 </main>
 
 <?php get_footer(); ?>
