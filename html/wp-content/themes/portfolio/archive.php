@@ -13,11 +13,11 @@
           <?php while (have_posts()) : the_post(); ?>
             <li class="post-list__item">
               <figure class="post-list__item_wrap">
-                <a href="<?php the_permalink(); ?>" class="thumbnail_link post_bm_8">
+                <a href="<?php the_permalink(); ?>" class="thumbnail_link u-mb__20">
                   <?php if (has_post_thumbnail()) : ?>
                     <?php the_post_thumbnail(); ?>
                   <?php else : ?>
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/common/noimage.jpg" alt="noimage" class="wp-post-image">
+                    <img src="<?php echo get_template_directory_uri(); ?>/dist/images/common/noimage.jpg" alt="noimage" class="wp-post-image">
                   <?php endif; ?>
                 </a>
                 <figcaption class="post-explanation__wrap">

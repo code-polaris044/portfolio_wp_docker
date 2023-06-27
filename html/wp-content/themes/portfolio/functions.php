@@ -85,12 +85,6 @@ function add_files()
 	// scrollreveal
 	wp_enqueue_script('scrollreveal', '//unpkg.com/scrollreveal', array(), null, true);
 
-	// gsap3
-	wp_enqueue_script('gsap', '//cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js', array(), null, true);
-
-	// gsap3 ScrollTrigger
-	wp_enqueue_script('gsapScrollTrigger', '//cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js', array(), null, true);
-
 	// サイト共通のCSSの読み込み
 	wp_enqueue_style('main', get_template_directory_uri() . '/dist/css/style.css', array(), '20230609', false);
 
