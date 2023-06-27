@@ -212,3 +212,97 @@
     border: 1px $c-teaxt solid;
     border-radius: 5px;
 }
+
+// input-layout
+@mixin input-layout {
+    height: 40px;
+    border: 1px solid #B7B7B7;
+    padding-left: 2px
+}
+
+// input-parts
+@mixin input-parts {
+    display: flex;
+    width: min(100% - 0px, 800px);
+    height: 50px;
+    margin: 0 auto;
+
+    .contact-wd-first {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        width: 18%;
+        font-size: 16px;
+    }
+
+    .contact-wd-second {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        font-size: 14px;
+        width: 10%;
+
+        .required {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 46px;
+            height: 24px;
+            background-color: #CB4830;
+            color: $c-white;
+            border-radius: 4px;
+        }
+    }
+
+    .contact-wd-third {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        font-size: 16px;
+        width: 72%;
+    }
+
+    // tab
+    @media screen and (max-width: $tab) {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: min(100% - 0px, 800px);
+        height: 50px;
+        margin: 20px auto 60px;
+
+        .contact-wd-first {
+            display: flex;
+            align-items: center;
+            height: auto;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        .contact-wd-second {
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            height: auto;
+            font-size: 14px;
+            width: 100%;
+
+            .required {
+                margin: 4px 0;
+            }
+        }
+
+        .contact-wd-third {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            font-size: 16px;
+            width: 100%;
+
+            input {
+                width: 80%;
+            }
+        }
+    }
+}
