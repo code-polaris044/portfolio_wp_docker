@@ -68,7 +68,7 @@
         <h3 class="section-title">職務経歴</h3>
         <div class="content">
           <div class="image">
-            < <img src="<?php echo esc_url(get_template_directory_uri()); ?>/dist/images/only/fade2.webp">
+            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/dist/images/only/fade2.webp">
           </div>
           <div class="info">
             <h4 class="info-title">Description</h4>
@@ -120,15 +120,19 @@
         </iframe>
       </div>
       <div class="p-front__contact__textarea">
-        <h2 class="p-front__section__title u-mb__50">お問い合わせ</h2>
-        <p class="p-front__section__lead u-mb__30">お気軽にお問い合わせください</p>
+        <h2 class="p-front__section__title u-mb__30">お問い合わせ</h2>
+        <p class="p-front__section__lead u-mb__20">お気軽にお問い合わせください</p>
         <address class="p-front__address">
-          <h3 class="p-front__section__subtitle u-mb__30">TEL</h3>
+          <h3 class="p-front__section__subtitle u-mb__20">TEL</h3>
           <p class="p-front__section__text u-mb__20">080-0000-000</p>
-          <h3 class="p-front__section__subtitle u-mb__30">住所</h3>
-          <p class="p-front__section__text">札幌市 北区 新琴似</p>
+          <h3 class="p-front__section__subtitle u-mb__20">住所</h3>
+          <p class="p-front__section__text u-mb__50">札幌市 北区 新琴似</p>
         </address>
+        <button class="p-front__btn">
+          <a href="<?php echo get_the_permalink(); ?>/contact/" class="p-front__btn__link">Contact</a>
+        </button>
       </div>
+
     </div>
   </section>
   </div>
