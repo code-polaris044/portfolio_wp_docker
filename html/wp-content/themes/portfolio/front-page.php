@@ -39,7 +39,7 @@
     <!-- section01 -->
     <section class="sec-01">
       <div class="container">
-        <h2 class="main-title">自己紹介</h2>
+        <h2 class="main-title">About</h2>
         <div class="content">
           <div class="image">
             <img src="<?php echo esc_url(get_template_directory_uri()); ?>/dist/images/only/fade1.webp">
