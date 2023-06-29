@@ -33,8 +33,32 @@ ScrollReveal().reveal(".media-info li", {
   interval: 200,
 });
 ScrollReveal().reveal(".l-lower__mv__title", {
-  delay: 0,
+  delay: 200,
   origin: "left",
+  interval: 200,
+});
+ScrollReveal().reveal(
+  ".l-lower__bg__about, .l-lower__bg__contact,  .l-lower__bg__404, .l-lower__bg__archive, .l-lower__bg__single, .l-lower__bg__gallery",
+  {
+    delay: 100,
+    origin: "bottom",
+    interval: 200,
+  }
+);
+ScrollReveal().reveal(".p-front__map", {
+  delay: 100,
+  origin: "left",
+  interval: 200,
+});
+ScrollReveal().reveal(".p-front__contact__textarea", {
+  delay: 100,
+  origin: "right",
+  interval: 200,
+});
+ScrollReveal().reveal(".post-list__item", {
+  distance: "40px",
+  delay: 100,
+  origin: "top",
   interval: 200,
 });
 

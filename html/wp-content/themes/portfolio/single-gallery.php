@@ -1,11 +1,13 @@
 <?php get_header(); ?>
 
 <main class="blogMain">
-  <div class="l-lower__bgWrap l-lower__bg__gallery">
-    <h1 class="l-lower__mv__title">
-      Gallery
-    </h1>
-  </div>
+  <section class="l-underlayer__common">
+    <div class="l-lower__bgWrap l-lower__bg__gallery">
+      <h1 class="l-lower__mv__title">
+        Gallery
+      </h1>
+    </div>
+  </section>
   <section class="blog_single">
     <div class="blog_wrap">
       <?php if (have_posts()) : ?>

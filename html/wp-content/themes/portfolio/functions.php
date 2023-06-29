@@ -89,7 +89,7 @@ function add_files()
 	wp_enqueue_style('main', get_template_directory_uri() . '/dist/css/style.css', array(), '20230629', false);
 
 	// サイト共通JS
-	wp_enqueue_script('script', get_template_directory_uri() . '/dist/js/index.js', array(), '20230629', true);
+	wp_enqueue_script('script', get_template_directory_uri() . '/dist/js/index.js', array(), '20230630', true);
 }
 add_action('wp_enqueue_scripts', 'add_files');
 
@@ -329,6 +329,6 @@ function my_pre_get_posts_number($query)
 {
 	if (is_admin() || !$query->is_main_query()) return;
 	if ($query->is_home()) {
-		$query->set('posts_per_page', 3); //3件 
+		$query->set('posts_per_page', 5); //5件 
 	}
 }
