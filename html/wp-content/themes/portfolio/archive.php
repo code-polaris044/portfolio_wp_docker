@@ -45,10 +45,11 @@
               </figure>
             </li>
           <?php endwhile; ?>
+        <?php else : ?>
+          <p class="post__none">投稿がありません。</p>
+        <?php endif; ?>
       </ul>
-    <?php else : ?>
-      <p class="post__none">投稿がありません。</p>
-    <?php endif; ?>
+    </div>
   </section>
   <section class="p-archive__pagination">
     <?php the_posts_pagination(
