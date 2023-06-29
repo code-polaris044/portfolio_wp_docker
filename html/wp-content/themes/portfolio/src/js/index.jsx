@@ -186,3 +186,10 @@ const slider = function () {
 };
 
 slider();
+
+import tippy from "tippy.js";
+import "tippy.js/dist/tippy.css";
+
+tippy(".note", {
+  content: "My tooltip!",
+});

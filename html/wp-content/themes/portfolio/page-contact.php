@@ -1,16 +1,15 @@
 <?php get_header(); ?>
 
-<main class="aboutMain">
+<main class="p-contact__main">
     <section class="l-underlayer__common">
         <?php
         include('templates/under-mv.php');
         ?>
     </section>
-    <section class="s_contact">
-        <?php echo do_shortcode('[mwform_formkey key="50"]'); ?>
+    <section class="p-contact">
+        <div class="p-contactWrap">
+            <?php echo do_shortcode('[mwform_formkey key="50"]'); ?>
+        </div>
     </section>
-
-    <!-- ローカルは22 -->
-
 </main>
 <?php get_footer(); ?>

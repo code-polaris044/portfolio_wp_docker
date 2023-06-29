@@ -1,19 +1,12 @@
 @use "../components/"as *;
 
-.p-contact__mainWrap {
+.p-contactWrap {
     width: min(100% - 80px, $common-contents-width-pc);
-    margin: 0 auto;
+    margin: 100px auto;
 
     @include tab {
         width: min(100% - 40px, $common-contents-width-tab);
-    }
-}
-
-.s_contact {
-    margin: 100px 0;
-
-    @media screen and (max-width: $tab) {
-        margin: 60px 0;
+        margin: 60px auto;
     }
 }
 
@@ -84,7 +77,7 @@
 .input {
     border: 1px solid $c-assort;
     border-radius: 2px;
-    padding: 12px;
+    padding: 8px;
 
     &:focus {
         outline: 1px solid $c-assort;
@@ -207,7 +200,6 @@ input[type="checkbox"] {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    gap: 20px;
     position: relative;
 
     br {
