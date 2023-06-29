@@ -87,8 +87,15 @@ function add_files()
 	// popperjs
 	wp_enqueue_script('popperjs', '//unpkg.com/@popperjs/core@2', array(), null, true);
 
-	// popperjs
-	wp_enqueue_script('tippy.js', '//unpkg.com/tippy.js@6', array(), null, true);
+	// tippy.js
+	wp_enqueue_script('tippyjs', '//unpkg.com/tippy.js@6', array(), null, true);
+
+	// splidejs
+	wp_enqueue_script('splidejs', '//cdn.jsdelivr.net/npm/@splidejs/splide@4.1.3/dist/js/splide.min.js', array(), null, true);
+
+	// splidecss
+	wp_enqueue_style('splidecss', '//cdn.jsdelivr.net/npm/@splidejs/splide@4.1.3/dist/css/splide.min.css', array(), null, false);
+	wp_enqueue_script('splideAuto', '//cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js', array(), null, true);
 
 	// サイト共通のCSSの読み込み
 	wp_enqueue_style('main', get_template_directory_uri() . '/dist/css/style.css', array(), '20230629', false);

@@ -196,3 +196,35 @@ slider();
 tippy(".note", {
   content: "必須",
 });
+
+const options = {
+  perPage: 3,
+  perMove: 1,
+  gap: 30,
+  cover: true,
+  updateOnMove: true,
+  type: "loop",
+  focus: "left",
+  pagination: false,
+  azyLoad: false,
+  breakpoints: {
+    960: {
+      perPage: 1,
+      gap: 16,
+      type: "splide",
+      autoplay: false,
+      heightRatio: 1,
+      rewind: true,
+      perMove: 1,
+      gap: 16,
+      cover: true,
+      updateOnMove: true,
+      padding: "10rem",
+      type: "loop",
+      focus: "center",
+    },
+  },
+};
+
+const splide = new Splide(".splide", options);
+splide.mount();

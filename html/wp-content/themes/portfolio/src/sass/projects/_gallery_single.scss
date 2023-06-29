@@ -1,1 +1,49 @@
 @use "../components/"as *;
+
+.p-single__galleryWrap {
+    width: min(100% - 80px, $common-contents-width-pc);
+    margin: 0 auto;
+
+    @include tab {
+        width: min(100% - 40px, $common-contents-width-tab);
+    }
+}
+
+.p-single__gallery__textWrap {
+    display: flex;
+    justify-content: space-between;
+
+    .p-single__gallery__title {
+        @include noto-sans-jp($fs-c-32, 500);
+        color: $c-assort;
+    }
+
+    .p-single__gallery__linkwrap {
+        display: grid;
+        place-content: end;
+        color: $c-text;
+
+        .p-single__gallery__date__link {
+            color: currentColor;
+            @include noto-sans-jp($fs-normal, 400);
+
+            &::hover {
+                opacity: .8;
+            }
+
+        }
+
+    }
+}
+
+.p-gallery__single__imgWrap {
+    width: min(100% - 40px, 600px);
+    margin: 0 auto;
+}
+
+.p-gallery__single__img {
+    aspect-ratio: 3/2;
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+}

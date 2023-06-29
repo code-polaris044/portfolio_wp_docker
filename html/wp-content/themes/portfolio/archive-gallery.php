@@ -14,8 +14,8 @@
         } ?>
       </div>
     </section>
-    <section>
-      <div class="p-post__list__wrap">
+    <section class="p-gallery">
+      <div class="p-gallery__post__list__wrap">
         <ul class="p-post-list">
           <?php if (have_posts()) : ?>
             <?php while (have_posts()) : the_post(); ?>
@@ -31,7 +31,7 @@
                   <figcaption class="post-explanation__wrap">
                     <div class="p-post__link__wrap">
                       <button class="p-post__category__btn">
-                        <a href="<?php echo esc_url(home_url()); ?>/news/" class="btn__link">
+                        <a href="<?php echo esc_url(home_url()); ?>/gallery/" class="btn__link">
                           <?php
                           $categories = get_the_category();
                           if (!empty($categories)) {
@@ -40,7 +40,7 @@
                           ?>
                         </a>
                       </button>
-                      <a href="<?php echo esc_url(home_url()); ?>/news/" class="date__link">
+                      <a href="<?php echo esc_url(home_url()); ?>/gallery/" class="date__link">
                         <time class="post-list_date" datetime="<?php echo get_the_date('Y-m-d'); ?>" itemprop=”datepublished”><?php echo get_the_date('Y年m月d日'); ?></time>
                       </a>
                     </div>
