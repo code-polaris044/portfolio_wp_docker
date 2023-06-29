@@ -60,7 +60,7 @@
                       <li class="splide__slide">
                         <figure class="slide__figure">
                           <figcaption class="slide__figcaption">
-                            CTA
+                            CTAボタン
                           </figcaption>
                           <img src="<?php echo esc_url($gallery_img3['url']); ?>" alt="<?php echo esc_attr($gallery_img3['alt']); ?>" class="p-single__gallery__img" />
                         </figure>
@@ -68,7 +68,7 @@
                     </ul>
                   </div>
                 </div>
-                <div class="p-single__gallery__imgSpWrap">
+                <div class="p-single__gallery__imgSpWrap u-mb__100">
                   <img src="<?php echo esc_url($gallery_img_sp['url']); ?>" alt="<?php echo esc_attr($gallery_img_sp['alt']); ?>" class="p-single__gallery__imgSp" />
                 </div>
               </div>
@@ -83,12 +83,35 @@
       <?php else : ?>
         <p class="post__none">投稿がありません。</p>
       <?php endif; ?>
+
+      <div class="p-pager__linkWrap u-mb__100">
+        <div class="pager__prev">
+          <?php previous_post_link('<i class="fa-solid fa-caret-left"></i> %link', '%title', true); ?>
+        </div>
+        <div class="pager__next">
+          <?php next_post_link(' %link <i class="fa-solid fa-caret-right"></i>', '%title', true); ?>
+        </div>
+      </div>
+      <div class="p-single__gallery__btnWrap">
+        <div class="p-single__gallery__top__btnWrap">
+          <button class="p-single__gallery__btn btn__color__reverse">
+            <a href="https://github.com/code-polaris044/YOSHIDA_LP" rel="noopener noreferrer" target="_blank" class="btn__link">
+              Githubへ
+            </a>
+          </button>
+          <button class="p-single__gallery__btn">
+            <a href="https://yoshida-g.ac.jp/saishushoku/" rel="noopener noreferrer" target="_blank" class="btn__link">
+              サイトへ
+            </a>
+          </button>
+        </div>
+        <button class="p-single__gallery__back__btn">
+          <a href="<?php echo esc_url(home_url()); ?>/gallery/" rel="noopener noreferrer" class="btn__link">
+            一覧へ戻る
+          </a>
+        </button>
+      </div>
     </div>
-    <button class="blog_btn">
-      <a href="<?php echo esc_url(home_url()); ?>/news/" rel="noopener noreferrer" class="btn_link">
-        一覧へ戻る
-      </a>
-    </button>
   </section>
 </main>
 
