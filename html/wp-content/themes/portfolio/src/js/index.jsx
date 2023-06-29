@@ -32,6 +32,11 @@ ScrollReveal().reveal(".media-info li", {
   origin: "left",
   interval: 200,
 });
+ScrollReveal().reveal(".l-lower__mv__title", {
+  delay: 0,
+  origin: "left",
+  interval: 200,
+});
 
 import { toggleHamburger, addLoadedClass } from "./common.js";
 

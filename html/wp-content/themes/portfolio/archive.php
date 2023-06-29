@@ -1,11 +1,11 @@
 <?php get_header(); ?>
 
 <main class="blogArchiveMain">
-  <!-- <section class="s_underlayer_common">
+  <section class="l-underlayer__common">
     <?php
-    include('underlayer_mv/template02.php');
+    include('templates/under-mv.php');
     ?>
-  </section> -->
+  </section>
   <section class="blog-archive">
     <div class="post-list_wrap">
       <ul class="post-list">

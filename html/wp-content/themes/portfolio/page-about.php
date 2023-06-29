@@ -2,11 +2,11 @@
 
 <main class="p-about__main">
     <div class="c-mainWrap">
-        <!-- <section class="l-template u-mb__50">
+        <section class="l-underlayer__common">
             <?php
-            include('templates/temp.php');
+            include('templates/under-mv.php');
             ?>
-        </section> -->
+        </section>
         <section class="p-about__introduction">
             <div class="p-about__bg">
                 <div class="p-about__introductionWrap">

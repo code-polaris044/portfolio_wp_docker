@@ -86,10 +86,10 @@ function add_files()
 	wp_enqueue_script('scrollreveal', '//unpkg.com/scrollreveal', array(), null, true);
 
 	// サイト共通のCSSの読み込み
-	wp_enqueue_style('main', get_template_directory_uri() . '/dist/css/style.css', array(), '20230609', false);
+	wp_enqueue_style('main', get_template_directory_uri() . '/dist/css/style.css', array(), '20230629', false);
 
 	// サイト共通JS
-	wp_enqueue_script('script', get_template_directory_uri() . '/dist/js/index.js', array(), '20230609', true);
+	wp_enqueue_script('script', get_template_directory_uri() . '/dist/js/index.js', array(), '20230629', true);
 }
 add_action('wp_enqueue_scripts', 'add_files');
 

@@ -33525,6 +33525,11 @@ ScrollReveal().reveal(".media-info li", {
   origin: "left",
   interval: 200
 });
+ScrollReveal().reveal(".l-lower__mv__title", {
+  delay: 0,
+  origin: "left",
+  interval: 200
+});
 
 document.querySelector(".l-hamburger").addEventListener("click", function () {
   (0,_common_js__WEBPACK_IMPORTED_MODULE_0__.toggleHamburger)();
