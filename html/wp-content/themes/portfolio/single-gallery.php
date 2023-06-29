@@ -17,7 +17,7 @@
     <div class="p-single__galleryWrap u-mb__100">
       <?php if (have_posts()) : ?>
         <?php while (have_posts()) : the_post(); ?>
-          <div class="p-single__gallery__textWrap  u-mb__50">
+          <div class="p-single__gallery__textWrap  u-mb__100">
             <h2 class="p-single__gallery__title">
               <?php the_title(); ?>
             </h2>
@@ -35,36 +35,50 @@
             $gallery_img1 = get_field('gallery_img1');
             $gallery_img2 = get_field('gallery_img2');
             $gallery_img3 = get_field('gallery_img3');
+            $gallery_img_sp = get_field('gallery_img_sp');
             if (!empty($gallery_img1 || $gallery_img2 || $gallery_img3)) : ?>
-              <div class="splide">
-                <div class="splide__track">
-                  <ul class="p-gallery__single__imgWrap splide__list">
-                    <li class="splide__slide">
-                      <a href="https://yoshida-g.ac.jp/saishushoku/" class="p-gallery__link">
-                        <img src="<?php echo esc_url($gallery_img1['url']); ?>" alt="<?php echo esc_attr($gallery_img1['alt']); ?>" class="p-gallery__single__img" />
-                      </a>
-                    </li>
-                    <li class="splide__slide">
-                      <img src="<?php echo esc_url($gallery_img2['url']); ?>" alt="<?php echo esc_attr($gallery_img2['alt']); ?>" class="p-gallery__single__img" />
-                    </li>
-                    <li class="splide__slide">
-                      <img src="<?php echo esc_url($gallery_img3['url']); ?>" alt="<?php echo esc_attr($gallery_img3['alt']); ?>" class="p-gallery__single__img" />
-                    </li>
-                  </ul>
+              <div class="p-single__splideWrap">
+                <div class="splide  u-mb__50">
+                  <div class="splide__track">
+                    <ul class="p-gallery__single__imgWrap splide__list">
+                      <li class="splide__slide">
+                        <figure class="slide__figure">
+                          <figcaption class="slide__figcaption">
+                            MV
+                          </figcaption>
+                          <img src="<?php echo esc_url($gallery_img1['url']); ?>" alt="<?php echo esc_attr($gallery_img1['alt']); ?>" class="p-single__gallery__img" />
+                        </figure>
+                      </li>
+                      <li class="splide__slide">
+                        <figure class="slide__figure">
+                          <figcaption class="slide__figcaption">
+                            インタビューセクション
+                          </figcaption>
+                          <img src="<?php echo esc_url($gallery_img2['url']); ?>" alt="<?php echo esc_attr($gallery_img2['alt']); ?>" class="p-single__gallery__img" />
+                        </figure>
+                      </li>
+                      <li class="splide__slide">
+                        <figure class="slide__figure">
+                          <figcaption class="slide__figcaption">
+                            CTA
+                          </figcaption>
+                          <img src="<?php echo esc_url($gallery_img3['url']); ?>" alt="<?php echo esc_attr($gallery_img3['alt']); ?>" class="p-single__gallery__img" />
+                        </figure>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="p-single__gallery__imgSpWrap">
+                  <img src="<?php echo esc_url($gallery_img_sp['url']); ?>" alt="<?php echo esc_attr($gallery_img_sp['alt']); ?>" class="p-single__gallery__imgSp" />
                 </div>
               </div>
-
-
             <?php endif; ?>
           <?php endforeach; ?>
-
-
           <div class="blog_contents">
             <div class="blog_text_wrap">
               <?php the_content(); ?>
             </div>
           </div>
-
         <?php endwhile; ?>
       <?php else : ?>
         <p class="post__none">投稿がありません。</p>

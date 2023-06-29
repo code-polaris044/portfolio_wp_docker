@@ -33679,30 +33679,32 @@ tippy(".note", {
   content: "必須"
 });
 const options = {
-  perPage: 3,
+  perPage: 1,
   perMove: 1,
   gap: 30,
   cover: true,
   updateOnMove: true,
   type: "loop",
   focus: "left",
-  pagination: false,
   azyLoad: false,
+  focus: 0,
+  padding: "10rem",
+  heightRatio: 0.6,
   breakpoints: {
     960: {
+      heightRatio: 0.64,
       perPage: 1,
       gap: 16,
       type: "splide",
       autoplay: false,
-      heightRatio: 1,
       rewind: true,
       perMove: 1,
-      gap: 16,
       cover: true,
       updateOnMove: true,
-      padding: "10rem",
+      padding: "0rem",
       type: "loop",
-      focus: "center"
+      focus: "center",
+      padding: "0rem"
     }
   }
 };
