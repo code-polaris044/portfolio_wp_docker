@@ -61,10 +61,28 @@ ScrollReveal().reveal(".p-post__list__item", {
   origin: "bottom",
   interval: 200,
 });
+ScrollReveal().reveal(".p-about__title", {
+  delay: 100,
+  origin: "left",
+  interval: 200,
+});
+ScrollReveal().reveal(".p-about__text", {
+  delay: 100,
+  origin: "left",
+  interval: 200,
+});
+ScrollReveal().reveal(".p-about___img, .p-about__caption", {
+  delay: 100,
+  origin: "right",
+  interval: 200,
+});
+ScrollReveal().reveal(".p-about__dt, .p-about__dd", {
+  delay: 100,
+  origin: "right",
+  interval: 200,
+});
 
-// // ------------------------------
 // // 文字数制限
-// // ------------------------------
 
 window.onresize = function () {
   const windowSize = window.innerWidth;

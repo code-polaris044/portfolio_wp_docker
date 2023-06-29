@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <main class="p-about__main">
-    <div class="c-mainWrap">
+    <div class="p-main__Wrap">
         <section class="l-underlayer__common">
             <?php
             include('templates/under-mv.php');
@@ -11,9 +11,9 @@
             <div class="p-about__bg">
                 <div class="p-about__introductionWrap">
                     <div class="p-about__titleWrap u-mb__50">
-                        <h2 class="c-contents__title">
+                        <h2 class="c-contents__title p-about__title">
                             ポートフォリオサイトについて
-                        </h2 c-contents__title>
+                        </h2>
                     </div>
                     <p class="p-about__text u-mb__50">
                         こちらのポートフォリオサイトは、実務で制作したサイトの一覧サイトです。<br><br>
@@ -24,13 +24,13 @@
                 </div>
             </div>
         </section>
-        <section class="p-about__company" id="p-about__company">
-            <div class="p-about__companyWrap">
-                <div class="p-about__companyWrap-column u-mb__50">
+        <section class="p-about__info" id="p-about__company">
+            <div class="p-about__infoWrap">
+                <div class="p-about__infoWrap-column u-mb__50">
                     <div class="p-about__titleWrap">
-                        <h2 class=" c-contents__title">
+                        <h2 class="c-contents__title p-about__title">
                             サイト制作者
-                        </h2 c-contents__title>
+                        </h2>
                     </div>
                     <div class="p-about__imgWrap">
                         <img src="<?php echo get_template_directory_uri(); ?>/dist/images/only/pc.webp" alt="githubプロフィール画像" class="p-about___img">
@@ -39,17 +39,17 @@
                         </p>
                     </div>
                 </div>
-                <dl class="p-about__company__inner">
-                    <dt class="p-about__company__dt">氏名</dt>
-                    <dd class="p-about__company__dd">菅原 俊哉（スガワラ シュンヤ）</dd>
-                    <dt class="p-about__company__dt">所在地</dt>
-                    <dd class="p-about__company__dd">北海道札幌市北区新琴似</dd>
-                    <dt class="p-about__company__dt">TEL</dt>
-                    <dd class="p-about__company__dd">011-000-0000</dd>
-                    <dt class="p-about__company__dt">FAX</dt>
-                    <dd class="p-about__company__dd">011-000-0000</dd>
-                    <dt class="p-about__company__dt">職業</dt>
-                    <dd class="p-about__company__dd">フロントエンジニア</dd>
+                <dl class="p-about__list__inner">
+                    <dt class="p-about__dt">氏名</dt>
+                    <dd class="p-about__dd">菅原 俊哉（スガワラ シュンヤ）</dd>
+                    <dt class="p-about__dt">所在地</dt>
+                    <dd class="p-about__dd">北海道札幌市北区新琴似</dd>
+                    <dt class="p-about__dt">TEL</dt>
+                    <dd class="p-about__dd">011-000-0000</dd>
+                    <dt class="p-about__dt">FAX</dt>
+                    <dd class="p-about__dd">011-000-0000</dd>
+                    <dt class="p-about__dt">職業</dt>
+                    <dd class="p-about__dd">フロントエンジニア</dd>
                 </dl>
             </div>
         </section>

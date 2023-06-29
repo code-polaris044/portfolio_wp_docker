@@ -33551,6 +33551,48 @@ ScrollReveal().reveal(".p-post__list__item", {
   origin: "bottom",
   interval: 200
 });
+ScrollReveal().reveal(".p-about__title", {
+  delay: 100,
+  origin: "left",
+  interval: 200
+});
+ScrollReveal().reveal(".p-about__text", {
+  delay: 100,
+  origin: "left",
+  interval: 200
+});
+ScrollReveal().reveal(".p-about___img, .p-about__caption", {
+  delay: 100,
+  origin: "right",
+  interval: 200
+});
+ScrollReveal().reveal(".p-about__dt, .p-about__dd", {
+  delay: 100,
+  origin: "right",
+  interval: 200
+});
+
+// // 文字数制限
+
+window.onresize = function () {
+  const windowSize = window.innerWidth;
+  const left = document.querySelector(".pager__prev > a");
+  const right = document.querySelector(".pager__next > a");
+  const strL = left ? left.textContent : "";
+  const strR = right ? right.textContent : "";
+  let len;
+  if (windowSize < 960) {
+    len = 5;
+  } else {
+    len = 16;
+  }
+  if (strL.length > len) {
+    left.textContent = strL.substring(0, len) + "...";
+  }
+  if (strR.length > len) {
+    right.textContent = strR.substring(0, len) + "...";
+  }
+};
 
 document.querySelector(".l-hamburger").addEventListener("click", function () {
   (0,_common_js__WEBPACK_IMPORTED_MODULE_0__.toggleHamburger)();
