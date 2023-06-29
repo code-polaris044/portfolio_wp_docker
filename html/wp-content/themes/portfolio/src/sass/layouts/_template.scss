@@ -89,3 +89,14 @@
     width: fit-content;
     height: fit-content;
 }
+
+.breadcrumbs {
+    text-align: end;
+    width: min(100% - 80px, $common-contents-width-pc);
+    margin: 20px auto 0;
+
+    @include tab {
+        width: min(100% - 40px, $common-contents-width-tab);
+    }
+
+}

@@ -83,11 +83,11 @@ ScrollReveal().reveal(".p-about__dt, .p-about__dd", {
 });
 ScrollReveal().reveal(".breadcrumbs", {
   delay: 100,
-  origin: "left",
+  origin: "right",
   interval: 200,
 });
 
-// // 文字数制限
+// 文字数制限
 
 window.onresize = function () {
   const windowSize = window.innerWidth;
@@ -192,6 +192,7 @@ const slider = function () {
 
 slider();
 
+// コンタクト　ツールチップ
 tippy(".note", {
   content: "必須",
 });
