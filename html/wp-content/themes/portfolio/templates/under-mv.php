@@ -21,25 +21,19 @@
         <?php elseif (is_page('sitemap')) : ?>
             <div class="l-lower__mvWrap">
                 <h1 class="l-lower__mv__title">
-
+                    sitemap
                 </h1>
             </div>
         <?php elseif (is_archive()) : ?>
             <div class="l-lower__bgWrap l-lower__bg__archive">
                 <h1 class="l-lower__mv__title">
-                    NEWS
+                    News
                 </h1>
             </div>
         <?php elseif (is_single()) : ?>
             <div class="l-lower__bgWrap l-lower__bg__single">
                 <h1 class="l-lower__mv__title">
-                    NEWS
-                </h1>
-            </div>
-        <?php elseif (is_post_type_archive('gallery')) : ?>
-            <div class="l-lower__bgWrap l-lower__bg__gallery">
-                <h1 class="l-lower__mv__title">
-                    <?php echo $gallery_slug = strtoupper(get_query_var('post_type')); ?>
+                    News
                 </h1>
             </div>
         <?php endif; ?>

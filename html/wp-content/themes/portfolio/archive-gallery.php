@@ -3,7 +3,7 @@
 <main class="p-gallery__main">
   <div class="l-lower__bgWrap l-lower__bg__gallery">
     <h1 class="l-lower__mv__title">
-      <?php echo $gallery_slug = strtoupper(get_query_var('post_type')); ?>
+      Gallery
     </h1>
   </div>
   <div>
