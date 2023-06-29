@@ -1,6 +1,6 @@
 @use "../components/"as *;
 
-.blog_single {
+.p-single {
     margin: 60px 0 100px;
 
     @media screen and (max-width: $tab) {
@@ -8,26 +8,26 @@
     }
 }
 
-.blog_wrap {
+.p-single__wrap {
     width: min(100% - 40px, 720px);
     margin: 0 auto;
 }
 
-.blog_links_wrap {
+.p-single__links__wrap {
     display: flex;
     justify-content: space-between;
     margin-bottom: 12px;
 
-    .blog-category_btn {
+    .p-single__category__btn {
         margin: 0;
 
-        .btn_link {
-            @include btn(.8em, .4em, $c-base, $c-accent, $c-assort);
+        .btn__link {
+            @include btn(10px, 4px, $c-base, $c-accent, $c-assort);
             border-radius: 25px;
         }
     }
 
-    .date_link {
+    .date__link {
         @include f-base($fs-normal, 400);
         display: grid;
         place-content: center;
@@ -37,22 +37,22 @@
             opacity: 0.8;
         }
 
-        .post-list_date {
+        .p-post__list__date {
             font-size: inherit;
         }
     }
 }
 
-.blog_contents {
-    .blog_title {
+.p-single__contents {
+    .p-single__title {
         @include f-base($fs-c-32, 600);
         color: $c-assort;
         margin-bottom: 18px;
     }
 
-    .subtitel_line {
+    .p-subtitel__line {
         border: 1px solid $c-text;
-        margin-bottom: 1.8rem;
+        margin-bottom: 40px;
     }
 
     h3 {
@@ -64,7 +64,7 @@
         border-left: 3px $c-accent solid;
     }
 
-    .blog_text_wrap {
+    .p-single__text__wrap {
         @include f-base($fs-c-18, 400);
 
         p {
@@ -77,15 +77,47 @@
     }
 }
 
-.blog_btn {
+.single__btn {
     @include f-base($fs-c-18, 400);
     margin-top: 60px;
     cursor: pointer;
     display: block;
     margin: 0 auto;
 
-    .btn_link {
+    .btn__link {
         @include btn(1.4em, .4em, $c-white, $c-assort, $c-assort-btn);
         border-radius: 10em;
+    }
+}
+
+.p-pager__linkWrap {
+    width: 100%;
+    display: flex;
+    gap: 1px;
+
+    .pager__prev {
+        width: 50%;
+        border-right: 1px $c-text solid;
+
+        a {
+            font-size: clamp(1.4rem, 1vw + 1rem, 1.6rem);
+
+            &:hover {
+                opacity: 0.6;
+            }
+        }
+    }
+
+    .pager__next {
+        width: 50%;
+        text-align: end;
+
+        a {
+            font-size: clamp(1.4rem, 1vw + 1rem, 1.6rem);
+
+            &:hover {
+                opacity: 0.6;
+            }
+        }
     }
 }

@@ -62,6 +62,35 @@ ScrollReveal().reveal(".p-post__list__item", {
   interval: 200,
 });
 
+// // ------------------------------
+// // 文字数制限
+// // ------------------------------
+
+window.onresize = function () {
+  const windowSize = window.innerWidth;
+
+  const left = document.querySelector(".pager__prev > a");
+  const right = document.querySelector(".pager__next > a");
+
+  const strL = left ? left.textContent : "";
+  const strR = right ? right.textContent : "";
+  let len;
+
+  if (windowSize < 960) {
+    len = 5;
+  } else {
+    len = 16;
+  }
+
+  if (strL.length > len) {
+    left.textContent = strL.substring(0, len) + "...";
+  }
+
+  if (strR.length > len) {
+    right.textContent = strR.substring(0, len) + "...";
+  }
+};
+
 import { toggleHamburger, addLoadedClass } from "./common.js";
 
 document.querySelector(".l-hamburger").addEventListener("click", function () {

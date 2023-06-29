@@ -33545,10 +33545,10 @@ ScrollReveal().reveal(".p-front__contact__textarea", {
   origin: "right",
   interval: 200
 });
-ScrollReveal().reveal(".post-list__item", {
+ScrollReveal().reveal(".p-post__list__item", {
   distance: "40px",
   delay: 100,
-  origin: "top",
+  origin: "bottom",
   interval: 200
 });
 
