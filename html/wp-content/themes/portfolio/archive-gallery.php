@@ -1,11 +1,11 @@
 <?php get_header(); ?>
 
 <main class="p-gallery__main">
-  <!-- <section class="l-underlayer__common">
-    <?php
-    include('templates/under-mv.php');
-    ?>
-  </section> -->
+  <div class="l-lower__bgWrap l-lower__bg__gallery">
+    <h1 class="l-lower__mv__title">
+      <?php echo $gallery_slug = strtoupper(get_query_var('post_type')); ?>
+    </h1>
+  </div>
   <div>
     <?php if (have_posts()) : ?>
       <dl>

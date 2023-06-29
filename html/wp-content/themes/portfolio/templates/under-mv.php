@@ -37,12 +37,10 @@
                 </h1>
             </div>
         <?php elseif (is_post_type_archive('gallery')) : ?>
-            <div class="l-lower__mvWrap">
-                <div class="l-lower__mv__slide">
-                    <h1 class="l-lower__mv__text">
-                        <?php echo $gallery_slug = strtoupper(get_query_var('post_type')); ?>
-                    </h1>
-                </div>
+            <div class="l-lower__bgWrap l-lower__bg__gallery">
+                <h1 class="l-lower__mv__title">
+                    <?php echo $gallery_slug = strtoupper(get_query_var('post_type')); ?>
+                </h1>
             </div>
         <?php endif; ?>
     </div>

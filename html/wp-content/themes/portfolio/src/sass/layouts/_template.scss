@@ -63,6 +63,22 @@
     }
 }
 
+.l-lower__bg__gallery {
+    background-image: image-set(url("#{$only-path}gallery.avif") type("image/avif"),
+        url("#{$only-path}gallery.webp") type("image/webp"),
+        url("#{$only-path}gallery.png") type("image/png"));
+    position: relative;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    aspect-ratio: 4/1;
+
+    @include tab {
+        aspect-ratio: 3/1;
+    }
+}
+
+
 
 .l-lower__mv__title {
     position: absolute;
