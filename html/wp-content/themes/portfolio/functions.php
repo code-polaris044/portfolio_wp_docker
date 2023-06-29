@@ -75,7 +75,6 @@ function add_files()
 	// fontawesome
 	wp_enqueue_script('fontawesomeJs', '//kit.fontawesome.com/ebc2ff5fc3.js', array(), null, true);
 
-
 	// ftailwind
 	wp_enqueue_style('tailwindcss', '//unpkg.com/tailwindcss@^2/dist/tailwind.min.css', array(), 20230626, false);
 
@@ -84,6 +83,12 @@ function add_files()
 
 	// scrollreveal
 	wp_enqueue_script('scrollreveal', '//unpkg.com/scrollreveal', array(), null, true);
+
+	// popperjs
+	wp_enqueue_script('popperjs', '//unpkg.com/@popperjs/core@2', array(), null, true);
+
+	// popperjs
+	wp_enqueue_script('tippy.js', '//unpkg.com/tippy.js@6', array(), null, true);
 
 	// サイト共通のCSSの読み込み
 	wp_enqueue_style('main', get_template_directory_uri() . '/dist/css/style.css', array(), '20230629', false);

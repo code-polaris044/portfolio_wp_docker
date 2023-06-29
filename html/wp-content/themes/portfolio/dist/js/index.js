@@ -33571,6 +33571,11 @@ ScrollReveal().reveal(".p-about__dt, .p-about__dd", {
   origin: "right",
   interval: 200
 });
+ScrollReveal().reveal(".breadcrumbs", {
+  delay: 100,
+  origin: "left",
+  interval: 200
+});
 
 // // 文字数制限
 
@@ -33668,6 +33673,9 @@ const slider = function () {
 };
 
 slider();
+tippy(".note", {
+  content: "必須"
+});
 }();
 /******/ })()
 ;

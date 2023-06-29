@@ -81,6 +81,11 @@ ScrollReveal().reveal(".p-about__dt, .p-about__dd", {
   origin: "right",
   interval: 200,
 });
+ScrollReveal().reveal(".breadcrumbs", {
+  delay: 100,
+  origin: "left",
+  interval: 200,
+});
 
 // // 文字数制限
 
@@ -187,9 +192,6 @@ const slider = function () {
 
 slider();
 
-import tippy from "tippy.js";
-import "tippy.js/dist/tippy.css";
-
 tippy(".note", {
-  content: "My tooltip!",
+  content: "必須",
 });
