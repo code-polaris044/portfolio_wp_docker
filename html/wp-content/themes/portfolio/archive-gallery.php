@@ -14,7 +14,7 @@
         } ?>
       </div>
     </section>
-    <section class="p-gallery">
+    <section class="p-gallery u-mb__100">
       <div class="p-gallery__post__list__wrap">
         <ul class="p-post-list">
           <?php if (have_posts()) : ?>

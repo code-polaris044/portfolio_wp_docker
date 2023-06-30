@@ -344,3 +344,12 @@ function my_pre_get_posts_number($query)
 		$query->set('posts_per_page', 5); //5件 
 	}
 }
+
+// モバイル端末のアーカイブの投稿数変更
+function mobile_archive_posts_per_page($query)
+{
+	if (wp_is_mobile() && $query->is_archive() && $query->is_main_query()) {
+		$query->set('posts_per_page', 6); // 6件表示
+	}
+}
+add_action('pre_get_posts', 'mobile_archive_posts_per_page');
