@@ -100,6 +100,13 @@ ScrollReveal().reveal(".p-single__gallery__imgSpWrap", {
   reset: false,
   distance: "100px",
 });
+ScrollReveal().reveal(".p-single__gallery__richtextWrap", {
+  delay: 300,
+  origin: "left",
+  interval: 400,
+  reset: false,
+  distance: "100px",
+});
 
 // 文字数制限
 

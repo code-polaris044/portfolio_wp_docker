@@ -28,34 +28,40 @@
             </div>
           </div>
           <?php
-          $gallery_posts = get_posts(array('post_type' => 'gallery'));
+          $gallery_posts = get_posts(array('post_type' => 'gallery', 'p' => get_the_ID()));
           foreach ($gallery_posts as $post) : setup_postdata($post);
           ?>
             <?php
-            $gallery_img1 = get_field('gallery_img1');
-            $gallery_img2 = get_field('gallery_img2');
-            $gallery_img3 = get_field('gallery_img3');
-            $gallery_img_sp = get_field('gallery_img_sp');
-            if (!empty($gallery_img1 || $gallery_img2 || $gallery_img3)) : ?>
+            $gallery_img1 = get_field('gallery_img1', get_the_ID());
+            $gallery_img2 = get_field('gallery_img2', get_the_ID());
+            $gallery_img3 = get_field('gallery_img3', get_the_ID());
+            $gallery_img_sp = get_field('gallery_img_sp', get_the_ID());
+            if (!empty($gallery_img1 || !empty($gallery_img2) || !empty($gallery_img3))) : ?>
               <div class="p-single__splideWrap">
                 <div class="splide u-mb__50">
                   <div class="splide__track">
                     <ul class="splide__list">
-                      <li class="splide__slide">
-                        <div class="p-splide__imgWrap">
-                          <img src="<?php echo esc_url($gallery_img1['url']); ?>" alt="<?php echo esc_attr($gallery_img1['alt']); ?>" class="p-single__gallery__img" />
-                        </div>
-                      </li>
-                      <li class="splide__slide">
-                        <div class="p-ssplidey__imgWrap">
-                          <img src="<?php echo esc_url($gallery_img2['url']); ?>" alt="<?php echo esc_attr($gallery_img2['alt']); ?>" class="p-single__gallery__img" />
-                        </div>
-                      </li>
-                      <li class="splide__slide">
-                        <div class="p-splide__imgWrap">
-                          <img src="<?php echo esc_url($gallery_img3['url']); ?>" alt="<?php echo esc_attr($gallery_img3['alt']); ?>" class="p-single__gallery__img" />
-                        </div>
-                      </li>
+                      <?php if (!empty($gallery_img1)) : ?>
+                        <li class="splide__slide">
+                          <div class="p-splide__imgWrap">
+                            <img src="<?php echo esc_url($gallery_img1['url']); ?>" alt="<?php echo esc_attr($gallery_img1['alt']); ?>" class="p-single__gallery__img" />
+                          </div>
+                        </li>
+                      <?php endif; ?>
+                      <?php if (!empty($gallery_img2)) : ?>
+                        <li class="splide__slide">
+                          <div class="p-ssplidey__imgWrap">
+                            <img src="<?php echo esc_url($gallery_img2['url']); ?>" alt="<?php echo esc_attr($gallery_img2['alt']); ?>" class="p-single__gallery__img" />
+                          </div>
+                        </li>
+                      <?php endif; ?>
+                      <?php if (!empty($gallery_img3)) : ?>
+                        <li class="splide__slide">
+                          <div class="p-splide__imgWrap">
+                            <img src="<?php echo esc_url($gallery_img3['url']); ?>" alt="<?php echo esc_attr($gallery_img3['alt']); ?>" class="p-single__gallery__img" />
+                          </div>
+                        </li>
+                      <?php endif; ?>
                     </ul>
                   </div>
                   <ul class="splide__pagination"></ul>
