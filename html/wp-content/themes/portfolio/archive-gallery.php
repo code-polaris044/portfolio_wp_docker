@@ -59,6 +59,16 @@
         </ul>
       </div>
     </section>
+    <section class="p-archive__pagination">
+      <?php the_posts_pagination(
+        array(
+          'mid_size' => 1,
+          'prev_text' => '<span class="pagination-angle-left-sp">前の9件</span>',
+          'next_text' => '<span class="pagination-angle-right-sp">次の9件</span>',
+          'show_all' => false,
+        )
+      ); ?>
+    </section>
   </div>
 </main>
 
