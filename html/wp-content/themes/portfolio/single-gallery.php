@@ -72,22 +72,13 @@
               </div>
             <?php endif; ?>
           <?php endforeach; ?>
-          <div class="p-single__gallery__richtextWrap">
+          <div class="p-single__gallery__richtextWrap u-mb__100">
             <?php the_content(); ?>
           </div>
         <?php endwhile; ?>
       <?php else : ?>
         <p class="post__none">投稿がありません。</p>
       <?php endif; ?>
-
-      <div class="p-pager__linkWrap u-mb__100">
-        <div class="pager__prev">
-          <?php previous_post_link('<i class="fa-solid fa-caret-left"></i> %link', '%title', true); ?>
-        </div>
-        <div class="pager__next">
-          <?php next_post_link(' %link <i class="fa-solid fa-caret-right"></i>', '%title', true); ?>
-        </div>
-      </div>
       <div class="p-single__gallery__btnWrap">
         <button class="p-single__gallery__back__btn">
           <a href="<?php echo esc_url(home_url()); ?>/gallery/" rel="noopener noreferrer" class="btn__link">
