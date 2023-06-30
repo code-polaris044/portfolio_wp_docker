@@ -33576,6 +33576,20 @@ ScrollReveal().reveal(".breadcrumbs", {
   origin: "right",
   interval: 200
 });
+ScrollReveal().reveal(".splide__track", {
+  delay: 500,
+  origin: "top",
+  interval: 400,
+  reset: false,
+  distance: "100px"
+});
+ScrollReveal().reveal(".p-single__gallery__imgSpWrap", {
+  delay: 300,
+  origin: "bottom",
+  interval: 400,
+  reset: false,
+  distance: "100px"
+});
 
 // 文字数制限
 
@@ -33674,10 +33688,12 @@ const slider = function () {
 
 slider();
 
-// コンタクト　ツールチップ
+// ツールチップ
 tippy(".note", {
   content: "必須"
 });
+
+//sliders
 const options = {
   perPage: 1,
   perMove: 1,
@@ -33687,29 +33703,22 @@ const options = {
   type: "loop",
   focus: "left",
   azyLoad: false,
-  focus: 0,
   padding: "10rem",
   heightRatio: 0.6,
   breakpoints: {
     960: {
       heightRatio: 0.64,
-      perPage: 1,
       gap: 16,
-      type: "splide",
-      autoplay: false,
       rewind: true,
-      perMove: 1,
-      cover: true,
-      updateOnMove: true,
-      padding: "0rem",
-      type: "loop",
-      focus: "center",
-      padding: "0rem"
+      padding: "0"
     }
   }
 };
-const splide = new Splide(".splide", options);
-splide.mount();
+const splideElement = document.querySelector(".splide");
+if (splideElement) {
+  const splide = new Splide(splideElement, options);
+  splide.mount();
+}
 }();
 /******/ })()
 ;

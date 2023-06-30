@@ -38,35 +38,27 @@
             $gallery_img_sp = get_field('gallery_img_sp');
             if (!empty($gallery_img1 || $gallery_img2 || $gallery_img3)) : ?>
               <div class="p-single__splideWrap">
-                <div class="splide  u-mb__50">
+                <div class="splide u-mb__50">
                   <div class="splide__track">
-                    <ul class="p-gallery__single__imgWrap splide__list">
+                    <ul class="splide__list">
                       <li class="splide__slide">
-                        <figure class="slide__figure">
-                          <figcaption class="slide__figcaption">
-                            MV
-                          </figcaption>
+                        <div class="p-splide__imgWrap">
                           <img src="<?php echo esc_url($gallery_img1['url']); ?>" alt="<?php echo esc_attr($gallery_img1['alt']); ?>" class="p-single__gallery__img" />
-                        </figure>
+                        </div>
                       </li>
                       <li class="splide__slide">
-                        <figure class="slide__figure">
-                          <figcaption class="slide__figcaption">
-                            インタビューセクション
-                          </figcaption>
+                        <div class="p-ssplidey__imgWrap">
                           <img src="<?php echo esc_url($gallery_img2['url']); ?>" alt="<?php echo esc_attr($gallery_img2['alt']); ?>" class="p-single__gallery__img" />
-                        </figure>
+                        </div>
                       </li>
                       <li class="splide__slide">
-                        <figure class="slide__figure">
-                          <figcaption class="slide__figcaption">
-                            CTAボタン
-                          </figcaption>
+                        <div class="p-splide__imgWrap">
                           <img src="<?php echo esc_url($gallery_img3['url']); ?>" alt="<?php echo esc_attr($gallery_img3['alt']); ?>" class="p-single__gallery__img" />
-                        </figure>
+                        </div>
                       </li>
                     </ul>
                   </div>
+                  <ul class="splide__pagination"></ul>
                 </div>
                 <div class="p-single__gallery__imgSpWrap u-mb__100">
                   <img src="<?php echo esc_url($gallery_img_sp['url']); ?>" alt="<?php echo esc_attr($gallery_img_sp['alt']); ?>" class="p-single__gallery__imgSp" />
