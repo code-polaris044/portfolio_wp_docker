@@ -4,7 +4,7 @@
   <section class="l-underlayer__common u-mb__100">
     <div class="l-lower__bgWrap l-lower__bg__gallery">
       <h1 class="l-lower__mv__title">
-        Gallery
+        Site Introduction
       </h1>
     </div>
     <div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
