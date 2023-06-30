@@ -55,8 +55,8 @@
     <?php the_posts_pagination(
       array(
         'mid_size' => 1,
-        'prev_text' => '<span class="pagination-angle-left-sp">前の9件</span>',
-        'next_text' => '<span class="pagination-angle-right-sp">次の9件</span>',
+        'prev_text' => '<span class="pagination-angle-left-sp">前のページ</span>',
+        'next_text' => '<span class="pagination-angle-right-sp">次のページ</span>',
         'show_all' => false,
       )
     ); ?>
