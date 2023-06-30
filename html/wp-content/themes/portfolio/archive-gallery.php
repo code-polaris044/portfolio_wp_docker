@@ -16,7 +16,7 @@
     </section>
     <section class="p-gallery u-mb__100">
       <div class="p-gallery__post__list__wrap">
-        <ul class="p-post-list">
+        <ul class="p-gallery__post__list">
           <?php if (have_posts()) : ?>
             <?php while (have_posts()) : the_post(); ?>
               <li class="p-post__list__item">
@@ -30,18 +30,8 @@
                   </a>
                   <figcaption class="post-explanation__wrap">
                     <div class="p-post__link__wrap">
-                      <button class="p-post__category__btn">
-                        <a href="<?php echo esc_url(home_url()); ?>/gallery/" class="btn__link">
-                          <?php
-                          $categories = get_the_category();
-                          if (!empty($categories)) {
-                            echo esc_html($categories[0]->name);
-                          }
-                          ?>
-                        </a>
-                      </button>
                       <a href="<?php echo esc_url(home_url()); ?>/gallery/" class="date__link">
-                        <time class="post-list_date" datetime="<?php echo get_the_date('Y-m-d'); ?>" itemprop=”datepublished”><?php echo get_the_date('Y年m月d日'); ?></time>
+                        <time class="post-list__date" datetime="<?php echo get_the_date('Y-m-d'); ?>" itemprop=”datepublished”><?php echo get_the_date('Y年m月d日'); ?></time>
                       </a>
                     </div>
                     <div class="p-post__title__wrap">

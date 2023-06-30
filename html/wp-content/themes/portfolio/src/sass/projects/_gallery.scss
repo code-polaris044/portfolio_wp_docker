@@ -13,7 +13,7 @@
     }
 }
 
-.p-post-list {
+.p-gallery__post__list {
     display: flex;
     column-gap: 38px;
     row-gap: 52px;
@@ -93,7 +93,7 @@
             opacity: 0.8;
         }
 
-        .post-list_date {
+        .post-list__date {
             font-size: inherit;
         }
     }
