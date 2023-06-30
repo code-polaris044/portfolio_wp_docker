@@ -66,10 +66,8 @@
               </div>
             <?php endif; ?>
           <?php endforeach; ?>
-          <div class="blog_contents">
-            <div class="blog_text_wrap">
-              <?php the_content(); ?>
-            </div>
+          <div class="p-single__gallery__richtextWrap">
+            <?php the_content(); ?>
           </div>
         <?php endwhile; ?>
       <?php else : ?>
@@ -85,18 +83,6 @@
         </div>
       </div>
       <div class="p-single__gallery__btnWrap">
-        <div class="p-single__gallery__top__btnWrap">
-          <button class="p-single__gallery__btn btn__color__reverse">
-            <a href="https://github.com/code-polaris044/YOSHIDA_LP" rel="noopener noreferrer" target="_blank" class="btn__link">
-              Githubへ
-            </a>
-          </button>
-          <button class="p-single__gallery__btn">
-            <a href="https://yoshida-g.ac.jp/saishushoku/" rel="noopener noreferrer" target="_blank" class="btn__link">
-              サイトへ
-            </a>
-          </button>
-        </div>
         <button class="p-single__gallery__back__btn">
           <a href="<?php echo esc_url(home_url()); ?>/gallery/" rel="noopener noreferrer" class="btn__link">
             一覧へ戻る
