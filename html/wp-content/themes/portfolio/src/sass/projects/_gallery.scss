@@ -127,7 +127,7 @@
     align-items: center;
     column-gap: 20px;
 
-    @media screen and (max-width: $sp) {
+    @include sp {
         column-gap: 12px;
     }
 
@@ -149,7 +149,7 @@
             height: 50px;
         }
 
-        @media screen and (max-width: $tab) {
+        @include tab {
             width: 36px;
             height: 36px;
         }
@@ -170,7 +170,7 @@
             padding: 12px 42px;
         }
 
-        @media screen and (max-width: $sp) {
+        @include sp {
             padding: 6px 12px;
             border-radius: 2.5em;
             width: initial;
@@ -192,7 +192,7 @@
     opacity: 0.4;
 
     &:hover {
-        border: 2px #333b17 solid !important;
+        border: 2px $c-accent solid !important;
     }
 }
 
@@ -201,5 +201,5 @@
 }
 
 .nav-links .current:hover {
-    border: 2px #333b17 solid;
+    border: 2px $c-accent solid;
 }
