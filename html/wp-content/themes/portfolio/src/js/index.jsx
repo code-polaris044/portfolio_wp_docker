@@ -6,6 +6,11 @@ ScrollReveal({
   delay: 200, // 0.2s後に発動
 });
 
+ScrollReveal().reveal(".p-front__news__picker", {
+  delay: 200,
+  origin: "left",
+  reset: false,
+});
 ScrollReveal().reveal(".main-title, .section-title", {
   delay: 200,
   origin: "left",
@@ -59,6 +64,7 @@ ScrollReveal().reveal(".instagram__img__wrap", {
   delay: 100,
   origin: "bottom",
   interval: 200,
+  reset: false,
 });
 ScrollReveal().reveal(".p-front__contact__textarea", {
   delay: 100,

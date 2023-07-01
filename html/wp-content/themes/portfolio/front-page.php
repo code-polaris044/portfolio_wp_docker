@@ -12,36 +12,38 @@
         <div class="p-front__scrollDown"><span>Scroll</span></div>
       </div>
     </section>
-    <section class="">
-      <div class="p-front__news__picker u-mb__100">
-        <div class="sliderbox">
-          <ul class="sliderlist"><?php if (have_posts()) : ?><?php while (have_posts()) : the_post(); ?>
-            <li class="sliderlist__item"><time class="slider__date" datetime="<?php echo get_the_date('Y.m.d'); ?>" itemprop="”datepublished”">
-                <a href="<?php echo get_the_permalink(); ?>" class="slider__date__link">
-                  <?php echo get_the_date('Y.m.d'); ?>
-                </a>
-              </time>
-              <span class="slider__text">
-                <a href="<?php echo get_the_permalink(); ?>" class="slider__text__link">
-                  <?php the_title(); ?>
-                </a>
-              </span>
-            </li>
-          <?php endwhile; ?>
-        <?php else : ?>
-          <p>投稿がありません</p>
-        <?php endif; ?>
-          </ul>
+    <section class="p-news__picker">
+      <div class="p-front__news__pickerWrap">
+        <div class="p-front__news__picker u-mb__100">
+          <div class="sliderbox">
+            <ul class="sliderlist"><?php if (have_posts()) : ?><?php while (have_posts()) : the_post(); ?>
+              <li class="sliderlist__item"><time class="slider__date" datetime="<?php echo get_the_date('Y.m.d'); ?>" itemprop="”datepublished”">
+                  <a href="<?php echo get_the_permalink(); ?>" class="slider__date__link">
+                    <?php echo get_the_date('Y.m.d'); ?>
+                  </a>
+                </time>
+                <span class="slider__text">
+                  <a href="<?php echo get_the_permalink(); ?>" class="slider__text__link">
+                    <?php the_title(); ?>
+                  </a>
+                </span>
+              </li>
+            <?php endwhile; ?>
+          <?php else : ?>
+            <p>投稿がありません</p>
+          <?php endif; ?>
+            </ul>
+          </div>
+          <div class="prev"></div>
+          <div class="next"></div>
         </div>
-        <div class="prev"></div>
-        <div class="next"></div>
       </div>
     </section>
 
-    <!-- section01 -->
+
     <section class="sec-01">
       <div class="container">
-        <h2 class="main-title">About</h2>
+        <h2 class="main-title">自己紹介</h2>
         <div class="content">
           <div class="image">
             <img src="<?php echo esc_url(get_template_directory_uri()); ?>/dist/images/only/fade1.webp">
@@ -64,7 +66,6 @@
       </div>
     </section>
 
-    <!-- section02 -->
     <section class="sec-02">
       <div class="container">
         <h3 class="section-title">職務経歴</h3>
@@ -84,7 +85,7 @@
       </div>
     </section>
 
-    <!-- section03 -->
+
     <section class="sec-03">
       <div class="container">
         <h3 class="section-title">制作実績</h3>

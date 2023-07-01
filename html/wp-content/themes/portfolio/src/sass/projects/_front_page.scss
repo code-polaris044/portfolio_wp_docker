@@ -203,6 +203,15 @@
 }
 
 // ニュース
+.p-front__news__pickerWrap {
+    width: $common-contents-width-pc;
+    margin: 0 auto;
+
+    @include tab {
+        width: $common-contents-width-tab;
+    }
+}
+
 .p-front__news__picker {
     position: relative;
     height: 66px;
