@@ -571,7 +571,7 @@
 
     .p-front__section__title {
         text-align: center;
-        @include f-base($fs-c-32, 500);
+        @include f-base($fs-c-48, 500);
         color: $c-base;
     }
 }
@@ -633,7 +633,7 @@
     }
 
     .p-front__section__title {
-        @include noto-sans-jp($fs-c-32, 500);
+        @include noto-sans-jp($fs-c-48, 500);
         color: $c-assort;
         text-align: center;
     }
