@@ -368,7 +368,7 @@
             backdrop-filter: blur(20px);
             padding: 40px;
             width: min(400px);
-            height: min(240px);
+            height: 100%;
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 10px;
             margin-left: -50px;
@@ -379,7 +379,6 @@
                 margin: -60px auto 0;
                 padding: 30px;
                 width: min(100% - 20px, 500px);
-                height: 100%;
             }
 
             .glass__title {
@@ -396,13 +395,74 @@
 .p-front__jobCareer {
     background: linear-gradient($c-assort, $c-accent);
     padding: 100px 0;
+
+    @include tab {
+        padding: 50px 0;
+    }
 }
 
 .p-front__jobCareerWrap {
     width: $common-contents-width-pc;
     margin: 0 auto;
-    display: flex;
-    color: $c-base;
+
+    @include tab {
+        width: $common-contents-width-tab;
+    }
+
+    .p-front__jobCareer__title {
+        text-align: center;
+        @include f-base($fs-c-48, 500);
+        color: $c-base;
+    }
+
+    .p-front__jobCareer__inner {
+        display: flex;
+        color: $c-base;
+
+        @include tab {
+            flex-direction: column-reverse;
+        }
+
+        .jobCareer__picWrap {
+            display: block;
+            width: min(100%, 600px);
+
+            @include tab {
+                margin: 0 auto;
+            }
+
+            .jobCareer__pic {
+                width: 100%;
+                aspect-ratio: 4/3;
+                object-fit: cover;
+            }
+        }
+
+        .glass__text__box {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            padding: 40px 40px 30px;
+            width: min(540px);
+            height: 100%;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            margin-right: -60px;
+            margin-top: 50px;
+
+            @include tab {
+                margin-right: initial;
+                margin: -60px auto 0;
+                padding: 30px 30px 20px;
+                width: min(100% - 20px, 500px);
+                height: 100%;
+            }
+
+            .glass__text {
+                @include noto-sans-jp($fs-normal, 400);
+                margin-bottom: 10px;
+            }
+        }
+    }
 }
 
 .p-front__pastProjectsWrap {

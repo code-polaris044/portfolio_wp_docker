@@ -63,7 +63,23 @@
 
     <section class=" p-front__jobCareer">
       <div class="p-front__jobCareerWrap">
-
+        <h2 class="p-front__jobCareer__title u-mb__50">職務経歴</h2>
+        <div class="p-front__jobCareer__inner">
+          <div class="glass__text__box">
+            <p class="glass__text">・2019年 4月 北海道等業株式会社 入社 人事課配属</p>
+            <p class="glass__text">・2021年 9月 北海道等業株式会社 一身上の都合で退職</p>
+            <p class="glass__text">・2022年 4月 〜 11月 web開発のインターンシップ・アルバイトを経験</p>
+            <p class="glass__text">・2022年 12月 株式会社Workup 入社 web制作部配属</p>
+            <p class="glass__text">・2023年 5月 株式会社Workup 雇止め</p>
+          </div>
+          <div class="jobCareer__picWrap">
+            <picture class="jobCareer__pic">
+              <source type="image/avif" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/dist/images/only/fade2.avif" class="jobCareer__src">
+              <source type="image/webp" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/dist/images/only/fade2.webp" class="jobCareer__src">
+              <img src="<?php echo esc_url(get_template_directory_uri()); ?>/dist/images/only/fade2.jpg" alt="ロゴ" class="jobCareer__img">
+            </picture>
+          </div>
+        </div>
       </div>
     </section>
     <section class="p-front__pastProjects">
