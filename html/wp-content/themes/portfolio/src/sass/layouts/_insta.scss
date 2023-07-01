@@ -1,50 +1,37 @@
 @use "../components/"as *;
 
-// instagram-section
-.p-instagram {
-    width: 100%;
-    height: auto;
+.instagram__content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: min(100%, $common-contents-width-pc);
+    gap: 60px 25px;
+    margin: 0 auto;
 
-    .content-title-wrap {
-        width: min(100% - 40px, 1080px);
-        margin: 160px auto 0px;
+    @include tab {
+        width: min(100%, $common-contents-width-tab);
+        gap: 40px 20px;
+    }
 
-        .sub-title-red {
-            font-size: 16px;
-            font-weight: 600;
-            color: #cb4830;
-            padding-bottom: 10px;
+    .instagram__img__wrap {
+        width: calc((100% - (25px * 4)) / 5);
+
+        @include tab {
+            width: calc((100% - (20px * 2)) / 3);
         }
 
-        .content-title {
-            font-size: 40px;
-            font-weight: 500;
-            white-space: nowrap;
+        @include sp {
+            width: calc((100% - (20px * 1)) / 2);
         }
 
-        .instagram-content {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            width: min(100% - 0px, 1080px);
-            margin: 30px auto 0px;
-            gap: 25px;
+        a {
+            img {
+                border-radius: 30px;
+            }
 
-            .instagram-img-wrap {
-                width: calc((100% - (25px * 4)) / 5);
-
-                a {
-                    img {
-                        border-radius: 30px;
-                    }
-
-                    &:active,
-                    &:hover {
-                        opacity: .8;
-                    }
-
-
-                }
+            &:active,
+            &:hover {
+                opacity: .8;
             }
         }
     }

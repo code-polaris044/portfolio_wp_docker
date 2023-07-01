@@ -110,25 +110,11 @@
         </div>
       </div>
     </section>
-
-
     <section class="p-instagram">
-      <p class="sub-title-red">
-        FOLLOW US
-      </p>
-      <h2 class="content-title">
-        INSTAGRAM
-      </h2>
-
-      <section class="l-underlayer__common">
-        <?php
-        include('templates/insta.php');
-        ?>
-      </section>
+      <?php
+      include('templates/insta.php');
+      ?>
     </section>
-
-
-
     <section class="p-front__contact">
       <div class="p-front__contactWrap">
         <div class="p-front__map">
