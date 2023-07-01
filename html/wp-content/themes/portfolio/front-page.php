@@ -84,6 +84,25 @@
     </section>
     <section class="p-front__pastProjects">
       <div class="p-front__pastProjectsWrap">
+        <h2 class="p-front__pastProjects__title u-mb__50">制作実績</h2>
+        <div class="p-front__pastProjects__inner">
+          <div class="pastProjects__picWrap">
+            <picture class="jobCareer__pic">
+              <source type="image/avif" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/dist/images/only/fade3.avif" class="pastProjects__src">
+              <source type="image/webp" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/dist/images/only/fade3.webp" class="pastProjects__src">
+              <img src="<?php echo esc_url(get_template_directory_uri()); ?>/dist/images/only/fade3.jpg" alt="ロゴ" class="pastProjects__img">
+            </picture>
+          </div>
+          <div class="glass__text__box">
+            <h3 class="glass__title u-mb__20">制作物について</h3>
+            <p class="glass__text u-mb__50">
+              LP/WordPress/CakePHPなどのフロントエンド開発・制作で実際に納品したものを掲載しています。
+            </p>
+            <button class="p-front__btn">
+              <a href="<?php echo esc_url(get_post_type_archive_link('gallery')) ?>" class="p-front__btn__link">Galleryへ</a>
+            </button>
+          </div>
+        </div>
       </div>
     </section>
     <section class="p-front__instagram">
@@ -113,7 +132,6 @@
             <a href="<?php echo get_the_permalink(); ?>/contact/" class="p-front__btn__link">Contact</a>
           </button>
         </div>
-
       </div>
     </section>
   </div>

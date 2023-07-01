@@ -319,7 +319,7 @@
 .p-front__selfIntroduction,
 .p-front__pastProjects {
     background: linear-gradient($c-accent, $c-assort);
-    padding: 100px 0;
+    padding: 80px 0;
 
     @include tab {
         padding: 50px 0;
@@ -357,6 +357,7 @@
             }
 
             .selfIntroduction__pic {
+                display: block;
                 width: 100%;
                 aspect-ratio: 4/3;
                 object-fit: cover;
@@ -376,7 +377,7 @@
 
             @include tab {
                 margin-left: initial;
-                margin: -60px auto 0;
+                margin: -100px auto 0;
                 padding: 30px;
                 width: min(100% - 20px, 500px);
             }
@@ -394,7 +395,7 @@
 
 .p-front__jobCareer {
     background: linear-gradient($c-assort, $c-accent);
-    padding: 100px 0;
+    padding: 80px 0;
 
     @include tab {
         padding: 50px 0;
@@ -432,6 +433,7 @@
             }
 
             .jobCareer__pic {
+                display: block;
                 width: 100%;
                 aspect-ratio: 4/3;
                 object-fit: cover;
@@ -451,7 +453,7 @@
 
             @include tab {
                 margin-right: initial;
-                margin: -60px auto 0;
+                margin: -100px auto 0;
                 padding: 30px 30px 20px;
                 width: min(100% - 20px, 500px);
                 height: 100%;
@@ -468,29 +470,93 @@
 .p-front__pastProjectsWrap {
     width: $common-contents-width-pc;
     margin: 0 auto;
-    display: flex;
-    color: $c-base;
-}
+
+    @include tab {
+        width: $common-contents-width-tab;
+    }
+
+    .p-front__pastProjects__title {
+        text-align: center;
+        @include f-base($fs-c-48, 500);
+        color: $c-base;
+    }
+
+    .p-front__pastProjects__inner {
+        display: flex;
+        color: $c-base;
+
+        @include tab {
+            flex-direction: column;
+        }
+
+        .pastProjects__picWrap {
+            display: block;
+            width: min(100%, 600px);
+
+            @include tab {
+                margin: 0 auto;
+            }
+
+            .jobCareer__pic {
+                display: block;
+                width: 100%;
+                aspect-ratio: 4/3;
+                object-fit: cover;
+            }
+        }
+
+        .glass__text__box {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            padding: 40px;
+            width: min(500px);
+            height: 100%;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            margin-left: -50px;
+            margin-top: 50px;
+
+            @include tab {
+                margin-left: initial;
+                margin: -120px auto 0;
+                padding: 30px;
+                width: min(100% - 20px, 500px);
+                height: 100%;
+            }
+
+            .glass__title {
+                @include noto-sans-jp($fs-c-20, 400);
+            }
 
 
-.text-box {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(20px);
-    padding: 40px;
-    max-width: 400px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    transform: translate(-80px, 50px);
+            .glass__text {
+                @include noto-sans-jp($fs-normal, 400);
+            }
+
+            .p-front__btn {
+                display: block;
+                margin: 0 auto;
+                @include f-base($fs-normal, 400);
+
+                .p-front__btn__link {
+                    @include btn(1.4em, .4em, $c-white, $c-assort, $c-assort-btn);
+                    border-radius: 10em;
+                    transition: transform 0.3s;
+                }
+            }
+        }
+    }
 }
+
 
 
 // instagram
 .p-front__instagram {
-    padding: 150px 0;
+    padding: 100px 0;
     background: linear-gradient($c-assort, $c-base-reverse);
 
     @include tab {
-        padding: 70px 0;
+        padding: 50px 0;
     }
 }
 
