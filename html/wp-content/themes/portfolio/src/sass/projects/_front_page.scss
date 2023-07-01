@@ -438,13 +438,37 @@
     padding-left: 50px;
 }
 
+// instagram
+.p-instagram {
+    padding: 150px 0;
+    background: linear-gradient($c-assort, $c-base-reverse);
+
+    @include tab {
+        padding: 70px 0;
+    }
+}
+
+.p-instagramWrap {
+    width: min(100%, $pc-s);
+    margin: 0 auto;
+
+
+    .p-front__section__title {
+        text-align: center;
+        @include f-base($fs-c-32, 500);
+        color: $c-base;
+    }
+}
+
+
+
 //contact
 .p-front__contact {
     background: $c-base-reverse;
 }
 
 .p-front__contactWrap {
-    width: min(100% - 80px, $common-contents-width-pc);
+    width: $common-contents-width-pc;
     margin: 0 auto;
     padding: 100px 0;
     display: flex;
@@ -453,7 +477,7 @@
     @include tab {
         padding: 50px;
         flex-direction: column-reverse;
-        width: min(100% - 80px, $common-contents-width-tab);
+        width: $common-contents-width-tab;
         gap: 60px;
     }
 }

@@ -33540,6 +33540,16 @@ ScrollReveal().reveal(".p-front__map", {
   origin: "left",
   interval: 200
 });
+ScrollReveal().reveal(".p-instagram__title", {
+  delay: 100,
+  origin: "right",
+  interval: 200
+});
+ScrollReveal().reveal(".instagram__img__wrap", {
+  delay: 100,
+  origin: "bottom",
+  interval: 200
+});
 ScrollReveal().reveal(".p-front__contact__textarea", {
   delay: 100,
   origin: "right",

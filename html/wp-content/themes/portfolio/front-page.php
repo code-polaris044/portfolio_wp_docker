@@ -111,9 +111,12 @@
       </div>
     </section>
     <section class="p-instagram">
-      <?php
-      include('templates/insta.php');
-      ?>
+      <div class="p-instagramWrap">
+        <h2 class="p-front__section__title u-mb__100 p-instagram__title">Instagram</h2>
+        <?php
+        include('templates/insta.php');
+        ?>
+      </div>
     </section>
     <section class="p-front__contact">
       <div class="p-front__contactWrap">
