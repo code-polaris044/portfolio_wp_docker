@@ -33524,11 +33524,15 @@ ScrollReveal().reveal(".p-jobCareer__glass", {
   delay: 200,
   origin: "left"
 });
-ScrollReveal().reveal(".p-jobCareer__text", {
+ScrollReveal().reveal(".p-jobCareer__glass__text", {
   delay: 200,
   origin: "left"
 });
 ScrollReveal().reveal(".p-pastProjects__glass", {
+  delay: 200,
+  origin: "right"
+});
+ScrollReveal().reveal(".p-pastProjects__glass__title, .p-pastProjects__glass__text, .p-pastProjects__glass__btn", {
   delay: 200,
   origin: "right"
 });

@@ -1,11 +1,11 @@
 @use "../components/"as *;
 
 .p-contactWrap {
-    width: min(100% - 80px, $common-contents-width-pc);
+    width: $common-contents-width-pc;
     margin: 100px auto;
 
     @include tab {
-        width: min(100% - 40px, $common-contents-width-tab);
+        width: $common-contents-width-tab;
         margin: 60px auto;
     }
 }
@@ -23,7 +23,7 @@
     display: flex;
     @include noto-sans-jp($fs-normal, 400);
 
-    @media screen and (max-width: $tab) {
+    @include tab {
         flex-direction: column;
         gap: initial;
     }
@@ -37,7 +37,7 @@
         width: 50%;
         margin-bottom: 20px;
 
-        @media screen and (max-width: $tab) {
+        @include tab {
             width: 100%;
         }
     }
@@ -46,7 +46,7 @@
     .contact_tel {
         margin-right: 40px;
 
-        @media screen and (max-width: $tab) {
+        @include tab {
             margin-right: initial;
         }
     }
@@ -64,7 +64,7 @@
         resize: none;
         padding: 12px;
 
-        @media screen and (max-width: $tab) {
+        @include tab {
             min-height: 180px;
         }
 
