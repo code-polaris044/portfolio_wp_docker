@@ -1,5 +1,5 @@
-<?php get_header();
-?><main class="p-front__main">
+<?php get_header(); ?>
+<main class="p-front__main">
   <div class="p-frontWrap">
     <section class="p-mv u-mb__100">
       <div class="p-mvWrap">
@@ -12,8 +12,8 @@
         <div class="p-front__scrollDown"><span>Scroll</span></div>
       </div>
     </section>
-    <section class="p-news__picker">
-      <div class="p-front__news__pickerWrap">
+    <section class="p-front__news">
+      <div class="p-front__newsWrap">
         <div class="p-front__news__picker u-mb__100">
           <div class="sliderbox">
             <ul class="sliderlist"><?php if (have_posts()) : ?><?php while (have_posts()) : the_post(); ?>
@@ -39,82 +39,39 @@
         </div>
       </div>
     </section>
-
-
-    <section class="sec-01">
-      <div class="container">
-        <h2 class="main-title">自己紹介</h2>
-        <div class="content">
-          <div class="image">
-            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/dist/images/only/fade1.webp">
+    <section class="p-front__selfIntroduction">
+      <div class="p-front__selfIntroductionWrap">
+        <h2 class="p-front__selfIntroduction__title u-mb__50">自己紹介</h2>
+        <div class="p-front__selfIntroduction__inner">
+          <div class="selfIntroduction__picWrap">
+            <picture class="selfIntroduction__pic">
+              <source type="image/avif" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/dist/images/only/fade1.avif" class="selfIntroduction__src">
+              <source type="image/webp" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/dist/images/only/fade1.webp" class="selfIntroduction__src">
+              <img src="<?php echo esc_url(get_template_directory_uri()); ?>/dist/images/only/fade1.png" alt="ロゴ" class="selfIntroduction__img">
+            </picture>
           </div>
-          <div class="text-box">
-            <h3>菅原俊哉</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
-              asperiores ea mollitia harum, dolore iste. Nesciunt necessitatibus
-              pariatur autem optio.
-            </p>
-          </div>
-        </div>
-        <div class="media-icons">
-          <a href="#" class="icon"><i class="fab fa-facebook"></i></a>
-          <a href="#" class="icon"><i class="fab fa-instagram"></i></a>
-          <a href="#" class="icon"><i class="fab fa-twitter"></i></a>
-          <a href="#" class="icon"><i class="fab fa-youtube"></i></a>
-        </div>
-      </div>
-    </section>
-
-    <section class="sec-02">
-      <div class="container">
-        <h3 class="section-title">職務経歴</h3>
-        <div class="content">
-          <div class="image">
-            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/dist/images/only/fade2.webp">
-          </div>
-          <div class="info">
-            <h4 class="info-title">Description</h4>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure
-              repellendus itaque ab beatae ad odit dicta, culpa recusandae
-              necessitatibus inventore.
+          <div class="glass__text__box">
+            <h3 class="glass__title u-mb__20">菅原 俊哉</h3>
+            <p class="glass__text">
+              札幌出身で、フロントエンジニアとして活動中。<br>
+              常に新しい技術に挑戦し、使いやすく魅力的なウェブ開発を追求しています。
             </p>
           </div>
         </div>
       </div>
     </section>
 
+    <section class=" p-front__jobCareer">
+      <div class="p-front__jobCareerWrap">
 
-    <section class="sec-03">
-      <div class="container">
-        <h3 class="section-title">制作実績</h3>
-        <div class="content">
-          <div class="media-info">
-            <li>
-              <a href="#"><i class="fab facebook"></i> Facebook</a>
-            </li>
-            <li>
-              <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
-            </li>
-            <li>
-              <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
-            </li>
-            <li>
-              <a href="#"><i class="fab fa-youtube"></i> Youtube</a>
-            </li>
-            <li>
-              <a href="#"><i class="fab fa-linkedin"></i> Linkedin</a>
-            </li>
-          </div>
-          <div class="image">
-            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/dist/images/only/fade1.webp">
-          </div>
-        </div>
       </div>
     </section>
-    <section class="p-instagram">
-      <div class="p-instagramWrap">
+    <section class="p-front__pastProjects">
+      <div class="p-front__pastProjectsWrap">
+      </div>
+    </section>
+    <section class="p-front__instagram">
+      <div class="p-front__instagramWrap">
         <h2 class="p-front__section__title u-mb__100 p-instagram__title">Instagram</h2>
         <?php
         include('templates/insta.php');
