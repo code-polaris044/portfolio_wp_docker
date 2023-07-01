@@ -33499,6 +33499,11 @@ ScrollReveal({
   delay: 200 // 0.2s後に発動
 });
 
+ScrollReveal().reveal(".p-front__news__picker", {
+  delay: 200,
+  origin: "left",
+  reset: false
+});
 ScrollReveal().reveal(".main-title, .section-title", {
   delay: 200,
   origin: "left"
