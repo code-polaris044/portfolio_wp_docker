@@ -12,29 +12,31 @@
         <div class="p-front__scrollDown"><span>Scroll</span></div>
       </div>
     </section>
-    <div class="p-front__news__picker u-mb__100">
-      <div class="sliderbox">
-        <ul class="sliderlist"><?php if (have_posts()) : ?><?php while (have_posts()) : the_post(); ?>
-          <li class="sliderlist__item"><time class="slider__date" datetime="<?php echo get_the_date('Y.m.d'); ?>" itemprop="”datepublished”">
-              <a href="<?php echo get_the_permalink(); ?>" class="slider__date__link">
-                <?php echo get_the_date('Y.m.d'); ?>
-              </a>
-            </time>
-            <span class="slider__text">
-              <a href="<?php echo get_the_permalink(); ?>" class="slider__text__link">
-                <?php the_title(); ?>
-              </a>
-            </span>
-          </li>
-        <?php endwhile; ?>
-      <?php else : ?>
-        <p>投稿がありません</p>
-      <?php endif; ?>
-        </ul>
+    <section class="">
+      <div class="p-front__news__picker u-mb__100">
+        <div class="sliderbox">
+          <ul class="sliderlist"><?php if (have_posts()) : ?><?php while (have_posts()) : the_post(); ?>
+            <li class="sliderlist__item"><time class="slider__date" datetime="<?php echo get_the_date('Y.m.d'); ?>" itemprop="”datepublished”">
+                <a href="<?php echo get_the_permalink(); ?>" class="slider__date__link">
+                  <?php echo get_the_date('Y.m.d'); ?>
+                </a>
+              </time>
+              <span class="slider__text">
+                <a href="<?php echo get_the_permalink(); ?>" class="slider__text__link">
+                  <?php the_title(); ?>
+                </a>
+              </span>
+            </li>
+          <?php endwhile; ?>
+        <?php else : ?>
+          <p>投稿がありません</p>
+        <?php endif; ?>
+          </ul>
+        </div>
+        <div class="prev"></div>
+        <div class="next"></div>
       </div>
-      <div class="prev"></div>
-      <div class="next"></div>
-    </div>
+    </section>
 
     <!-- section01 -->
     <section class="sec-01">

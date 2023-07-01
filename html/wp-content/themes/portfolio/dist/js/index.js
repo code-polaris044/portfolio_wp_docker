@@ -33542,8 +33542,8 @@ ScrollReveal().reveal(".p-front__map", {
 });
 ScrollReveal().reveal(".p-instagram__title", {
   delay: 100,
-  origin: "right",
-  interval: 200
+  origin: "left",
+  interval: 800
 });
 ScrollReveal().reveal(".instagram__img__wrap", {
   delay: 100,
