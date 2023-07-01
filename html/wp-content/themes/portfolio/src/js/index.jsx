@@ -6,53 +6,32 @@ ScrollReveal({
   delay: 200, // 0.2s後に発動
 });
 
-ScrollReveal().reveal(".p-front__news__picker", {
+ScrollReveal().reveal(".main-title, .section-title", {
   delay: 200,
   origin: "left",
-  reset: false,
 });
-ScrollReveal().reveal(
-  ".p-front__selfIntroduction__title, .p-front__jobCareer__title,.p-front__pastProjects__title ",
-  {
-    delay: 200,
-    origin: "left",
-  }
-);
-ScrollReveal().reveal(".selfIntroduction__picWrap, .pastProjects__picWrap", {
-  delay: 200,
-  origin: "top",
-});
-ScrollReveal().reveal(".jobCareer__picWrap", {
-  delay: 200,
+ScrollReveal().reveal(".sec-01 .image, .info", {
+  delay: 600,
   origin: "bottom",
 });
-ScrollReveal().reveal(
-  ".p-selfIntroduction__glass, .p-selfIntroduction__glass__title, .p-selfIntroduction__glass__text",
-  {
-    delay: 200,
-    origin: "right",
-  }
-);
-ScrollReveal().reveal(".p-jobCareer__glass", {
-  delay: 200,
-  origin: "left",
-});
-ScrollReveal().reveal(".p-jobCareer__glass__text", {
-  delay: 200,
-  origin: "left",
-});
-ScrollReveal().reveal(".p-pastProjects__glass", {
-  delay: 200,
+ScrollReveal().reveal(".text-box", {
+  delay: 700,
   origin: "right",
 });
-ScrollReveal().reveal(
-  ".p-pastProjects__glass__title, .p-pastProjects__glass__text, .p-pastProjects__glass__btn",
-  {
-    delay: 200,
-    origin: "right",
-  }
-);
-
+ScrollReveal().reveal(".media-icons i", {
+  delay: 500,
+  origin: "bottom",
+  interval: 200,
+});
+ScrollReveal().reveal(".sec-02 .image, .sec-03 .image", {
+  delay: 500,
+  origin: "top",
+});
+ScrollReveal().reveal(".media-info li", {
+  delay: 500,
+  origin: "left",
+  interval: 200,
+});
 ScrollReveal().reveal(".l-lower__mv__title", {
   delay: 200,
   origin: "left",
@@ -70,17 +49,6 @@ ScrollReveal().reveal(".p-front__map", {
   delay: 100,
   origin: "left",
   interval: 200,
-});
-ScrollReveal().reveal(".p-instagram__title", {
-  delay: 100,
-  origin: "left",
-  interval: 800,
-});
-ScrollReveal().reveal(".instagram__img__wrap", {
-  delay: 100,
-  origin: "bottom",
-  interval: 200,
-  reset: false,
 });
 ScrollReveal().reveal(".p-front__contact__textarea", {
   delay: 100,

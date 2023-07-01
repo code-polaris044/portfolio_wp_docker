@@ -1,11 +1,11 @@
 @use "../components/"as *;
 
 .p-contactWrap {
-    width: $common-contents-width-pc;
+    width: min(100% - 80px, $common-contents-width-pc);
     margin: 100px auto;
 
     @include tab {
-        width: $common-contents-width-tab;
+        width: min(100% - 40px, $common-contents-width-tab);
         margin: 60px auto;
     }
 }
@@ -13,10 +13,6 @@
 .contact_wrap {
     width: min(100% - 80px, 960px);
     margin: 0 auto;
-
-    @include tab {
-        width: 100%;
-    }
 }
 
 .contact_mg_rg {
@@ -27,7 +23,7 @@
     display: flex;
     @include noto-sans-jp($fs-normal, 400);
 
-    @include tab {
+    @media screen and (max-width: $tab) {
         flex-direction: column;
         gap: initial;
     }
@@ -41,7 +37,7 @@
         width: 50%;
         margin-bottom: 20px;
 
-        @include tab {
+        @media screen and (max-width: $tab) {
             width: 100%;
         }
     }
@@ -50,7 +46,7 @@
     .contact_tel {
         margin-right: 40px;
 
-        @include tab {
+        @media screen and (max-width: $tab) {
             margin-right: initial;
         }
     }
@@ -68,7 +64,7 @@
         resize: none;
         padding: 12px;
 
-        @include tab {
+        @media screen and (max-width: $tab) {
             min-height: 180px;
         }
 
@@ -110,7 +106,7 @@
 }
 
 
-//プライバシーポリシー 
+/* プライバシーポリシー */
 .formPrivacy__title {
     margin-top: 60px;
     margin-bottom: 30px;
@@ -178,7 +174,7 @@
     }
 }
 
-//チェックボックス
+/* チェックボックス */
 
 input[type="checkbox"] {
     accent-color: #b28247;
@@ -249,7 +245,7 @@ input[type="checkbox"] {
     transform: translate(-50%, 100%);
 }
 
-//ボタン 
+/* ボタン */
 .topForm__button {
     text-align: center;
 }
