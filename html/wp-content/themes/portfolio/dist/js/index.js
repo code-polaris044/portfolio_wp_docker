@@ -33504,6 +33504,34 @@ ScrollReveal().reveal(".p-front__news__picker", {
   origin: "left",
   reset: false
 });
+ScrollReveal().reveal(".p-front__selfIntroduction__title, .p-front__jobCareer__title,.p-front__pastProjects__title ", {
+  delay: 200,
+  origin: "left"
+});
+ScrollReveal().reveal(".selfIntroduction__picWrap, .pastProjects__picWrap", {
+  delay: 200,
+  origin: "top"
+});
+ScrollReveal().reveal(".jobCareer__picWrap", {
+  delay: 200,
+  origin: "bottom"
+});
+ScrollReveal().reveal(".p-selfIntroduction__glass, .p-selfIntroduction__glass__title, .p-selfIntroduction__glass__text", {
+  delay: 200,
+  origin: "right"
+});
+ScrollReveal().reveal(".p-jobCareer__glass", {
+  delay: 200,
+  origin: "left"
+});
+ScrollReveal().reveal(".p-jobCareer__text", {
+  delay: 200,
+  origin: "left"
+});
+ScrollReveal().reveal(".p-pastProjects__glass", {
+  delay: 200,
+  origin: "right"
+});
 ScrollReveal().reveal(".l-lower__mv__title", {
   delay: 200,
   origin: "left",

@@ -50,9 +50,9 @@
               <img src="<?php echo esc_url(get_template_directory_uri()); ?>/dist/images/only/fade1.png" alt="ロゴ" class="selfIntroduction__img">
             </picture>
           </div>
-          <div class="glass__text__box">
-            <h3 class="glass__title u-mb__20">菅原 俊哉</h3>
-            <p class="glass__text">
+          <div class="glass__text__box p-selfIntroduction__glass">
+            <h3 class="glass__title p-selfIntroduction__glass__title u-mb__20">菅原 俊哉</h3>
+            <p class="glass__text p-selfIntroduction__glass__text">
               札幌出身で、フロントエンジニアとして活動中。<br>
               常に新しい技術に挑戦し、使いやすく魅力的なウェブ開発を追求しています。
             </p>
@@ -60,17 +60,16 @@
         </div>
       </div>
     </section>
-
     <section class=" p-front__jobCareer">
       <div class="p-front__jobCareerWrap">
         <h2 class="p-front__jobCareer__title u-mb__50">職務経歴</h2>
         <div class="p-front__jobCareer__inner">
-          <div class="glass__text__box">
-            <p class="glass__text">・2019年 4月 北海道等業株式会社 入社 人事課配属</p>
-            <p class="glass__text">・2021年 9月 北海道等業株式会社 一身上の都合で退職</p>
-            <p class="glass__text">・2022年 4月 〜 11月 web開発のインターンシップ・アルバイトを経験</p>
-            <p class="glass__text">・2022年 12月 株式会社Workup 入社 web制作部配属</p>
-            <p class="glass__text">・2023年 5月 株式会社Workup 雇止め</p>
+          <div class="glass__text__box  p-jobCareer__glass">
+            <p class="glass__text p-jobCareer__glass__text">・2019年 4月 北海道等業株式会社 入社 人事課配属</p>
+            <p class="glass__text p-jobCareer__glass__text">・2021年 9月 北海道等業株式会社 一身上の都合で退職</p>
+            <p class="glass__text p-jobCareer__glass__text">・2022年 4月 〜 11月 web開発のインターンシップ・アルバイトを経験</p>
+            <p class="glass__text p-jobCareer__glass__text">・2022年 12月 株式会社Workup 入社 web制作部配属</p>
+            <p class="glass__text p-jobCareer__glass__text">・2023年 5月 株式会社Workup 雇止め</p>
           </div>
           <div class="jobCareer__picWrap">
             <picture class="jobCareer__pic">
@@ -93,12 +92,12 @@
               <img src="<?php echo esc_url(get_template_directory_uri()); ?>/dist/images/only/fade3.jpg" alt="ロゴ" class="pastProjects__img">
             </picture>
           </div>
-          <div class="glass__text__box">
-            <h3 class="glass__title u-mb__20">制作物について</h3>
-            <p class="glass__text u-mb__50">
+          <div class="glass__text__box p-pastProjects__glass">
+            <h3 class="glass__title u-mb__20 p-pastProjects__glass__title">制作物について</h3>
+            <p class="glass__text u-mb__50 p-pastProjects__glass__text">
               LP/WordPress/CakePHPなどのフロントエンド開発・制作で実際に納品したものを掲載しています。
             </p>
-            <button class="p-front__btn">
+            <button class="p-front__btn p-pastProjects__glass__btn">
               <a href="<?php echo esc_url(get_post_type_archive_link('gallery')) ?>" class="p-front__btn__link">Galleryへ</a>
             </button>
           </div>
