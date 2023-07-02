@@ -57,11 +57,11 @@ module.exports = {
     new ImageminPlugin({
       test: /\.(jpe?g|png)$/i,
       pngquant: {
-        quality: 75,
+        quality: 60,
       },
       plugins: [
         ImageminMozjpeg({
-          quality: 75,
+          quality: 60,
           progressive: true,
         }),
       ],
@@ -71,7 +71,7 @@ module.exports = {
         {
           test: /\.(png|jpe?g)$/i,
           options: {
-            quality: 75,
+            quality: 60,
           },
         },
       ],
