@@ -8,7 +8,7 @@ wordpressテーマフォルダです<br>
 https://github.com/code-polaris044/portfolio_wp_docker/tree/main/html/wp-content/themes
 
 package.jsonです<br>
-html/wp-content/themes/portfolio/package.json
+[html/wp-content/themes/portfolio/package.json](https://github.com/code-polaris044/portfolio_wp_docker/blob/main/html/wp-content/themes/portfolio/package.json)
 
 <br>
 
