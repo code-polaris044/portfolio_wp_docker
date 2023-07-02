@@ -75,9 +75,6 @@ function add_files()
 	// fontawesome
 	wp_enqueue_script('fontawesomeJs', '//kit.fontawesome.com/ebc2ff5fc3.js', array(), null, true);
 
-	// ftailwind
-	wp_enqueue_style('tailwindcss', '//unpkg.com/tailwindcss@^2/dist/tailwind.min.css', array(), 20230626, false);
-
 	// ajaxzip3
 	wp_enqueue_script('fajaxzip3', '//ajaxzip3.github.io/ajaxzip3.js', array(), null, false);
 
