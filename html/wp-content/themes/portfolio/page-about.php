@@ -12,14 +12,22 @@
                 <div class="p-about__introductionWrap">
                     <div class="p-about__titleWrap u-mb__50">
                         <h2 class="c-contents__title p-about__title">
-                            ポートフォリオサイトについて
+                            WEB開発について
                         </h2>
                     </div>
                     <p class="p-about__text u-mb__50">
-                        こちらのポートフォリオサイトは、実務で制作したサイトの一覧サイトです。<br><br>
-                        header.php(ヘッダー)・footer.php(フッター)・front-page.php(トップページ)以外は、今まで実務経験で使用したコードを準用(箇所によっては複写)しております。<br><br>
-                        header.php(ヘッダー)・footer.php(フッター)・front-page.php(トップページ)については、BEMとSMACSSとユーティリティークラスを併用したCSS設計になっておりますが、
-                        そのほかのページは、制作工数短縮のためcss設計を行っておりません。
+                        HTMLは、セマンティックHTMLを心がけています。<br><br>
+                        CSSは、基本プリプロセッサのSASS(scss記法)を使用しています。postCSSは、autoprefixer(ベンダープレフィックスの最適化)のみ使用しています。
+                        CSS設計は、BEM + SMACSS or FLOCSS + ユーティリティCSS(自作)を併用しています。<br><br>
+                        JavaScriptは、基本vanilla.jsで、複雑なコードになりそうな実装や実力的に難しい時はその時々にあったライブラリーを探して使用しています。<br><br>
+                        PHPは、WordPressのオリジナルテーマ開発で使用する範囲で可能です。<br><br>
+                        WordPressは、0からオリジナルテーマを開発することができます。よく使うテンプレートタグは、githubのコードからご確認下さい。
+                        また、フォームやカスタム投稿ポスト等には、プラグインを使用しています。 <br><br>
+                        githubで複数人開発を4か月程経験したことがあり、プルリクエストベースの開発経験があります。ファイル管理にはgitを使用しています(GUIのgithub desk topアプリを使用)。<br><br>
+                        Wordpressのローカル環境の構築には、Dockerを使用しており、Wordpressの基礎的な構築が可能です。<br><br>
+                        Wordpressのファイルの移行には、WordpressのプラグインのAll-in-One WP Migrationか、ftpソフトのfilezillaを使用しています。<br><br>
+                        モジュールバンドルツールは、WebPack5を使用しており、基本的な画像の圧縮やトランスコンパイラ(babel)などをプリセットして使用しています。<br><br>
+                        デザインツールは、実務ではADOBE XDとFigmaを使用していました。ADOBE XDはコンポーネント・ホバーステートを用いた簡単なWEBデザインが可能です。Figmaは、書き出し等の基本の操作が可能です。
                     </p>
                 </div>
             </div>
