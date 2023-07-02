@@ -1,20 +1,11 @@
-# portfolio_wp_docker
+# ポートフォリオサイト
 
-制作中のポートフォリオサイトです。
+・wordpressのテンプレート開発<br>
 
 [https://code-polaris044.sakura.ne.jp/profile/](https://code-polaris044.sakura.ne.jp/profile/)
 
-テーマフォルダ<br>
-https://github.com/code-polaris044/portfolio_wp_docker/tree/main/html/wp-content/themes
-
-
-・wordpressのテンプレート開発<br>
-直道物産のサイト<br>
-https://naoto-bussan.com/
-<br>
-
 wordpressテーマフォルダです<br>
-https://github.com/code-polaris044/naoto-bussan_docker/tree/main/html/wp-content/themes
+https://github.com/code-polaris044/portfolio_wp_docker/tree/main/html/wp-content/themes
 
 <br>
 
