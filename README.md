@@ -15,7 +15,7 @@ package.jsonです<br>
 ・wordpressのテンプレート開発
 
 インスタグラムセクションの表示は、InstagramグラフAPIを使用<br>
-※githubで、トークンの公開ができないためgitignoreしています。
+※githubで、トークンの公開ができないためgitignoreしています。<br>
 https://developers.facebook.com/docs/instagram-api/
 
 ハンバーガーメニュー・文字制限・ニュースピッカー・ローディング画面は、vanilla.js
