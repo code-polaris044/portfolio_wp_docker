@@ -1,6 +1,6 @@
 # ポートフォリオサイト
 
-・wordpressのテンプレート開発<br>
+ポートフォリオURL<br>
 
 [https://code-polaris044.sakura.ne.jp/profile/](https://code-polaris044.sakura.ne.jp/profile/)
 
@@ -11,6 +11,8 @@ package.jsonです<br>
 [html/wp-content/themes/portfolio/package.json](https://github.com/code-polaris044/portfolio_wp_docker/blob/main/html/wp-content/themes/portfolio/package.json)
 
 <br>
+
+・wordpressのテンプレート開発
 
 インスタグラムセクションの表示は、InstagramグラフAPIを使用<br>
 ※githubで、トークンの公開ができないためgitignoreしています。
