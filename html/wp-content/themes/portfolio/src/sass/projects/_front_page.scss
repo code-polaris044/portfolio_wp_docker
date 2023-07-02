@@ -20,7 +20,7 @@
     width: 100vw;
     height: calc(100vh - $h-pc-h);
     opacity: 0;
-    animation: slider-1 24s linear infinite;
+    animation: slider-1 18s linear infinite;
     z-index: 0;
 }
 
@@ -38,7 +38,7 @@
     background-image: image-set(url("#{$only-path}mv2.avif") type("image/avif"),
         url("#{$only-path}mv2.webp") type("image/webp"),
         url("#{$only-path}mv2.png") type("image/png"));
-    animation-delay: 6s;
+    animation-delay: 4s;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -48,7 +48,7 @@
     background-image: image-set(url("#{$only-path}mv3.avif") type("image/avif"),
         url("#{$only-path}mv3.webp") type("image/webp"),
         url("#{$only-path}mv3.png") type("image/png"));
-    animation-delay: 14s;
+    animation-delay: 10s;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -88,7 +88,7 @@
 
     span {
         color: transparent;
-        animation: blur 10s ease-out infinite;
+        animation: blur 8s ease-out infinite;
     }
 
     span:nth-child(1) {
@@ -96,15 +96,15 @@
     }
 
     span:nth-child(2) {
-        animation-delay: 0.4s;
+        animation-delay: 0.2s;
     }
 
     span:nth-child(3) {
-        animation-delay: 0.6s;
+        animation-delay: 0.4s;
     }
 
     span:nth-child(4) {
-        animation-delay: 0.8s;
+        animation-delay: 0.6s;
     }
 
 }
@@ -147,7 +147,7 @@
     }
 }
 
-/*スクロールダウン全体の場所*/
+// スクロールダウン全体の場所
 .p-front__scrollDown {
     position: absolute;
     left: 50%;
@@ -158,7 +158,7 @@
         bottom: 40px;
     }
 
-    /*Scrollテキストの描写*/
+    // Scrollテキストの描写
     span {
         position: absolute;
         left: -15px;
@@ -168,7 +168,7 @@
         letter-spacing: 0.05em;
     }
 
-    /* 線の描写 */
+    //線の描写 
     &::after {
         content: "";
         position: absolute;
@@ -182,7 +182,7 @@
 }
 
 
-/*高さ・位置・透過が変化して線が上から下に動く*/
+//高さ・位置・透過が変化して線が上から下に動く
 @keyframes pathmove {
     0% {
         height: 0;
