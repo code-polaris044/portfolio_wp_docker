@@ -7,7 +7,7 @@
 テーマフォルダ<br>
 https://github.com/code-polaris044/portfolio_wp_docker/tree/main/html/wp-content/themes
 
-PC
-![スクリーンショット 2023-06-27 13 19 04](https://github.com/code-polaris044/portfolio_wp_docker/assets/118881278/797608ea-e071-4ac5-852b-e89ec7c8ef88)
+![Uploading スクリーンショット 2023-07-02 18.31.31.jpg…]()
+
 
 以上
