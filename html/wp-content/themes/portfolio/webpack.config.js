@@ -17,7 +17,7 @@ module.exports = {
     filename: "js/index.js",
     publicPath: "/",
   },
-  // devtool: "source-map",
+  devtool: "source-map",
   module: {
     rules: [
       {

@@ -25,9 +25,10 @@
 }
 
 .p-slide__image:nth-child(1) {
-    background-image: image-set(url("#{$only-path}mv1.avif") type("image/avif"),
-        url("#{$only-path}mv1.webp") type("image/webp"),
-        url("#{$only-path}mv1.png") type("image/png"));
+    // background-image: image-set(url("#{$only-path}mv1.avif") type("image/avif"),
+    //     url("#{$only-path}mv1.webp") type("image/webp"),
+    //     url("#{$only-path}mv1.png") type("image/png"));
+    background-image: url("#{$only-path}mv1.png");
     animation-delay: -2s;
     background-size: cover;
     background-position: center center;
@@ -35,9 +36,10 @@
 }
 
 .p-slide__image:nth-child(2) {
-    background-image: image-set(url("#{$only-path}mv2.avif") type("image/avif"),
-        url("#{$only-path}mv2.webp") type("image/webp"),
-        url("#{$only-path}mv2.png") type("image/png"));
+    // background-image: image-set(url("#{$only-path}mv2.avif") type("image/avif"),
+    //     url("#{$only-path}mv2.webp") type("image/webp"),
+    //     url("#{$only-path}mv2.png") type("image/png"));
+    background-image: url("#{$only-path}mv2.png");
     animation-delay: 4s;
     background-size: cover;
     background-position: center center;
@@ -45,9 +47,10 @@
 }
 
 .p-slide__image:nth-child(3) {
-    background-image: image-set(url("#{$only-path}mv3.avif") type("image/avif"),
-        url("#{$only-path}mv3.webp") type("image/webp"),
-        url("#{$only-path}mv3.png") type("image/png"));
+    // background-image: image-set(url("#{$only-path}mv3.avif") type("image/avif"),
+    //     url("#{$only-path}mv3.webp") type("image/webp"),
+    //     url("#{$only-path}mv3.png") type("image/png"));
+    background-image: url("#{$only-path}mv3.png");
     animation-delay: 10s;
     background-size: cover;
     background-position: center center;

@@ -3,9 +3,10 @@
 
 
 .l-lower__bg__about {
-    background-image: image-set(url("#{$only-path}about.avif") type("image/avif"),
-        url("#{$only-path}about.webp") type("image/webp"),
-        url("#{$only-path}about.png") type("image/png"));
+    // background-image: image-set(url("#{$only-path}about.avif") type("image/avif"),
+    //     url("#{$only-path}about.webp") type("image/webp"),
+    //     url("#{$only-path}about.png") type("image/png"));
+    background-image: url("#{$only-path}about.png");
     position: relative;
     background-size: cover;
     background-position: center center;
@@ -18,9 +19,10 @@
 }
 
 .l-lower__bg__contact {
-    background-image: image-set(url("#{$only-path}contact.avif") type("image/avif"),
-        url("#{$only-path}contact.webp") type("image/webp"),
-        url("#{$only-path}contact.png") type("image/png"));
+    // background-image: image-set(url("#{$only-path}contact.avif") type("image/avif"),
+    //     url("#{$only-path}contact.webp") type("image/webp"),
+    //     url("#{$only-path}contact.png") type("image/png"));
+    background-image: url("#{$only-path}contact.png");
     position: relative;
     background-size: cover;
     background-position: center center;
@@ -33,9 +35,10 @@
 }
 
 .l-lower__bg__404 {
-    background-image: image-set(url("#{$only-path}404.avif") type("image/avif"),
-        url("#{$only-path}404.webp") type("image/webp"),
-        url("#{$only-path}404.png") type("image/png"));
+    // background-image: image-set(url("#{$only-path}404.avif") type("image/avif"),
+    //     url("#{$only-path}404.webp") type("image/webp"),
+    //     url("#{$only-path}404.png") type("image/png"));
+    background-image: url("#{$only-path}404.png");
     position: relative;
     background-size: cover;
     background-position: top center;
@@ -49,9 +52,10 @@
 
 .l-lower__bg__archive,
 .l-lower__bg__single {
-    background-image: image-set(url("#{$only-path}news.avif") type("image/avif"),
-        url("#{$only-path}news.webp") type("image/webp"),
-        url("#{$only-path}news.png") type("image/png"));
+    // background-image: image-set(url("#{$only-path}news.avif") type("image/avif"),
+    //     url("#{$only-path}news.webp") type("image/webp"),
+    //     url("#{$only-path}news.png") type("image/png"));
+    background-image: url("#{$only-path}news.png");
     position: relative;
     background-size: cover;
     background-position: center center;
@@ -64,9 +68,10 @@
 }
 
 .l-lower__bg__gallery {
-    background-image: image-set(url("#{$only-path}gallery.avif") type("image/avif"),
-        url("#{$only-path}gallery.webp") type("image/webp"),
-        url("#{$only-path}gallery.png") type("image/png"));
+    // background-image: image-set(url("#{$only-path}gallery.avif") type("image/avif"),
+    //     url("#{$only-path}gallery.webp") type("image/webp"),
+    //     url("#{$only-path}gallery.png") type("image/png"));
+    background-image: url("#{$only-path}gallery.png");
     position: relative;
     background-size: cover;
     background-position: center center;

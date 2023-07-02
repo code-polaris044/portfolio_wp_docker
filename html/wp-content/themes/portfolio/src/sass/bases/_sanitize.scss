@@ -25,6 +25,7 @@ body {
     font-family: $f-roboto, $f-font-awesome;
     color: $c-text;
     background-color: $c-base;
+    overflow: clip;
 }
 
 main {
