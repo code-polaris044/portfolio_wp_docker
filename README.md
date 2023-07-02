@@ -24,7 +24,17 @@ package.jsonです<br>
 使用jsライブラリー<br>
 ・tippy.js<br>
 →ツールチップの実装<br>
-https://atomiks.github.io/tippyjs/
+[https://atomiks.github.io/tippyjs/](https://atomiks.github.io/tippyjs/)
+<br>
+
+・splide.js<br>
+→スライダーの実装<br>
+[https://atomiks.github.io/tippyjs/](https://splidejs.com/)
+<br>
+
+・tippy.js<br>
+→コンテンツの動きの実装<br>
+[https://atomiks.github.io/tippyjs/](https://scrollrevealjs.org/)
 <br>
 
 <br>
@@ -43,6 +53,9 @@ https://ja.wordpress.org/plugins/fv-top-level-cats/
 <br>
 ・WP Multibyte Patch<br>
 https://ja.wordpress.org/plugins/wp-multibyte-patch/
+<br>
+・Breadcrumb NavXT<br>
+https://ja.wordpress.org/plugins/breadcrumb-navxt/
 <br>
 ・MW WP Form<br>
 https://ja.wordpress.org/plugins/mw-wp-form/
