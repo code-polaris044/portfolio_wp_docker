@@ -52,4 +52,4 @@ https://ja.wordpress.org/plugins/mw-wp-form/
 ![スクリーンショット 2023-07-02 18 31 31](https://github.com/code-polaris044/portfolio_wp_docker/assets/118881278/52120b9f-c770-4935-bd1d-d9693c622c37)
 
 
-以上
+以上です。
