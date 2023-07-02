@@ -14,6 +14,7 @@ package.jsonです<br>
 
 使用スキル<br>
 ・ローカル環境:[Docker](https://www.docker.com/)<br>
+・モジュールバンドルツール: [webpack5](https://webpack.js.org/)
 ・html<br>
 ・sass<br>
 ・post-css<br>
