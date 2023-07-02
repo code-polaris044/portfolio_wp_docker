@@ -73,4 +73,9 @@ https://ja.wordpress.org/plugins/mw-wp-form/
 ![スクリーンショット 2023-07-02 18 31 31](https://github.com/code-polaris044/portfolio_wp_docker/assets/118881278/52120b9f-c770-4935-bd1d-d9693c622c37)
 
 
+・lighthouseレポート<br>
+![スクリーンショット 2023-07-02 22 35 38](https://github.com/code-polaris044/portfolio_wp_docker/assets/118881278/d9f1c340-dd50-42bf-9d42-a059ef4b9711)
+
+
+
 以上です。
