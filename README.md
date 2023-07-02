@@ -12,7 +12,8 @@ package.jsonです<br>
 
 <br>
 
-インスタグラムは、InstagramグラフAPIを使用<br>
+インスタグラムセクションの表示は、InstagramグラフAPIを使用<br>
+※githubで、トークンの公開ができないためgitignoreしています。
 https://developers.facebook.com/docs/instagram-api/
 
 ハンバーガーメニュー・文字制限・ニュースピッカー・ローディング画面は、vanilla.js
@@ -37,7 +38,7 @@ https://developers.facebook.com/docs/instagram-api/
 [https://atomiks.github.io/tippyjs/](https://splidejs.com/)
 <br>
 
-・tippy.js<br>
+・scrollrevealjs.js<br>
 →コンテンツの動きの実装<br>
 [https://atomiks.github.io/tippyjs/](https://scrollrevealjs.org/)
 <br>
