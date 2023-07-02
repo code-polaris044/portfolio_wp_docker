@@ -12,6 +12,11 @@ package.jsonです<br>
 
 <br>
 
+インスタグラムは、InstagramグラフAPIを使用<br>
+https://developers.facebook.com/docs/instagram-api/
+
+ハンバーガーメニュー・文字制限・ニュースピッカー・ローディング画面は、vanilla.js
+
 使用スキル<br>
 ・ローカル環境:[Docker](https://www.docker.com/)<br>
 ・モジュールバンドルツール: [webpack5](https://webpack.js.org/)<br>
