@@ -6,7 +6,7 @@
 	<?php if (is_home() || is_front_page()) : ?>
 		<meta name="description" content="<?php bloginfo('description'); ?>">
 	<?php endif; ?>
-	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="format-detection" content="email=no,telephone=no,address=no">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">

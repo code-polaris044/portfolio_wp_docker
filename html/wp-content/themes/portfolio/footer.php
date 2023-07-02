@@ -1,4 +1,3 @@
-<!-- footer -->
 <footer id="l-footer" class="l-footer">
   <div class="l-footerWeap">
     <div class="l-logo">
@@ -27,6 +26,7 @@
   </div>
   <p class="l-copy">&copy;2023 Shunya Sugawara</p>
 </footer>
+
 <!-- wrapper -->
 </div>
 <?php wp_footer(); ?>

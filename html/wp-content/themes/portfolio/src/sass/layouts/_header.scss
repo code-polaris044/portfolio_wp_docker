@@ -15,6 +15,7 @@
     align-items: center;
     color: $c-white;
     @include f-base($fs-c-20, 500);
+    overflow: hidden;
 
     .loading__spinner {
         position: relative;
@@ -123,6 +124,7 @@
     height: $h-pc-h;
     margin: 0 auto;
     color: $c-text;
+    overflow: hidden;
 
     @include tab {
         width: min(100% - 40px, $tab);
@@ -143,7 +145,11 @@
 .l-header__leftWrap {
     display: flex;
     align-items: center;
-    gap: 30px
+    gap: 30px;
+
+    @include tab {
+        gap: 20px;
+    }
 }
 
 // ロゴ

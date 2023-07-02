@@ -8,7 +8,7 @@
           <div class="p-slide__image"></div>
           <div class="p-slide__image"></div>
         </div>
-        <h1 class="p-mv__title"><span>Shunya</span><span>Sugawara’s</span><br><span>Profile</span><span>Website</span></h1>
+        <h1 class="p-mv__title"><span>Shunya</span><br class="sp__br"><span>Sugawara’s</span><br><span>Profile</span><br class="sp__br"><span>Website</span></h1>
         <div class="p-front__scrollDown"><span>Scroll</span></div>
       </div>
     </section>
