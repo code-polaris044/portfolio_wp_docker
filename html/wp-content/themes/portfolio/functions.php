@@ -98,10 +98,10 @@ function add_files()
 	wp_enqueue_script('splideAuto', '//cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js', array(), null, false);
 
 	// サイト共通のCSSの読み込み
-	wp_enqueue_style('main', get_template_directory_uri() . '/dist/css/style.css', array(), '20230629', false);
+	wp_enqueue_style('main', get_template_directory_uri() . '/dist/css/style.css', array(), '20230702', false);
 
 	// サイト共通JS
-	wp_enqueue_script('script', get_template_directory_uri() . '/dist/js/index.js', array(), '20230630', true);
+	wp_enqueue_script('script', get_template_directory_uri() . '/dist/js/index.js', array(), '20230702', true);
 }
 add_action('wp_enqueue_scripts', 'add_files');
 
