@@ -65,8 +65,8 @@
         <h2 class="p-front__jobCareer__title u-mb__50">職務経歴</h2>
         <div class="p-front__jobCareer__inner">
           <div class="glass__text__box  p-jobCareer__glass">
-            <p class="glass__text p-jobCareer__glass__text">・2019年 4月 北海道等業株式会社 入社 人事課配属</p>
-            <p class="glass__text p-jobCareer__glass__text">・2021年 9月 北海道等業株式会社 一身上の都合で退職</p>
+            <p class="glass__text p-jobCareer__glass__text">・2019年 4月 北海道糖業株式会社 入社 人事課配属</p>
+            <p class="glass__text p-jobCareer__glass__text">・2021年 9月 北海道糖業株式会社 一身上の都合で退職</p>
             <p class="glass__text p-jobCareer__glass__text">・2022年 4月 〜 11月 web開発のインターンシップ・アルバイトを経験</p>
             <p class="glass__text p-jobCareer__glass__text">・2022年 12月 株式会社Workup 入社 web制作部配属</p>
             <p class="glass__text p-jobCareer__glass__text">・2023年 5月 株式会社Workup 雇止め</p>
