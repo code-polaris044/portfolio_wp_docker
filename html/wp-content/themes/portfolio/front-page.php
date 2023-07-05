@@ -69,7 +69,7 @@
             <p class="glass__text p-jobCareer__glass__text">・2021年 9月 北海道糖業株式会社 一身上の都合で退職</p>
             <p class="glass__text p-jobCareer__glass__text">・2022年 4月 〜 11月 web開発のインターンシップ・アルバイトを経験</p>
             <p class="glass__text p-jobCareer__glass__text">・2022年 12月 株式会社Workup 入社 web制作部配属</p>
-            <p class="glass__text p-jobCareer__glass__text">・2023年 5月 株式会社Workup 雇止め</p>
+            <p class="glass__text p-jobCareer__glass__text">・2023年 5月 株式会社Workup 雇用契約満了</p>
           </div>
           <div class="jobCareer__picWrap">
             <picture class="jobCareer__pic">
