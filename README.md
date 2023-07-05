@@ -27,7 +27,7 @@ https://developers.facebook.com/docs/instagram-api/
 ・sass(scss)<br>
 ・post-css<br>
 ・javascript<br>
-・php(wordpressを実装できるレベル)<br>
+・php(wordpress)<br>
 
 使用jsライブラリー<br>
 ・tippy.js<br>
