@@ -88,7 +88,7 @@ class JS_Webp extends Page_Parser {
 	/**
 	 * Register (once) actions and filters for JS WebP.
 	 */
-	function __construct() {
+	public function __construct() {
 		global $eio_js_webp;
 		if ( \is_object( $eio_js_webp ) ) {
 			return 'you are doing it wrong';
@@ -172,7 +172,7 @@ class JS_Webp extends Page_Parser {
 	 * @param string  $uri The URI of the page (no domain or scheme included).
 	 * @return boolean True to process the page, false to skip.
 	 */
-	function should_process_page( $should_process = true, $uri = '' ) {
+	public function should_process_page( $should_process = true, $uri = '' ) {
 		// Don't foul up the admin side of things, unless a plugin needs to.
 		if ( \is_admin() &&
 			/**
@@ -212,7 +212,7 @@ class JS_Webp extends Page_Parser {
 		if ( false !== \strpos( $uri, '&builder=true' ) ) {
 			return false;
 		}
-		if ( false !== \strpos( $uri, 'cornerstone=' ) || false !== \strpos( $uri, 'cornerstone-endpoint' ) ) {
+		if ( false !== \strpos( $uri, 'cornerstone=' ) || false !== \strpos( $uri, 'cornerstone-endpoint' ) || false !== \strpos( $uri, 'cornerstone/edit/' ) ) {
 			return false;
 		}
 		if ( false !== \strpos( $uri, 'ct_builder=' ) ) {
@@ -222,6 +222,9 @@ class JS_Webp extends Page_Parser {
 			return false;
 		}
 		if ( \did_action( 'cornerstone_boot_app' ) || \did_action( 'cs_before_preview_frame' ) ) {
+			return false;
+		}
+		if ( \did_action( 'cs_element_rendering' ) || \did_action( 'cornerstone_before_boot_app' ) || \apply_filters( 'cs_is_preview_render', false ) ) {
 			return false;
 		}
 		if ( false !== \strpos( $uri, 'elementor-preview=' ) ) {
@@ -292,7 +295,7 @@ class JS_Webp extends Page_Parser {
 	 *
 	 * @return array A list of WebP domains.
 	 */
-	function get_webp_domains() {
+	public function get_webp_domains() {
 		return $this->allowed_domains;
 	}
 
@@ -302,7 +305,7 @@ class JS_Webp extends Page_Parser {
 	 * @param string $srcset A valid srcset attribute from an img element.
 	 * @return bool|string False if no changes were made, or the new srcset if any WebP images replaced the originals.
 	 */
-	function srcset_replace( $srcset ) {
+	public function srcset_replace( $srcset ) {
 		$this->debug_message( '<b>' . __METHOD__ . '()</b>' );
 		$srcset_urls = \explode( ' ', $srcset );
 		$found_webp  = false;
@@ -340,7 +343,7 @@ class JS_Webp extends Page_Parser {
 	 * @param string $image The full text of the img element.
 	 * @return string The modified noscript tag.
 	 */
-	function jetpack_replace( $image ) {
+	public function jetpack_replace( $image ) {
 		$this->debug_message( '<b>' . __METHOD__ . '()</b>' );
 		$data_orig_file = $this->get_attribute( $image, 'data-orig-file' );
 		if ( $data_orig_file ) {
@@ -375,7 +378,7 @@ class JS_Webp extends Page_Parser {
 	 * @param string $image The full text of the img element.
 	 * @return string The modified noscript tag.
 	 */
-	function woocommerce_replace( $image ) {
+	public function woocommerce_replace( $image ) {
 		$this->debug_message( '<b>' . __METHOD__ . '()</b>' );
 		$data_large_image = $this->get_attribute( $image, 'data-large_image' );
 		if ( $data_large_image ) {
@@ -407,7 +410,7 @@ class JS_Webp extends Page_Parser {
 	 * @param string $buffer The full HTML page generated since the output buffer was started.
 	 * @return string The altered buffer containing the full page with WebP images inserted.
 	 */
-	function filter_page_output( $buffer ) {
+	public function filter_page_output( $buffer ) {
 		$this->debug_message( '<b>' . __METHOD__ . '()</b>' );
 		if (
 			empty( $buffer ) ||
@@ -502,10 +505,11 @@ class JS_Webp extends Page_Parser {
 					if ( $srcset ) {
 						$srcset_webp = $this->srcset_replace( $srcset );
 						if ( $srcset_webp ) {
+							$this->debug_message( 'webp srcset generated, setting attrs' );
 							$this->set_attribute( $new_image, 'data-srcset-webp', $srcset_webp );
+							$this->set_attribute( $new_image, 'data-srcset-img', $srcset );
+							$this->set_attribute( $new_image, 'srcset', $this->placeholder_src . ' 1w', true );
 						}
-						$this->set_attribute( $new_image, 'data-srcset-img', $srcset );
-						$this->remove_attribute( $new_image, 'srcset' );
 					}
 					if ( $this->get_attribute( $image, 'data-orig-file' ) && $this->get_attribute( $image, 'data-medium-file' ) && $this->get_attribute( $image, 'data-large-file' ) ) {
 						$new_image = $this->jetpack_replace( $new_image );
@@ -573,18 +577,6 @@ class JS_Webp extends Page_Parser {
 					if ( $new_image !== $image ) {
 						$this->set_attribute( $new_image, 'class', $this->get_attribute( $new_image, 'class' ) . ' ewww_webp_lazy_load', true );
 						$buffer = \str_replace( $image, $new_image, $buffer );
-					}
-				}
-				// Rev Slider data-lazyload attribute on image elements.
-				if ( $this->get_attribute( $image, 'data-lazyload' ) ) {
-					$new_image = $image;
-					$lazyload  = $this->get_attribute( $new_image, 'data-lazyload' );
-					if ( $lazyload ) {
-						if ( $this->validate_image_url( $lazyload ) ) {
-							$this->set_attribute( $new_image, 'data-webp-lazyload', $this->generate_url( $lazyload ) );
-							$this->debug_message( "replacing with webp for data-lazyload: $lazyload" );
-							$buffer = \str_replace( $image, $new_image, $buffer );
-						}
 					}
 				}
 			} // End foreach().
@@ -724,39 +716,13 @@ class JS_Webp extends Page_Parser {
 				}
 			}
 		}
-		// Revolution Slider 'li' elements and LL li backgrounds.
+		// LL li elements with background images.
 		$listitems = $this->get_elements_from_html( $buffer, 'li' );
 		if ( $this->is_iterable( $listitems ) ) {
 			foreach ( $listitems as $index => $listitem ) {
 				$this->debug_message( 'parsing a listitem' );
 				if ( ! $this->validate_tag( $listitem ) ) {
 					continue;
-				}
-				if ( $this->get_attribute( $listitem, 'data-title' ) === 'Slide' && ( $this->get_attribute( $listitem, 'data-lazyload' ) || $this->get_attribute( $listitem, 'data-thumb' ) ) ) {
-					$thumb = $this->get_attribute( $listitem, 'data-thumb' );
-					$this->debug_message( "checking webp for revslider data-thumb: $thumb" );
-					if ( $this->validate_image_url( $thumb ) ) {
-						$this->set_attribute( $listitem, 'data-webp-thumb', $this->generate_url( $thumb ) );
-						$this->debug_message( "found webp for revslider data-thumb: $thumb" );
-					}
-					$param_num = 1;
-					while ( $param_num < 11 ) {
-						$parameter = $this->get_attribute( $listitem, 'data-param' . $param_num );
-						if ( $parameter ) {
-							$this->debug_message( "checking webp for revslider data-param$param_num: $parameter" );
-							if ( \strpos( $parameter, 'http' ) === 0 ) {
-								$this->debug_message( "looking for $parameter" );
-								if ( $this->validate_image_url( $parameter ) ) {
-									$this->set_attribute( $listitem, 'data-webp-param' . $param_num, $this->generate_url( $parameter ) );
-									$this->debug_message( "found webp for data-param$param_num: $parameter" );
-								}
-							}
-						}
-						$param_num++;
-					}
-					if ( $listitem !== $listitems[ $index ] ) {
-						$buffer = \str_replace( $listitems[ $index ], $listitem, $buffer );
-					}
 				}
 				$bg_image = $this->get_attribute( $listitem, 'data-back' );
 				$li_class = $this->get_attribute( $listitem, 'class' );
@@ -870,7 +836,7 @@ class JS_Webp extends Page_Parser {
 	 * @param array $images An array of NextGEN images and associate attributes.
 	 * @return array The array of images with WebP versions added.
 	 */
-	function ngg_pro_lightbox_images_queue( $images ) {
+	public function ngg_pro_lightbox_images_queue( $images ) {
 		$this->debug_message( '<b>' . __METHOD__ . '()</b>' );
 		if ( $this->is_iterable( $images ) ) {
 			foreach ( $images as $index => $image ) {
@@ -908,7 +874,7 @@ class JS_Webp extends Page_Parser {
 	 * @param array $variation The product variation with all associated data.
 	 * @return array The product variation with WebP image URLs added.
 	 */
-	function woocommerce_available_variation( $variation ) {
+	public function woocommerce_available_variation( $variation ) {
 		$this->debug_message( '<b>' . __METHOD__ . '()</b>' );
 		if ( $this->is_iterable( $variation ) && $this->is_iterable( $variation['image'] ) ) {
 			if ( ! empty( $variation['image']['src'] ) && $this->validate_image_url( $variation['image']['src'] ) ) {
@@ -940,7 +906,7 @@ class JS_Webp extends Page_Parser {
 	 * @param array $output The full array of FacetWP data.
 	 * @return array The FacetWP data with WebP images.
 	 */
-	function filter_facetwp_json_output( $output ) {
+	public function filter_facetwp_json_output( $output ) {
 		$this->debug_message( '<b>' . __METHOD__ . '()</b>' );
 		if ( empty( $output['template'] ) || ! \is_string( $output['template'] ) ) {
 			return $output;
@@ -963,7 +929,7 @@ class JS_Webp extends Page_Parser {
 	 * @param array $image_urls An array of image URLs.
 	 * @return array An array with WebP image URLs.
 	 */
-	function filter_image_url_array( $image_urls ) {
+	public function filter_image_url_array( $image_urls ) {
 		$this->debug_message( '<b>' . __METHOD__ . '()</b>' );
 		if ( $this->is_iterable( $image_urls ) ) {
 			foreach ( $image_urls as $index => $image_url ) {
@@ -983,14 +949,14 @@ class JS_Webp extends Page_Parser {
 	 * @param string $extension An optional extension to append during is_file().
 	 * @return bool True if a local file exists correlating to the URL, false otherwise.
 	 */
-	function url_to_path_exists( $url, $extension = '' ) {
+	public function url_to_path_exists( $url, $extension = '' ) {
 		return parent::url_to_path_exists( $url, '.webp' );
 	}
 
 	/**
 	 * Validate the user-defined exclusions.
 	 */
-	function validate_user_exclusions() {
+	public function validate_user_exclusions() {
 		$user_exclusions = $this->get_option( $this->prefix . 'webp_rewrite_exclude' );
 		$this->debug_message( $this->prefix . 'webp_rewrite_exclude' );
 		if ( ! empty( $user_exclusions ) ) {
@@ -1031,7 +997,7 @@ class JS_Webp extends Page_Parser {
 	 * @param string $image The HTML tag: img, span, etc.
 	 * @return bool False if it flags a filter or exclusion, true otherwise.
 	 */
-	function validate_tag( $image ) {
+	public function validate_tag( $image ) {
 		$this->debug_message( '<b>' . __METHOD__ . '()</b>' );
 		// Ignore 0-size Pinterest schema images.
 		if ( \strpos( $image, 'data-pin-description=' ) && \strpos( $image, 'width="0" height="0"' ) ) {
@@ -1073,7 +1039,7 @@ class JS_Webp extends Page_Parser {
 	 * @param string $image The image URL.
 	 * @return bool True if the file exists or matches a forced path, false otherwise.
 	 */
-	function validate_image_url( $image ) {
+	public function validate_image_url( $image ) {
 		$this->debug_message( __METHOD__ . "() webp validation for $image" );
 		if ( $this->is_lazy_placeholder( $image ) ) {
 			return false;
@@ -1121,7 +1087,7 @@ class JS_Webp extends Page_Parser {
 	 * @param string $url The image url.
 	 * @return string The WebP version of the image url.
 	 */
-	function generate_url( $url ) {
+	public function generate_url( $url ) {
 		$path_parts = \explode( '?', $url );
 		return \apply_filters( 'ewwwio_generated_webp_image_url', $path_parts[0] . '.webp' . ( ! empty( $path_parts[1] ) && 'is-pending-load=1' !== $path_parts[1] ? '?' . $path_parts[1] : '' ) );
 	}
@@ -1129,39 +1095,55 @@ class JS_Webp extends Page_Parser {
 	/**
 	 * Load full WebP script when SCRIPT_DEBUG is enabled.
 	 */
-	function debug_script() {
+	public function debug_script() {
 		if ( ! $this->should_process_page() ) {
 			return;
 		}
 		if ( ! \apply_filters( 'eio_do_js_webp', true, $this->request_uri ) ) {
 			return;
 		}
+		$check_args = array(
+			'strategy'  => 'async',
+			'in_footer' => false,
+		);
+		$load_args  = array(
+			'strategy'  => 'async',
+			'in_footer' => true,
+		);
 		if ( ! \ewww_image_optimizer_ce_webp_enabled() ) {
-			\wp_enqueue_script( 'ewww-webp-check-script', \plugins_url( '/includes/check-webp.js', EWWW_IMAGE_OPTIMIZER_PLUGIN_FILE ), array(), $this->version );
-			\wp_enqueue_script( 'ewww-webp-load-script', \plugins_url( '/includes/load-webp.js', EWWW_IMAGE_OPTIMIZER_PLUGIN_FILE ), array(), $this->version, true );
+			\wp_enqueue_script( 'ewww-webp-check-script', \plugins_url( '/includes/check-webp.js', EWWW_IMAGE_OPTIMIZER_PLUGIN_FILE ), array(), $this->version, $check_args );
+			\wp_enqueue_script( 'ewww-webp-load-script', \plugins_url( '/includes/load-webp.js', EWWW_IMAGE_OPTIMIZER_PLUGIN_FILE ), array(), $this->version, $load_args );
 		}
 	}
 
 	/**
 	 * Load minified WebP script when EWWW_IMAGE_OPTIMIZER_WEBP_EXTERNAL_SCRIPT is set.
 	 */
-	function min_external_script() {
+	public function min_external_script() {
 		if ( ! $this->should_process_page() ) {
 			return;
 		}
 		if ( ! \apply_filters( 'eio_do_js_webp', true, $this->request_uri ) ) {
 			return;
 		}
+		$check_args = array(
+			'strategy'  => 'async',
+			'in_footer' => false,
+		);
+		$load_args  = array(
+			'strategy'  => 'async',
+			'in_footer' => true,
+		);
 		if ( ! \ewww_image_optimizer_ce_webp_enabled() ) {
-			\wp_enqueue_script( 'ewww-webp-check-script', \plugins_url( '/includes/check-webp.min.js', EWWW_IMAGE_OPTIMIZER_PLUGIN_FILE ), array(), $this->version );
-			\wp_enqueue_script( 'ewww-webp-load-script', \plugins_url( '/includes/load-webp.min.js', EWWW_IMAGE_OPTIMIZER_PLUGIN_FILE ), array(), $this->version, true );
+			\wp_enqueue_script( 'ewww-webp-check-script', \plugins_url( '/includes/check-webp.min.js', EWWW_IMAGE_OPTIMIZER_PLUGIN_FILE ), array(), $this->version, $check_args );
+			\wp_enqueue_script( 'ewww-webp-load-script', \plugins_url( '/includes/load-webp.min.js', EWWW_IMAGE_OPTIMIZER_PLUGIN_FILE ), array(), $this->version, true, $load_args );
 		}
 	}
 
 	/**
 	 * Load minified inline version of check WebP script.
 	 */
-	function inline_check_script() {
+	public function inline_check_script() {
 		if ( ! $this->should_process_page() ) {
 			return;
 		}
@@ -1188,7 +1170,7 @@ class JS_Webp extends Page_Parser {
 	/**
 	 * Load minified inline version of load WebP script.
 	 */
-	function inline_load_script() {
+	public function inline_load_script() {
 		if ( \defined( 'EWWW_IMAGE_OPTIMIZER_NO_JS' ) && EWWW_IMAGE_OPTIMIZER_NO_JS ) {
 			return;
 		}

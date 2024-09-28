@@ -104,7 +104,7 @@ class Lazy_Load extends Page_Parser {
 	/**
 	 * Register (once) actions and filters for Lazy Load.
 	 */
-	function __construct() {
+	public function __construct() {
 		parent::__construct();
 		$this->debug_message( '<b>' . __METHOD__ . '()</b>' );
 		$this->content_url();
@@ -209,7 +209,7 @@ class Lazy_Load extends Page_Parser {
 	 * @param string  $uri The URI of the page (no domain or scheme included).
 	 * @return boolean True to process the page, false to skip.
 	 */
-	function should_process_page( $should_process = true, $uri = '' ) {
+	public function should_process_page( $should_process = true, $uri = '' ) {
 		// Don't foul up the admin side of things, unless a plugin needs to.
 		if ( \is_admin() &&
 			/**
@@ -228,11 +228,13 @@ class Lazy_Load extends Page_Parser {
 		if ( $this->is_iterable( $this->user_page_exclusions ) ) {
 			foreach ( $this->user_page_exclusions as $page_exclusion ) {
 				if ( '/' === $page_exclusion && '/' === $uri ) {
+					$this->debug_message( "$uri matchs $page_exclusion" );
 					return false;
 				} elseif ( '/' === $page_exclusion ) {
 					continue;
 				}
 				if ( false !== \strpos( $uri, $page_exclusion ) ) {
+					$this->debug_message( "$uri matchs $page_exclusion" );
 					return false;
 				}
 			}
@@ -246,7 +248,7 @@ class Lazy_Load extends Page_Parser {
 		if ( false !== \strpos( $uri, '&builder=true' ) ) {
 			return false;
 		}
-		if ( false !== \strpos( $uri, 'cornerstone=' ) || false !== \strpos( $uri, 'cornerstone-endpoint' ) ) {
+		if ( false !== \strpos( $uri, 'cornerstone=' ) || false !== \strpos( $uri, 'cornerstone-endpoint' ) || false !== \strpos( $uri, 'cornerstone/edit/' ) ) {
 			return false;
 		}
 		if ( false !== \strpos( $uri, 'ct_builder=' ) ) {
@@ -256,6 +258,9 @@ class Lazy_Load extends Page_Parser {
 			return false;
 		}
 		if ( \did_action( 'cornerstone_boot_app' ) || \did_action( 'cs_before_preview_frame' ) ) {
+			return false;
+		}
+		if ( \did_action( 'cs_element_rendering' ) || \did_action( 'cornerstone_before_boot_app' ) || \apply_filters( 'cs_is_preview_render', false ) ) {
 			return false;
 		}
 		if ( false !== \strpos( $uri, 'elementor-preview=' ) ) {
@@ -330,18 +335,18 @@ class Lazy_Load extends Page_Parser {
 	/**
 	 * Disable native lazy load for img elements.
 	 *
-	 * @param bool   $default True if it is an img or iframe element. Should be false otherwise.
+	 * @param bool   $default_value True if it is an img or iframe element. Should be false otherwise.
 	 * @param string $tag_name The type of HTML tag/element being parsed.
 	 * @return bool False for img elements, leave as-is for others.
 	 */
-	function wp_lazy_loading_enabled( $default, $tag_name = 'img' ) {
+	public function wp_lazy_loading_enabled( $default_value, $tag_name = 'img' ) {
 		if ( 'img' === $tag_name ) {
 			if ( \defined( 'EIO_ENABLE_NATIVE_LAZY' ) && EIO_ENABLE_NATIVE_LAZY ) {
 				return true;
 			}
 			return false;
 		}
-		return $default;
+		return $default_value;
 	}
 
 	/**
@@ -350,7 +355,7 @@ class Lazy_Load extends Page_Parser {
 	 * @param string $buffer The full HTML page generated since the output buffer was started.
 	 * @return string The altered buffer containing the full page with Lazy Load attributes.
 	 */
-	function filter_page_output( $buffer ) {
+	public function filter_page_output( $buffer ) {
 		$this->debug_message( '<b>' . __METHOD__ . '()</b>' );
 		if ( empty( $buffer ) ) {
 			return $buffer;
@@ -371,6 +376,10 @@ class Lazy_Load extends Page_Parser {
 		}
 		if ( ! \apply_filters( 'eio_do_lazyload', true, $this->request_uri ) ) {
 			return $buffer;
+		}
+
+		if ( ! $this->parsing_exactdn ) {
+			$this->get_preload_images( $buffer );
 		}
 
 		$above_the_fold   = \apply_filters( 'eio_lazy_fold', 0 );
@@ -441,7 +450,7 @@ class Lazy_Load extends Page_Parser {
 						$image    = $this->parse_img_tag( $image, $file );
 						$this->set_attribute( $ns_img, 'data-eio', 'l', true );
 						$noscript = '<noscript>' . $ns_img . '</noscript>';
-						$picture  = \str_replace( $orig_img, $image . $noscript, $picture );
+						$picture  = \str_replace( $orig_img, $image, $picture ) . $noscript;
 					}
 				} else {
 					continue;
@@ -499,7 +508,7 @@ class Lazy_Load extends Page_Parser {
 			\ksort( $replacements );
 			foreach ( $replacements as $position => $replacement ) {
 				$this->debug_message( "possible replacement at $position" );
-				$images_processed++;
+				++$images_processed;
 				if ( $images_processed <= $above_the_fold ) {
 					$this->debug_message( 'image above fold threshold' );
 					continue;
@@ -525,7 +534,7 @@ class Lazy_Load extends Page_Parser {
 	 * @param string $file The URL from the src attribute. Optional.
 	 * @return string The modified tag.
 	 */
-	function parse_img_tag( $image, $file = '' ) {
+	public function parse_img_tag( $image, $file = '' ) {
 		$this->debug_message( '<b>' . __METHOD__ . '()</b>' );
 		global $exactdn;
 
@@ -548,7 +557,7 @@ class Lazy_Load extends Page_Parser {
 		if ( ! $file ) {
 			$file = $this->get_attribute( $image, 'src' );
 		}
-		$file = \str_replace( '&#038;', '&', \esc_url( \trim( $file ) ) );
+		$file = \str_replace( '&#038;', '&', \esc_url( \trim( html_entity_decode( $file ) ) ) );
 		$this->set_attribute( $image, 'data-src', $file, true );
 		$srcset = $this->get_attribute( $image, 'srcset' );
 
@@ -593,6 +602,9 @@ class Lazy_Load extends Page_Parser {
 		if ( $this->parsing_exactdn && \apply_filters( 'eio_use_lqip', $this->get_option( $this->prefix . 'use_lqip' ), $file ) ) {
 			$placeholder_types[] = 'lqip';
 		}
+		if ( $this->parsing_exactdn && \apply_filters( 'eio_use_dcip', $this->get_option( $this->prefix . 'use_dcip' ), $file ) ) {
+			$placeholder_types[] = 'dcip';
+		}
 		if ( $this->parsing_exactdn && \apply_filters( 'eio_use_piip', true, $file ) ) {
 			$placeholder_types[] = 'epip';
 		}
@@ -609,6 +621,14 @@ class Lazy_Load extends Page_Parser {
 					$this->debug_message( 'using lqip, maybe' );
 					if ( false === \strpos( $file, 'nggid' ) && ! \preg_match( '#\.svg(\?|$)#', $file ) && \strpos( $file, $this->exactdn_domain ) ) {
 						$placeholder_src = add_query_arg( array( 'lazy' => 1 ), $file );
+						$use_native_lazy = true;
+						break 2;
+					}
+					break;
+				case 'dcip':
+					$this->debug_message( 'using dcip, maybe' );
+					if ( false === \strpos( $file, 'nggid' ) && ! \preg_match( '#\.svg(\?|$)#', $file ) && \strpos( $file, $this->exactdn_domain ) ) {
+						$placeholder_src = add_query_arg( array( 'lazy' => 3 ), $file );
 						$use_native_lazy = true;
 						break 2;
 					}
@@ -721,7 +741,10 @@ class Lazy_Load extends Page_Parser {
 			$this->set_attribute( $image, 'width', $width_attr, true );
 			$this->set_attribute( $image, 'height', $height_attr, true );
 		}
-		if ( 0 === \strpos( $placeholder_src, 'data:image/svg+xml' ) ) {
+		if ( 0 === \strpos( $placeholder_src, 'data:image/svg+xml' ) && $physical_width && $physical_height ) {
+			$this->set_attribute( $image, 'data-eio-rwidth', $physical_width, true );
+			$this->set_attribute( $image, 'data-eio-rheight', $physical_height, true );
+		} elseif ( $physical_width && $physical_height ) {
 			$this->set_attribute( $image, 'data-eio-rwidth', $physical_width, true );
 			$this->set_attribute( $image, 'data-eio-rheight', $physical_height, true );
 		}
@@ -737,7 +760,7 @@ class Lazy_Load extends Page_Parser {
 	 * @param string $buffer The HTML content to parse (and possibly modify).
 	 * @return array A list of replacements to make in $buffer.
 	 */
-	function parse_background_images( $tag_type, &$buffer ) {
+	public function parse_background_images( $tag_type, &$buffer ) {
 		$this->debug_message( '<b>' . __METHOD__ . '()</b>' );
 		$replacements = array();
 		if ( \in_array( $tag_type, $this->user_element_exclusions, true ) ) {
@@ -768,6 +791,17 @@ class Lazy_Load extends Page_Parser {
 				$bg_image_urls = $this->get_background_image_urls( $style );
 				if ( $this->is_iterable( $bg_image_urls ) ) {
 					$this->debug_message( 'bg-image urls found' );
+
+					foreach ( $bg_image_urls as $bg_image_url ) {
+						$bg_image_path = $this->parse_url( $bg_image_url, PHP_URL_PATH );
+						foreach ( $this->preload_images as $preload_image ) {
+							if ( $bg_image_path === $preload_image['path'] ) {
+								$this->debug_message( "preloading $bg_image_url, so no lazy allowed!" );
+								continue 3;
+							}
+						}
+					}
+
 					$new_style = $this->remove_background_image( $style );
 					if ( $style !== $new_style ) {
 						$this->debug_message( 'style modified, continuing' );
@@ -806,7 +840,7 @@ class Lazy_Load extends Page_Parser {
 	 * @param string $element The HTML element/tag to parse.
 	 * @return string The (maybe) modified element.
 	 */
-	function lazify_element( $element ) {
+	public function lazify_element( $element ) {
 		if ( \defined( 'EIO_EXTERNAL_CSS_LAZY_LOAD' ) && ! EIO_EXTERNAL_CSS_LAZY_LOAD ) {
 			return $element;
 		}
@@ -828,7 +862,7 @@ class Lazy_Load extends Page_Parser {
 	 * @param array $output An array of HTML strings.
 	 * @return array The output data with lazy loaded images.
 	 */
-	function filter_html_array( $output ) {
+	public function filter_html_array( $output ) {
 		$this->debug_message( '<b>' . __METHOD__ . '()</b>' );
 		if ( $this->is_iterable( $output ) ) {
 			foreach ( $output as $index => $html ) {
@@ -863,7 +897,7 @@ class Lazy_Load extends Page_Parser {
 	 * @param array $output The full array of FacetWP data.
 	 * @return array The FacetWP data with lazy loaded images.
 	 */
-	function filter_facetwp_json_output( $output ) {
+	public function filter_facetwp_json_output( $output ) {
 		$this->debug_message( '<b>' . __METHOD__ . '()</b>' );
 		if ( empty( $output['template'] ) || ! \is_string( $output['template'] ) ) {
 			return $output;
@@ -881,7 +915,7 @@ class Lazy_Load extends Page_Parser {
 	/**
 	 * Validate the user-defined exclusions.
 	 */
-	function validate_user_exclusions() {
+	public function validate_user_exclusions() {
 		$user_exclusions = $this->get_option( $this->prefix . 'll_exclude' );
 		if ( ! empty( $user_exclusions ) ) {
 			if ( \is_string( $user_exclusions ) ) {
@@ -919,7 +953,7 @@ class Lazy_Load extends Page_Parser {
 	/**
 	 * Validate the user-defined CSS element inclusions.
 	 */
-	function validate_css_element_inclusions() {
+	public function validate_css_element_inclusions() {
 		$user_inclusions = $this->get_option( $this->prefix . 'll_all_things' );
 		if ( ! empty( $user_inclusions ) ) {
 			if ( ! \is_string( $user_inclusions ) ) {
@@ -947,7 +981,7 @@ class Lazy_Load extends Page_Parser {
 	 * @param string $image The image (img) tag.
 	 * @return bool True if the tag is allowed, false otherwise.
 	 */
-	function validate_image_tag( $image ) {
+	public function validate_image_tag( $image ) {
 		$this->debug_message( '<b>' . __METHOD__ . '()</b>' );
 		if ( $this->is_lazy_placeholder( $image ) ) {
 			return false;
@@ -967,6 +1001,18 @@ class Lazy_Load extends Page_Parser {
 		if ( \strpos( $image, 'data-pin-description=' ) && \strpos( $image, 'width="0" height="0"' ) ) {
 			$this->debug_message( 'data-pin-description img skipped' );
 			return false;
+		}
+		$autoscaling = true;
+		if ( \defined( 'EIO_LL_AUTOSCALE' ) && ! EIO_LL_AUTOSCALE ) {
+			$autoscaling = false;
+		} elseif ( false === \strpos( $image, 'srcset' ) && empty( $this->exactdn_domain ) ) {
+			$autoscaling = false;
+		}
+		if ( ! $autoscaling ) {
+			if ( \strpos( $image, 'fetchpriority="high"' ) || \strpos( $image, "fetchpriority='high'" ) ) {
+				$this->debug_message( 'no autoscaling for this image, and lcp indicated' );
+				return false;
+			}
 		}
 
 		$exclusions = \apply_filters(
@@ -1010,6 +1056,14 @@ class Lazy_Load extends Page_Parser {
 				return false;
 			}
 		}
+
+		$src_path = $this->parse_url( $image_src, PHP_URL_PATH );
+		foreach ( $this->preload_images as $preload_image ) {
+			if ( $src_path === $preload_image['path'] ) {
+				$this->debug_message( "preloading $image_src, so no lazy allowed!" );
+				return false;
+			}
+		}
 		return true;
 	}
 
@@ -1019,7 +1073,7 @@ class Lazy_Load extends Page_Parser {
 	 * @param string $tag The tag.
 	 * @return bool True if the tag is allowed, false otherwise.
 	 */
-	function validate_bgimage_tag( $tag ) {
+	public function validate_bgimage_tag( $tag ) {
 		$this->debug_message( '<b>' . __METHOD__ . '()</b>' );
 		$exclusions = \apply_filters(
 			'eio_lazy_bg_image_exclusions',
@@ -1049,7 +1103,7 @@ class Lazy_Load extends Page_Parser {
 	 * @param string $tag The tag.
 	 * @return bool True if the tag is allowed, false otherwise.
 	 */
-	function validate_iframe_tag( $tag ) {
+	public function validate_iframe_tag( $tag ) {
 		$this->debug_message( '<b>' . __METHOD__ . '()</b>' );
 		$exclusions = \apply_filters(
 			'eio_lazy_iframe_exclusions',
@@ -1081,7 +1135,7 @@ class Lazy_Load extends Page_Parser {
 	 * @param int $height The height of the placeholder image.
 	 * @return string The PNG placeholder link.
 	 */
-	function create_piip( $width = 1, $height = 1 ) {
+	public function create_piip( $width = 1, $height = 1 ) {
 		$width  = (int) $width;
 		$height = (int) $height;
 		if ( ( 1 === $width && 1 === $height ) || ! $width || ! $height ) {
@@ -1124,7 +1178,6 @@ class Lazy_Load extends Page_Parser {
 				$placeholder->clear();
 			}
 			// If that didn't work, and we have a premium service, use the API to generate the slimmest PIP available.
-			/* if ( $this->get_option( 'ewww_image_optimizer_cloud_key' ) && ! defined( 'EWWW_IMAGE_OPTIMIZER_DISABLE_API_PIP' ) ) { */
 			if (
 				! \is_file( $piip_path ) &&
 				( $this->parsing_exactdn || $this->get_option( 'ewww_image_optimizer_cloud_key' ) ) &&
@@ -1175,7 +1228,7 @@ class Lazy_Load extends Page_Parser {
 	 * @param int $images The number of images that are above the fold.
 	 * @return int The (potentially overriden) number of images.
 	 */
-	function override_lazy_fold( $images ) {
+	public function override_lazy_fold( $images ) {
 		if ( \defined( 'EIO_LAZY_FOLD' ) ) {
 			return (int) \constant( 'EIO_LAZY_FOLD' );
 		}
@@ -1188,7 +1241,7 @@ class Lazy_Load extends Page_Parser {
 	 * @param bool $allow Will normally be false, unless already modified by another function.
 	 * @return bool True if it's an allowable admin-ajax request, false for all other admin requests.
 	 */
-	function allow_admin_lazyload( $allow ) {
+	public function allow_admin_lazyload( $allow ) {
 		if ( ! \wp_doing_ajax() ) {
 			return $allow;
 		}
@@ -1208,7 +1261,7 @@ class Lazy_Load extends Page_Parser {
 	 * @param bool $use_piip Whether LL should use PNG inline image placeholders.
 	 * @return bool True to use PIIP, false to skip them.
 	 */
-	function maybe_piip( $use_piip ) {
+	public function maybe_piip( $use_piip ) {
 		if ( \defined( 'EWWW_IMAGE_OPTIMIZER_USE_PIIP' ) && ! EWWW_IMAGE_OPTIMIZER_USE_PIIP ) {
 			return false;
 		}
@@ -1227,7 +1280,7 @@ class Lazy_Load extends Page_Parser {
 	 * @param bool $use_siip Whether LL should use SVG inline image placeholders.
 	 * @return bool True to use SIIP, false to skip them.
 	 */
-	function maybe_siip( $use_siip ) {
+	public function maybe_siip( $use_siip ) {
 		if ( \defined( 'EWWW_IMAGE_OPTIMIZER_USE_SIIP' ) && ! EWWW_IMAGE_OPTIMIZER_USE_SIIP ) {
 			return false;
 		}
@@ -1240,7 +1293,7 @@ class Lazy_Load extends Page_Parser {
 	/**
 	 * Adds a small CSS block to hide lazyload elements for no-JS browsers.
 	 */
-	function no_js_css() {
+	public function no_js_css() {
 		if ( ! $this->should_process_page() ) {
 			return;
 		}
@@ -1255,7 +1308,7 @@ class Lazy_Load extends Page_Parser {
 	/**
 	 * Load full lazysizes script when SCRIPT_DEBUG is enabled.
 	 */
-	function debug_script() {
+	public function debug_script() {
 		$this->debug_message( '<b>' . __METHOD__ . '()</b>' );
 		if ( ! $this->should_process_page() ) {
 			return;
@@ -1263,14 +1316,16 @@ class Lazy_Load extends Page_Parser {
 		if ( ! \apply_filters( 'eio_do_lazyload', true, $this->request_uri ) ) {
 			return;
 		}
-		$in_footer = true;
+		$in_footer = array(
+			'strategy'  => 'async',
+			'in_footer' => true,
+		);
 		if ( \defined( 'EIO_LL_FOOTER' ) && ! EIO_LL_FOOTER ) {
-			$in_footer = false;
+			$in_footer['in_footer'] = false;
 		}
 		$plugin_file = \constant( \strtoupper( $this->prefix ) . 'PLUGIN_FILE' );
 		\wp_enqueue_script( 'eio-lazy-load-pre', \plugins_url( '/includes/lazysizes-pre.js', $plugin_file ), array(), $this->version, $in_footer );
 		\wp_enqueue_script( 'eio-lazy-load-uvh', \plugins_url( '/includes/ls.unveilhooks.js', $plugin_file ), array(), $this->version, $in_footer );
-		\wp_enqueue_script( 'eio-lazy-load-uvh-addon', \plugins_url( '/includes/ls.unveilhooks-addon.js', $plugin_file ), array(), $this->version, $in_footer );
 		\wp_enqueue_script( 'eio-lazy-load-post', \plugins_url( '/includes/lazysizes-post.js', $plugin_file ), array(), $this->version, $in_footer );
 		\wp_enqueue_script( 'eio-lazy-load', \plugins_url( '/includes/lazysizes.js', $plugin_file ), array(), $this->version, $in_footer );
 		if ( \defined( \strtoupper( $this->prefix ) . 'LAZY_PRINT' ) && \constant( \strtoupper( $this->prefix ) . 'LAZY_PRINT' ) ) {
@@ -1296,7 +1351,7 @@ class Lazy_Load extends Page_Parser {
 	/**
 	 * Load minified lazysizes script.
 	 */
-	function min_script() {
+	public function min_script() {
 		$this->debug_message( '<b>' . __METHOD__ . '()</b>' );
 		if ( ! $this->should_process_page() ) {
 			return;
@@ -1304,9 +1359,12 @@ class Lazy_Load extends Page_Parser {
 		if ( ! \apply_filters( 'eio_do_lazyload', true, $this->request_uri ) ) {
 			return;
 		}
-		$in_footer = true;
+		$in_footer = array(
+			'strategy'  => 'async',
+			'in_footer' => true,
+		);
 		if ( \defined( 'EIO_LL_FOOTER' ) && ! EIO_LL_FOOTER ) {
-			$in_footer = false;
+			$in_footer['in_footer'] = false;
 		}
 		$plugin_file = \constant( \strtoupper( $this->prefix ) . 'PLUGIN_FILE' );
 		\wp_enqueue_script( 'eio-lazy-load', \plugins_url( '/includes/lazysizes.min.js', $plugin_file ), array(), $this->version, $in_footer );
