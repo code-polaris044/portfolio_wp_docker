@@ -24,7 +24,7 @@
       </ul>
     </nav>
   </div>
-  <p class="l-copy">&copy;2023 Shunya Sugawara</p>
+  <p class="l-copy">&copy;2024 Shunya Sugawara</p>
 </footer>
 
 <!-- wrapper -->
