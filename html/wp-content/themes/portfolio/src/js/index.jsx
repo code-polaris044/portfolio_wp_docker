@@ -1,6 +1,6 @@
 //ScrollReveal
 ScrollReveal({
-    reset: true,
+    reset: false,
     distance: "80px",
     duration: 2000, //2s
     delay: 200, // 0.2s後に発動
@@ -9,7 +9,7 @@ ScrollReveal({
 ScrollReveal().reveal(".p-front__news__picker", {
     delay: 200,
     origin: "left",
-    reset: true,
+    reset: false,
 });
 ScrollReveal().reveal(
     ".p-front__selfIntroduction__title, .p-front__jobCareer__title,.p-front__pastProjects__title ",
@@ -80,7 +80,7 @@ ScrollReveal().reveal(".instagram__img__wrap", {
     delay: 100,
     origin: "bottom",
     interval: 200,
-    reset: true,
+    reset: false,
 });
 ScrollReveal().reveal(".p-front__contact__textarea", {
     delay: 100,
@@ -122,21 +122,21 @@ ScrollReveal().reveal(".splide__track", {
     delay: 500,
     origin: "top",
     interval: 400,
-    reset: true,
+    reset: false,
     distance: "100px",
 });
 ScrollReveal().reveal(".p-single__gallery__imgSpWrap", {
     delay: 300,
     origin: "bottom",
     interval: 400,
-    reset: true,
+    reset: false,
     distance: "100px",
 });
 ScrollReveal().reveal(".p-single__gallery__richtextWrap", {
     delay: 300,
     origin: "left",
     interval: 400,
-    reset: true,
+    reset: false,
     distance: "100px",
 });
 

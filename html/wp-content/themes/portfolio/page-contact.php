@@ -8,8 +8,10 @@
     </section>
     <section class="p-contact">
         <div class="p-contactWrap">
-            <?php echo do_shortcode('[mwform_formkey key="50"]'); ?>
+            <?php echo do_shortcode('[mwform_formkey key="24"]'); ?>
         </div>
     </section>
 </main>
 <?php get_footer(); ?>
+
+
