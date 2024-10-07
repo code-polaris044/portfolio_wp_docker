@@ -3,9 +3,9 @@
     <div class="l-logo">
       <a href="<?php echo esc_url(home_url()); ?>/">
         <picture class="l-logo__picture">
-          <source type="image/avif" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/dist/images/common/logo.avif">
-          <source type="image/webp" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/dist/images/common/logo.webp">
-          <img src="<?php echo esc_url(get_template_directory_uri()); ?>/dist/images/common/logo.png" alt="ロゴ">
+          <!-- <source type="image/avif" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/dist/images/common/logo.avif">
+          <source type="image/webp" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/dist/images/common/logo.webp"> -->
+          <img src="<?php echo esc_url(get_template_directory_uri()); ?>/src/images/common/logo.png" alt="ロゴ">
         </picture>
       </a>
     </div>

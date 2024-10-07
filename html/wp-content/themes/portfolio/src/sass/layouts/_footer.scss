@@ -1,4 +1,4 @@
-@use "../components/"as *;
+@use "../components/" as *;
 
 .l-footer {
     background: $c-assort;
@@ -14,10 +14,10 @@
 
     // ロゴ
     .l-logo {
-        width: min(100%, 164px);
+        width: min(100%, 50px);
 
         @include tab {
-            width: min(120px);
+            width: min(36px);
         }
 
         .l-logo__picture {
@@ -26,7 +26,7 @@
             height: auto;
             aspect-ratio: 5/1;
             object-fit: cover;
-            transition: all .4s ease-in-out;
+            transition: all 0.4s ease-in-out;
         }
 
         &:hover {
@@ -35,10 +35,9 @@
     }
 
     .l-footer__nav {
-
         .sns__container {
             display: flex;
-            gap: 20px
+            gap: 20px;
         }
     }
 }
@@ -99,9 +98,10 @@
 }
 
 .l-copy {
+    border-top: 1px $c-base solid;
     text-align: center;
-    background: $c-accent;
-    padding: 10px 0;
+    background: $c-assort;
+    padding: 4px 0;
     color: $c-white;
     @include f-base(1.4rem, 300);
 }

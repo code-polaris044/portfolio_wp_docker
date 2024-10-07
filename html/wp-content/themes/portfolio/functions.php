@@ -102,6 +102,35 @@ function add_files()
 }
 add_action('wp_enqueue_scripts', 'add_files');
 
+function enqueue_vanta_scripts()
+{
+   	wp_enqueue_script('three-js', '//cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js', null, true);
+    wp_enqueue_script('vanta-globe', '//cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js', null, true);
+}
+add_action('wp_enqueue_scripts', 'enqueue_vanta_scripts');
+
+function add_vanta_script() {
+    ?>
+    <script>
+		VANTA.GLOBE({
+		el: "#MV",
+		mouseControls: true,
+		touchControls: true,
+		gyroControls: false,
+		minHeight: 200.00,
+		minWidth: 200.00,
+		scale: 1.00,
+		scaleMobile: 0.60,
+		size: 0.90,
+		backgroundColor: 0x3b3b3b,
+		color: 0x7f7030,
+		backgroundColor: 0x1a2b48,
+		})
+    </script>
+    <?php
+}
+add_action('wp_footer', 'add_vanta_script');
+
 // --------------------------------
 // ブロックエディタにテーマ内のcssを反映
 // --------------------------------

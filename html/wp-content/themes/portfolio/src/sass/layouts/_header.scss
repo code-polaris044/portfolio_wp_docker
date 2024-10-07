@@ -1,4 +1,4 @@
-@use "../components/"as *;
+@use "../components/" as *;
 
 //ローディング画面
 #loading {
@@ -29,15 +29,16 @@
         display: block;
         width: 100%;
         height: 100%;
-        background: linear-gradient(to bottom,
-                hsl(340, 75%, 73%),
-                hsla(282, 100%, 97%, 0.3) 90%,
-                hsla(221, 100%, 95%, 0.5));
+        background: linear-gradient(
+            to bottom,
+            hsl(340, 75%, 73%),
+            hsla(282, 100%, 97%, 0.3) 90%,
+            hsla(221, 100%, 95%, 0.5)
+        );
 
         animation: color-fade 3s infinite linear;
     }
 }
-
 
 .loading__circle {
     opacity: 0.4;
@@ -154,10 +155,10 @@
 
 // ロゴ
 .l-logo {
-    width: min(100%, 164px);
+    width: min(100%, 100px);
 
     @include tab {
-        width: min(120px);
+        width: min(36px);
     }
 
     .l-logo__picture {
@@ -166,11 +167,11 @@
         height: auto;
         aspect-ratio: 5/1;
         object-fit: cover;
-        transition: all .4s ease-in-out;
+        transition: all 0.4s ease-in-out;
     }
 
     &:hover {
-        box-shadow: 1px 1px 2px rgba($c-assort-btn, 0.5);
+        animation: rumble 0.12s linear infinite;
     }
 }
 
@@ -250,7 +251,7 @@
         a::after {
             position: absolute;
             left: 0;
-            content: '';
+            content: "";
             width: 100%;
             height: 2px;
             background: hsla(0, 0%, 0%, 0.8);
@@ -265,11 +266,16 @@
         }
     }
 
-    .l-menu__item:not(:first-child, :nth-child(2), :nth-child(3), :nth-child(4)) {
+    .l-menu__item:not(
+            :first-child,
+            :nth-child(2),
+            :nth-child(3),
+            :nth-child(4)
+        ) {
         @include f-base($fs-normal, 300);
 
         a {
-            @include btn(1em, .4em, $c-white, $c-assort, $c-assort-btn);
+            @include btn(1em, 0.4em, $c-white, $c-assort, $c-assort-btn);
             position: relative;
             border-radius: 10em;
             transition: transform 0.3s;
@@ -278,7 +284,7 @@
         a::after {
             position: static;
             left: 0;
-            content: '';
+            content: "";
             width: 100%;
             height: 2px;
             background: initial;
@@ -408,7 +414,7 @@
                 &:hover {
                     background: $c-assort;
                     color: $c-white;
-                    letter-spacing: .5em;
+                    letter-spacing: 0.5em;
                 }
             }
         }
@@ -416,11 +422,11 @@
 }
 
 // sp current
-.home .l-sp__menu>.l-menu__item:nth-child(1),
-.category-news .l-sp__menu>.l-menu__item:nth-child(2),
-.page-id-28 .l-sp__menu>.l-menu__item:nth-child(3),
-.post-type-archive-gallery .l-sp__menu>.l-menu__item:nth-child(4),
-.page-id-31 .l-sp__menu>.l-menu__item:nth-child(5) {
-    background: rgba($c-accent, .8);
+.home .l-sp__menu > .l-menu__item:nth-child(1),
+.category-news .l-sp__menu > .l-menu__item:nth-child(2),
+.page-id-28 .l-sp__menu > .l-menu__item:nth-child(3),
+.post-type-archive-gallery .l-sp__menu > .l-menu__item:nth-child(4),
+.page-id-31 .l-sp__menu > .l-menu__item:nth-child(5) {
+    background: rgba($c-accent, 0.8);
     color: $c-white;
 }

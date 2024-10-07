@@ -1,15 +1,13 @@
 <?php get_header(); ?>
+
 <main class="p-front__main">
   <div class="p-frontWrap">
     <section class="p-mv u-mb__100">
       <div class="p-mvWrap">
-        <div class="p-slide">
-          <div class="p-slide__image"></div>
-          <div class="p-slide__image"></div>
-          <div class="p-slide__image"></div>
+        <div id="MV">
+          <h1 class="p-mv__title"><span>Shunya</span><br class="sp__br"><span>Sugawara’s</span><br><span>Profile</span><br class="sp__br"><span>Website</span></h1>
+          <div class="p-front__scrollDown"><span>Scroll</span></div>
         </div>
-        <h1 class="p-mv__title"><span>Shunya</span><br class="sp__br"><span>Sugawara’s</span><br><span>Profile</span><br class="sp__br"><span>Website</span></h1>
-        <div class="p-front__scrollDown"><span>Scroll</span></div>
       </div>
     </section>
     <section class="p-front__news">
@@ -110,6 +108,23 @@
         <?php
         include('templates/insta.php');
         ?>
+      </div>
+    </section>
+    <section class="p-front__sns">
+      <div class="p-front__sns__inner">
+          <div class="p-front_x">
+            <h2 class="p-front__section__title u-mb__30">公式X</h2>
+            <div class="p-front_x_contents">
+              <a class="twitter-timeline" data-lang="ja" data-width="600" data-height="600" data-theme="light" href="https://twitter.com/code_polaris044?ref_src=twsrc%5Etfw">Tweets by code_polaris044</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+          </div>
+          <div class="p-front_github">
+            <h2 class="p-front__section__title u-mb__30">Github</h2>
+            <div class="p-front_github_contents">
+              <iframe src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=code-polaris044&theme=algolia&count_private=true" frameborder="0" style="width: 100%; height: 100%;"></iframe>
+              <iframe src="https://github-readme-stats.vercel.app/api/top-langs/?username=code-polaris044&layout=compact&theme=tokyonight&hide_progress=true&langs_count=50&count_private=true" frameborder="0" style="width: 100%; height: 100%;"></iframe>
+            </div>
+          </div>
       </div>
     </section>
     <section class="p-front__contact">

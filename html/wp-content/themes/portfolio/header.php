@@ -10,8 +10,10 @@
 	<meta name="format-detection" content="email=no,telephone=no,address=no">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="icon" href="<?php echo esc_url(get_template_directory_uri()); ?>/src/images/common/favicon.ico" type="image/x-icon">
 	<?php wp_head(); ?>
 </head>
+
 
 <?php get_header(); ?>
 
@@ -33,9 +35,9 @@
 					<div class="l-logo">
 						<a href="<?php echo esc_url(home_url()); ?>/">
 							<picture class="l-logo__picture">
-								<source type="image/avif" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/dist/images/common/logo.avif">
-								<source type="image/webp" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/dist/images/common/logo.webp">
-								<img src="<?php echo esc_url(get_template_directory_uri()); ?>/dist/images/common/logo.png" alt="ロゴ">
+								<!-- <source type="image/avif" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/dist/images/common/logo.avif">
+								<source type="image/webp" srcset="<?php echo esc_url(get_template_directory_uri()); ?>/dist/images/common/logo.webp"> -->
+								<img src="<?php echo esc_url(get_template_directory_uri()); ?>/src/images/common/logo.png" alt="ロゴ">
 							</picture>
 						</a>
 					</div>
