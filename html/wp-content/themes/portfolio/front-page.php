@@ -67,7 +67,8 @@
             <p class="glass__text p-jobCareer__glass__text">・2021年 9月 北海道糖業株式会社 一身上の都合で退職</p>
             <p class="glass__text p-jobCareer__glass__text">・2022年 4月 〜 11月 web開発のインターンシップ・アルバイトを経験</p>
             <p class="glass__text p-jobCareer__glass__text">・2022年 12月 株式会社Workup 入社 web制作部配属</p>
-            <p class="glass__text p-jobCareer__glass__text">・2023年 5月 株式会社Workup 雇用契約満了</p>
+            <p class="glass__text p-jobCareer__glass__text">・2023年 5月 株式会社Workup 会社都合退職</p>
+            <p class="glass__text p-jobCareer__glass__text">・2023年 8月 株式会社アリスタイル 入社</p>
           </div>
           <div class="jobCareer__picWrap">
             <picture class="jobCareer__pic">
@@ -111,18 +112,27 @@
       </div>
     </section>
     <section class="p-front__sns">
+      <h2 class="p-front__section__title u-mb__30">X(旧 twitter)</h2>
       <div class="p-front__sns__inner">
           <div class="p-front_x">
-            <h2 class="p-front__section__title u-mb__30">公式X</h2>
-            <div class="p-front_x_contents">
-              <a class="twitter-timeline" data-lang="ja" data-width="600" data-height="600" data-theme="light" href="https://twitter.com/code_polaris044?ref_src=twsrc%5Etfw">Tweets by code_polaris044</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            <div class="p-front_my_x_contents">
+              <h3 class="p-front__section__lead u-mb__20">個人で運用しているX</h3>
+              <p class="u-mb__30 p-front__sns__text">Shell Designというアカウント名で、読書した技術本・スキル・日常を投稿しています。</p>
+              <a class="twitter-timeline" data-lang="ja" data-width="500" data-height="600" href="https://twitter.com/code_polaris044?ref_src=twsrc%5Etfw">Tweets by code_polaris044</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
             </div>
           </div>
           <div class="p-front_github">
-            <h2 class="p-front__section__title u-mb__30">Github</h2>
-            <div class="p-front_github_contents">
-              <iframe src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=code-polaris044&theme=algolia&count_private=true" frameborder="0" style="width: 100%; height: 100%;"></iframe>
-              <iframe src="https://github-readme-stats.vercel.app/api/top-langs/?username=code-polaris044&layout=compact&theme=tokyonight&hide_progress=true&langs_count=50&count_private=true" frameborder="0" style="width: 100%; height: 100%;"></iframe>
+            <div class="p-front_company_x_contents">
+              <div class="p-front_company_x_item  u-mb__30">
+                  <h3 class="p-front__section__lead u-mb__20">会社で運用しているX</h3>
+                  <p class="u-mb__30">自社マーケティングのリーダーをしており、会社の公式アカウントを運営しています。</p>
+                  <a class="twitter-timeline" data-lang="ja" data-width="500" data-height="300" href="https://twitter.com/alistyle_inc?ref_src=twsrc%5Etfw">Tweets by alistyle_inc</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              </div>
+              <div class="p-front_company_x_item">
+                  <h3 class="p-front__section__lead u-mb__20">会社で提供しているサービス名で運用しているX</h3>
+                  <p class="u-mb__30">DX関連の自社サービスを展開しており、会社のアカウントとは別に運営しています。</p>
+                  <a class="twitter-timeline" data-lang="ja" data-width="400" data-height="211" href="https://twitter.com/AlistyleDx51541?ref_src=twsrc%5Etfw">Tweets by AlistyleDx51541</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              </div>
             </div>
           </div>
       </div>
@@ -138,9 +148,9 @@
           <p class="p-front__section__lead u-mb__20">お気軽にお問い合わせください</p>
           <address class="p-front__address">
             <h3 class="p-front__section__subtitle u-mb__20">TEL</h3>
-            <p class="p-front__section__text u-mb__20">080-0000-000</p>
+            <p class="p-front__section__text u-mb__20">080-4167-4690</p>
             <h3 class="p-front__section__subtitle u-mb__20">住所</h3>
-            <p class="p-front__section__text u-mb__50">札幌市 北区 新琴似</p>
+            <p class="p-front__section__text u-mb__50">北海道 札幌市 北区 新琴似</p>
           </address>
           <button class="p-front__btn">
             <a href="<?php echo get_the_permalink(); ?>/contact/" class="p-front__btn__link">Contact</a>

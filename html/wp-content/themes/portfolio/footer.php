@@ -12,6 +12,11 @@
     <nav id="l-footer__nav" class="l-footer__nav">
       <ul class="sns__container">
         <li class="sns__item">
+          <a href="https://x.com/code_polaris044" target="_blank" rel="noopener noreferrer" class="l-sns__link">
+            <i class="fa-brands fa-x-twitter"></i>
+          </a>
+        </li>
+        <li class="sns__item">
           <a href="https://github.com/code-polaris044" target="_blank" rel="noopener noreferrer" class="l-sns__link">
             <i class="fa-brands fa-github"></i>
           </a>
