@@ -53,6 +53,12 @@ ScrollReveal().reveal(
     }
 );
 
+ScrollReveal().reveal(".p-x__title", {
+    delay: 100,
+    origin: "left",
+    interval: 200,
+});
+
 ScrollReveal().reveal(".l-lower__mv__title", {
     delay: 100,
     origin: "left",

@@ -112,13 +112,13 @@
       </div>
     </section>
     <section class="p-front__sns">
-      <h2 class="p-front__section__title u-mb__30">X(旧 twitter)</h2>
+      <h2 class="p-front__section__title u-mb__30 p-x__title">X(旧 twitter)</h2>
       <div class="p-front__sns__inner">
           <div class="p-front_x">
             <div class="p-front_my_x_contents">
               <h3 class="p-front__section__lead u-mb__20">個人で運用しているX</h3>
               <p class="u-mb__30 p-front__sns__text">Shell Designというアカウント名で、読書した技術本・スキル・日常を投稿しています。</p>
-              <a class="twitter-timeline" data-lang="ja" data-width="500" data-height="600" href="https://twitter.com/code_polaris044?ref_src=twsrc%5Etfw">Tweets by code_polaris044</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              <a class="twitter-timeline" data-lang="ja" data-width="550" data-height="740" href="https://twitter.com/code_polaris044?ref_src=twsrc%5Etfw">Tweets by code_polaris044</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
             </div>
           </div>
           <div class="p-front_github">
@@ -126,12 +126,12 @@
               <div class="p-front_company_x_item  u-mb__30">
                   <h3 class="p-front__section__lead u-mb__20">会社で運用しているX</h3>
                   <p class="u-mb__30">自社マーケティングのリーダーをしており、会社の公式アカウントを運営しています。</p>
-                  <a class="twitter-timeline" data-lang="ja" data-width="500" data-height="300" href="https://twitter.com/alistyle_inc?ref_src=twsrc%5Etfw">Tweets by alistyle_inc</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                  <a class="twitter-timeline" data-lang="ja" data-width="550" data-height="300" href="https://twitter.com/alistyle_inc?ref_src=twsrc%5Etfw">Tweets by alistyle_inc</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
               </div>
               <div class="p-front_company_x_item">
                   <h3 class="p-front__section__lead u-mb__20">会社で提供しているサービス名で運用しているX</h3>
                   <p class="u-mb__30">DX関連の自社サービスを展開しており、会社のアカウントとは別に運営しています。</p>
-                  <a class="twitter-timeline" data-lang="ja" data-width="400" data-height="211" href="https://twitter.com/AlistyleDx51541?ref_src=twsrc%5Etfw">Tweets by AlistyleDx51541</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                  <a class="twitter-timeline" data-lang="ja" data-width="550" data-height="300" href="https://twitter.com/AlistyleDx51541?ref_src=twsrc%5Etfw">Tweets by AlistyleDx51541</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
               </div>
             </div>
           </div>

@@ -33536,6 +33536,11 @@ ScrollReveal().reveal(".p-pastProjects__glass__title, .p-pastProjects__glass__te
   delay: 100,
   origin: "right"
 });
+ScrollReveal().reveal(".p-x__title", {
+  delay: 100,
+  origin: "left",
+  interval: 200
+});
 ScrollReveal().reveal(".l-lower__mv__title", {
   delay: 100,
   origin: "left",
