@@ -158,7 +158,7 @@
     width: min(100%, 100px);
 
     @include tab {
-        width: min(36px);
+        width: min(54px);
     }
 
     .l-logo__picture {
@@ -439,6 +439,16 @@
             }
         }
     }
+}
+
+// pc current
+.home .l-sp__menu > .l-menu__item:nth-child(1),
+.category-news .l-sp__menu > .l-menu__item:nth-child(2),
+.page-id-28 .l-sp__menu > .l-menu__item:nth-child(3),
+.post-type-archive-gallery .l-sp__menu > .l-menu__item:nth-child(4),
+.page-id-31 .l-sp__menu > .l-menu__item:nth-child(5) {
+    background: rgba($c-accent, 0.8);
+    color: $c-white;
 }
 
 // sp current
