@@ -697,6 +697,7 @@
 .p-front__sns {
     background: $c-base-reverse;
     padding: 100px 0;
+
     @include tab {
         padding: 50px 0;
     }
@@ -710,13 +711,23 @@
 
 .p-front__sns__inner {
     display: flex;
-    gap: 50px;
-    width: min(100%, $common-contents-width-pc);
+    gap: 60px;
+    width: $common-contents-width-pc;
     margin-inline: auto;
+
+    @include pc-m {
+        overflow-x: scroll;
+        overflow-y: hidden;
+        scrollbar-width: thin;
+        scrollbar-color: black transparent;
+        scrollbar-gutter: stable;
+    }
 
     @include tab {
         flex-direction: column;
-        width: min(100%, $common-contents-width-tab);
+        width: $common-contents-width-tab;
+        margin-inline: auto;
+        overflow-y: hidden;
     }
 
     .p-front__section__lead {
@@ -728,4 +739,26 @@
     .p-front__sns__text {
         line-height: 1.4;
     }
+}
+
+.p-front_x,
+.p-front_company_x_contents_wrap {
+    margin-inline: auto;
+    width: fit-content;
+
+    @include sp {
+        width: 100%;
+    }
+}
+
+.p-front_x_container {
+    width: 104%;
+}
+
+.p-x_subtitle {
+    margin-bottom: 40px;
+}
+
+.p-front_company_x_item {
+    margin-bottom: 40px;
 }

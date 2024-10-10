@@ -437,6 +437,8 @@ button[name="submitBack"] {
     border: 1px solid #1b201a;
     color: #1b201a;
     transition: opacity 0.6s;
+    background-color: $c-accent;
+    text-align: center;
 }
 
 .mw-wp-form__buttons button[type="submit"]:hover {

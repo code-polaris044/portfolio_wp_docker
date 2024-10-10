@@ -230,9 +230,28 @@
 
 //ヘッダーナビ
 
+.menu-item {
+    &:hover {
+        animation: text-blur 0.5s;
+    }
+
+    /* アニメーション設定 */
+    @keyframes text-blur {
+        0% {
+            filter: blur(0);
+        }
+        50% {
+            filter: blur(2px); /* ぼかしの強さ */
+        }
+        100% {
+            filter: blur(0);
+        }
+    }
+}
+
 .l-menu {
     display: flex;
-    gap: 10px;
+    gap: 24px;
     align-items: center;
 
     @include tab {
@@ -383,9 +402,9 @@
 
     @include tab {
         width: 100%;
-        display: flex;
-        flex-direction: column;
-        gap: 10;
+        display: grid;
+        place-content: center;
+        gap: 10px;
         align-items: center;
         background: $c-base-reverse;
         position: absolute;
@@ -394,6 +413,7 @@
         transition: 0.5s;
         z-index: $z2;
         padding: 60px 0;
+        height: 100vh;
 
         .l-menu__item {
             @include f-base($fs-normal, 400);

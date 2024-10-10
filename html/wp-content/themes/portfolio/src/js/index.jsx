@@ -52,13 +52,6 @@ ScrollReveal().reveal(
         origin: "right",
     }
 );
-
-ScrollReveal().reveal(".p-x__title", {
-    delay: 100,
-    origin: "left",
-    interval: 200,
-});
-
 ScrollReveal().reveal(".l-lower__mv__title", {
     delay: 100,
     origin: "left",
@@ -83,13 +76,27 @@ ScrollReveal().reveal(".p-instagram__title", {
     interval: 800,
 });
 ScrollReveal().reveal(".instagram__img__wrap", {
-    delay: 100,
+    delay: 50,
     origin: "bottom",
-    interval: 200,
+    interval: 50,
     reset: false,
 });
-ScrollReveal().reveal(".p-front__contact__textarea", {
+ScrollReveal().reveal(".p-x__title", {
     delay: 100,
+    origin: "left",
+});
+ScrollReveal().reveal(".p-front_my_x_contents", {
+    delay: 200,
+    origin: "top",
+    interval: 200,
+});
+ScrollReveal().reveal(".p-front_company_x_contents_wrap", {
+    delay: 200,
+    origin: "bottom",
+    interval: 200,
+});
+ScrollReveal().reveal(".p-front__contact__textarea", {
+    delay: 400,
     origin: "right",
     interval: 200,
 });
