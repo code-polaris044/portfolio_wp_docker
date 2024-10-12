@@ -49,20 +49,20 @@
 				</div>
 				<nav id="l-header__nav" class="l-header__nav">
 					<div class="l-header__navWrap">
-						<div class="l-hamburger">
+						<button class="l-hamburger">
 							<span></span>
 							<span></span>
 							<span></span>
-						</div>
+						</button>
 						<?php
 						wp_nav_menu(array(
-							'menu' => 'menu',
+							'menu' => 'globalNav',
 							'menu_class' => 'l-menu',
 						));
 						?>
 						<?php
 						wp_nav_menu(array(
-							'menu' => 'menu',
+							'menu' => 'globalNavSP',
 							'menu_class' => 'l-sp__menu',
 						));
 						?>

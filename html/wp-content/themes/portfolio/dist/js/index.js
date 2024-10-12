@@ -22,6 +22,9 @@ const addLoadedClass = () => {
   spinner.classList.add("loaded");
 };
 window.addEventListener("load", addLoadedClass);
+
+// let isMenuOpen = false; // メニューの状態を管理するフラグ
+
 const toggleBodyOverflow = () => {
   // htmlタグを取得
   let html = document.documentElement;
@@ -29,27 +32,61 @@ const toggleBodyOverflow = () => {
   // 現在のhtmlのスタイルを取得
   let htmlStyle = window.getComputedStyle(html);
 
-  // htmlのoverflowスタイルがhiddenかどうかを確認
-  if (htmlStyle.overflowY === "hidden") {
-    // もしoverflowがhiddenなら、htmlのスタイルを元に戻す
+  // メニューが開いているかどうかを確認
+  if (isMenuOpen) {
+    // メニューが開いている場合、閉じる処理
     html.style.height = "";
-    html.style.overflow = "";
+    html.style.overflowY = "auto"; // autoに戻す
+    isMenuOpen = false; // メニューを閉じた状態に更新
   } else {
-    // そうでなければ、htmlにheight: 100%とoverflow: hiddenを設定し、スクロールを無効にする
+    // メニューが閉じている場合、開く処理
     html.style.height = "100%";
-    html.style.overflowY = "hidden";
+    html.style.overflowY = "hidden"; // スクロールを無効にする
+    isMenuOpen = true; // メニューを開いた状態に更新
   }
 };
+
 document.addEventListener("DOMContentLoaded", function () {
   // ハンバーガーメニューボタンがクリックされたときのイベントハンドラを設定
   document.querySelector(".l-hamburger").addEventListener("click", toggleBodyOverflow);
+
+  // ブラウザのリサイズイベントを監視
+  window.addEventListener("resize", function () {
+    let html = document.documentElement; // htmlタグを再取得
+    // ブラウザ幅が961px以上の場合、overflowをautoに設定
+    if (window.innerWidth >= 961) {
+      html.style.overflowY = "auto";
+      isMenuOpen = false; // メニューを閉じた状態に更新
+    }
+  });
 });
 
 //ハンバーガー
+// export function toggleHamburger() {
+//     document.querySelector(".l-hamburger").classList.toggle("active");
+//     document.querySelector(".l-sp__menu").classList.toggle("active");
+// }
+
+let isMenuOpen = false; // メニューの状態を管理するフラグ
+
 function toggleHamburger() {
   document.querySelector(".l-hamburger").classList.toggle("active");
   document.querySelector(".l-sp__menu").classList.toggle("active");
+  isMenuOpen = !isMenuOpen; // メニューの状態を更新
 }
+
+// ブラウザのリサイズイベントを監視
+window.addEventListener("resize", function () {
+  if (window.innerWidth >= 961 && isMenuOpen) {
+    // メニューが開いていて、ブラウザ幅が961px以上の場合
+    toggleHamburger(); // メニューを閉じる
+  }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  // ハンバーガーメニューボタンがクリックされたときのイベントハンドラを設定
+  document.querySelector(".l-hamburger").addEventListener("click", toggleHamburger);
+});
 
 /***/ }),
 

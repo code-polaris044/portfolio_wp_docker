@@ -374,6 +374,7 @@
     /* ハンバーガーメニューの1番目の線 */
     top: 50%;
     transform: rotate(405deg);
+    background-color: $c-base-reverse;
 }
 
 .l-hamburger.active span:nth-of-type(2) {
@@ -386,6 +387,7 @@
     /* ハンバーガーメニューの3番目の線 */
     top: 50%;
     transform: rotate(-405deg);
+    background-color: $c-base-reverse;
 }
 
 .l-sp__menu {
@@ -398,17 +400,14 @@
     @include tab {
         width: 100%;
         display: grid;
-        place-content: center;
-        gap: 10px;
-        align-items: center;
-        background: $c-base-reverse;
+        background: rgba(26, 43, 72, 0.85);
         position: absolute;
         top: 0;
         left: 0;
         transition: 0.5s;
         z-index: $z2;
-        padding: 60px 0;
         height: 100vh;
+        padding-top: 70px;
 
         .l-menu__item {
             @include f-base($fs-normal, 400);

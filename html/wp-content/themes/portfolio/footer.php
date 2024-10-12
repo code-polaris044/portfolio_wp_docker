@@ -9,6 +9,9 @@
         </picture>
       </a>
     </div>
+    <div class="bl_footer_top">
+      <a href="#l-header">topへ</a>
+    </div>
     <nav id="l-footer__nav" class="l-footer__nav">
       <ul class="sns__container">
         <li class="sns__item">
