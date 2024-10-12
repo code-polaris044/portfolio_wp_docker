@@ -11,15 +11,41 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   addLoadedClass: function() { return /* binding */ addLoadedClass; },
+/* harmony export */   toggleBodyOverflow: function() { return /* binding */ toggleBodyOverflow; },
 /* harmony export */   toggleHamburger: function() { return /* binding */ toggleHamburger; }
 /* harmony export */ });
 
 
+//ローディングJs
 const addLoadedClass = () => {
   const spinner = document.getElementById("loading");
   spinner.classList.add("loaded");
 };
 window.addEventListener("load", addLoadedClass);
+const toggleBodyOverflow = () => {
+  // htmlタグを取得
+  let html = document.documentElement;
+
+  // 現在のhtmlのスタイルを取得
+  let htmlStyle = window.getComputedStyle(html);
+
+  // htmlのoverflowスタイルがhiddenかどうかを確認
+  if (htmlStyle.overflowY === "hidden") {
+    // もしoverflowがhiddenなら、htmlのスタイルを元に戻す
+    html.style.height = "";
+    html.style.overflow = "";
+  } else {
+    // そうでなければ、htmlにheight: 100%とoverflow: hiddenを設定し、スクロールを無効にする
+    html.style.height = "100%";
+    html.style.overflowY = "hidden";
+  }
+};
+document.addEventListener("DOMContentLoaded", function () {
+  // ハンバーガーメニューボタンがクリックされたときのイベントハンドラを設定
+  document.querySelector(".l-hamburger").addEventListener("click", toggleBodyOverflow);
+});
+
+//ハンバーガー
 function toggleHamburger() {
   document.querySelector(".l-hamburger").classList.toggle("active");
   document.querySelector(".l-sp__menu").classList.toggle("active");

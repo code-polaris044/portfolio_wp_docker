@@ -17,6 +17,7 @@ html {
     scroll-behavior: smooth;
     overflow-x: clip;
     overflow-x: hidden;
+    overflow-y: auto;
 }
 
 body {
@@ -28,7 +29,6 @@ body {
     color: $c-text;
     background-color: $c-base;
     overflow-x: clip;
-    overflow-x: hidden;
     scroll-behavior: smooth;
 }
 
