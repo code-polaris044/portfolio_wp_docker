@@ -14,7 +14,6 @@ html {
     line-height: 1.15;
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: transparent;
-    // scroll-behavior: smooth;
     overflow-x: clip;
     overflow-x: hidden;
     overflow-y: auto;
@@ -29,7 +28,6 @@ body {
     color: $c-text;
     background-color: $c-base;
     overflow-x: clip;
-    // scroll-behavior: smooth;
 }
 
 .wrapper {

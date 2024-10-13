@@ -1,4 +1,7 @@
 <footer id="l-footer" class="l-footer">
+  <div class="bl_footer_top">
+    <a href="#l-header" class="el_footer_top_link">TOP<i class="fa-solid fa-jet-fighter-up"></i></a>
+  </div>
   <div class="l-footerWeap">
     <div class="l-logo">
       <a href="<?php echo esc_url(home_url()); ?>/">
@@ -8,9 +11,6 @@
           <img src="<?php echo esc_url(get_template_directory_uri()); ?>/src/images/common/logo.png" alt="ロゴ">
         </picture>
       </a>
-    </div>
-    <div class="bl_footer_top">
-      <a href="#l-header">topへ</a>
     </div>
     <nav id="l-footer__nav" class="l-footer__nav">
       <ul class="sns__container">

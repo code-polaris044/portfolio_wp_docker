@@ -129,14 +129,14 @@
                   <h3 class="p-front__section__lead p-x_subtitle">会社で運用しているX</h3>
                   <p class="u-mb__30">自社マーケティングのリーダーをしており、会社の公式アカウントを運営しています。</p>
                   <div class="p-front_x_container">
-                    <a class="twitter-timeline" data-lang="ja" data-width="550" data-height="300" href="https://twitter.com/alistyle_inc?ref_src=twsrc%5Etfw">Tweets by alistyle_inc</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                    <a class="twitter-timeline" data-lang="ja" data-width="550" data-height="280" href="https://twitter.com/alistyle_inc?ref_src=twsrc%5Etfw">Tweets by alistyle_inc</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                   </div>
               </div>
               <div class="p-front_company_x_item">
                   <h3 class="p-front__section__lead p-x_subtitle">会社で提供しているサービス名で運用しているX</h3>
                   <p class="u-mb__30">DX関連の自社サービスを展開しており、会社のアカウントとは別に運営しています。</p>
                   <div class="p-front_x_container">
-                    <a class="twitter-timeline" data-lang="ja" data-width="550" data-height="300" href="https://twitter.com/AlistyleDx51541?ref_src=twsrc%5Etfw">Tweets by AlistyleDx51541</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                    <a class="twitter-timeline" data-lang="ja" data-width="550" data-height="280" href="https://twitter.com/AlistyleDx51541?ref_src=twsrc%5Etfw">Tweets by AlistyleDx51541</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                   </div>
               </div>
             </div>
