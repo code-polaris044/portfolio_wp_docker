@@ -364,7 +364,7 @@ button[name="submitBack"] {
 }
 
 .mw-wp-form__label--req {
-    background: #be1d1d;
+    background: $c-accent;
 }
 
 .mw-wp-form__label--opt {
@@ -437,7 +437,6 @@ button[name="submitBack"] {
     border: 1px solid #1b201a;
     color: #1b201a;
     transition: opacity 0.6s;
-    background-color: $c-accent;
     text-align: center;
 }
 
@@ -455,6 +454,15 @@ button[name="submitBack"] {
     border-top: 1px solid #1b201a;
     border-right: 1px solid #1b201a;
     content: "";
+}
+
+.mw-wp-form__buttons button[value="back"] {
+    color: #fff;
+}
+
+.mw-wp-form__buttons button[value="back"]:before {
+    border-top: 1px solid #fff;
+    border-right: 1px solid #fff;
 }
 
 .mw_wp_form_confirm .mw-wp-form dd {

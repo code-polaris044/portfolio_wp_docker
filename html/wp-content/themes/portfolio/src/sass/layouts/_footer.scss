@@ -106,6 +106,7 @@
     color: $c-white;
     @include f-base(1.4rem, 300);
 }
+
 .bl_footer_top {
     display: flex;
     background-color: $c-white;
@@ -122,5 +123,10 @@
         height: 100%;
         text-align: center;
         padding-top: 3px;
+        letter-spacing: 0.3em;
+
+        &:hover {
+            opacity: 0.75;
+        }
     }
 }
