@@ -10,8 +10,7 @@
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   addLoadedClass: function() { return /* binding */ addLoadedClass; },
-/* harmony export */   toggleHamburger: function() { return /* binding */ toggleHamburger; }
+/* harmony export */   addLoadedClass: function() { return /* binding */ addLoadedClass; }
 /* harmony export */ });
 
 
@@ -23,42 +22,50 @@ const addLoadedClass = () => {
 window.addEventListener("load", addLoadedClass);
 
 // ハンバーガーメニューのトグル関数
-const toggleBodyOverflow = () => {
+const toggleHamburger = () => {
   const html = document.documentElement;
-  const htmlStyle = window.getComputedStyle(html);
-  if (htmlStyle.overflowY === "hidden") {
-    html.style.height = "";
-    html.style.overflowY = "auto";
-  } else {
+  const hamburger = document.querySelector(".l-hamburger");
+  const menu = document.querySelector(".l-sp__menu");
+
+  // メニューとボタンのactiveクラスをトグル
+  hamburger.classList.toggle("active");
+  menu.classList.toggle("active");
+
+  // メニューがアクティブかどうかでoverflowYを設定
+  if (menu.classList.contains("active")) {
     html.style.height = "100%";
     html.style.overflowY = "hidden";
+  } else {
+    html.style.height = "";
+    html.style.overflowY = "auto";
   }
 };
 
 // ウィンドウリサイズ時の処理
 const onWindowResize = () => {
   const html = document.documentElement;
+  const menu = document.querySelector(".l-sp__menu");
   if (window.innerWidth >= 961) {
     // 幅が961px以上になったらスクロールを有効にする
     html.style.height = "";
     html.style.overflowY = "auto";
+
+    // メニューが開いている場合は閉じる
+    if (menu.classList.contains("active")) {
+      menu.classList.remove("active");
+      document.querySelector(".l-hamburger").classList.remove("active");
+    }
   }
 };
 
 // DOMが読み込まれたときの初期化処理
 document.addEventListener("DOMContentLoaded", function () {
   // ハンバーガーメニューボタンのクリックイベントを設定
-  document.querySelector(".l-hamburger").addEventListener("click", toggleBodyOverflow);
+  document.querySelector(".l-hamburger").addEventListener("click", toggleHamburger);
 
   // ウィンドウのリサイズイベントを設定
   window.addEventListener("resize", onWindowResize);
 });
-
-//ハンバーガー
-function toggleHamburger() {
-  document.querySelector(".l-hamburger").classList.toggle("active");
-  document.querySelector(".l-sp__menu").classList.toggle("active");
-}
 
 /***/ }),
 
@@ -33691,9 +33698,6 @@ window.onresize = function () {
   }
 };
 
-document.querySelector(".l-hamburger").addEventListener("click", function () {
-  (0,_common_js__WEBPACK_IMPORTED_MODULE_0__.toggleHamburger)();
-});
 
 
 function App() {
