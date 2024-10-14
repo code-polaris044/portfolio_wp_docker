@@ -1,4 +1,4 @@
-@use "../components/"as *;
+@use "../components/" as *;
 
 .c-mainWrap {
     background: $c-base-reverse;
@@ -9,13 +9,11 @@
     margin: 0 auto;
     padding: 100px 0;
 
-
     @include tab {
         width: $common-contents-width-tab;
         padding: 50px 0;
     }
 }
-
 
 .p-about__titleWrap {
     @include noto-sans-jp($fs-c-32, 600);
@@ -40,7 +38,6 @@
     margin: 0 auto;
     padding: 100px 0;
 
-
     @include tab {
         width: $common-contents-width-tab;
         padding: 50px 0;
@@ -61,7 +58,7 @@
     .p-about__imgWrap {
         width: min(100%, 160px);
         height: auto;
-
+        text-align: center;
 
         .p-about___img {
             width: 100%;
@@ -89,7 +86,7 @@
     .p-about__dt {
         border-bottom: 1px $c-text dotted;
         padding: 30px 0 30px 40px;
-        font-weight: 500;
+        font-weight: 400;
         line-height: 1.6;
 
         @include tab {
@@ -101,7 +98,7 @@
         border-bottom: 1px $c-text dotted;
         padding: 30px 0;
         line-height: 1.6;
-        font-weight: 500;
+        font-weight: 400;
 
         @include tab {
             padding: 20px 0;
@@ -110,7 +107,6 @@
 }
 
 .p-about__mapWrap {
-
     .p-about__map {
         width: 100%;
         height: auto;
