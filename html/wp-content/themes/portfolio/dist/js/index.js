@@ -11,7 +11,6 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   addLoadedClass: function() { return /* binding */ addLoadedClass; },
-/* harmony export */   toggleBodyOverflow: function() { return /* binding */ toggleBodyOverflow; },
 /* harmony export */   toggleHamburger: function() { return /* binding */ toggleHamburger; }
 /* harmony export */ });
 
@@ -22,27 +21,37 @@ const addLoadedClass = () => {
   spinner.classList.add("loaded");
 };
 window.addEventListener("load", addLoadedClass);
+
+// ハンバーガーメニューのトグル関数
 const toggleBodyOverflow = () => {
-  // htmlタグを取得
-  let html = document.documentElement;
-
-  // 現在のhtmlのスタイルを取得
-  let htmlStyle = window.getComputedStyle(html);
-
-  // htmlのoverflowスタイルがhiddenかどうかを確認
+  const html = document.documentElement;
+  const htmlStyle = window.getComputedStyle(html);
   if (htmlStyle.overflowY === "hidden") {
-    // もしoverflowがhiddenなら、htmlのスタイルを元に戻す
     html.style.height = "";
-    html.style.overflowY = "auto"; // autoに戻す
+    html.style.overflowY = "auto";
   } else {
-    // そうでなければ、htmlにheight: 100%とoverflow: hiddenを設定し、スクロールを無効にする
     html.style.height = "100%";
     html.style.overflowY = "hidden";
   }
 };
+
+// ウィンドウリサイズ時の処理
+const onWindowResize = () => {
+  const html = document.documentElement;
+  if (window.innerWidth >= 961) {
+    // 幅が961px以上になったらスクロールを有効にする
+    html.style.height = "";
+    html.style.overflowY = "auto";
+  }
+};
+
+// DOMが読み込まれたときの初期化処理
 document.addEventListener("DOMContentLoaded", function () {
-  // ハンバーガーメニューボタンがクリックされたときのイベントハンドラを設定
+  // ハンバーガーメニューボタンのクリックイベントを設定
   document.querySelector(".l-hamburger").addEventListener("click", toggleBodyOverflow);
+
+  // ウィンドウのリサイズイベントを設定
+  window.addEventListener("resize", onWindowResize);
 });
 
 //ハンバーガー

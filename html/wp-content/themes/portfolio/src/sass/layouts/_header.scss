@@ -400,7 +400,7 @@
     @include tab {
         width: 100%;
         display: grid;
-        background: rgba(26, 43, 72, 0.85);
+        background: rgba(26, 43, 72, 0.95);
         position: absolute;
         top: 0;
         left: 0;
@@ -417,7 +417,9 @@
             transition: transform 3s;
 
             a {
-                display: block;
+                display: flex; // フレックスボックスを使用
+                align-items: center; // 垂直方向に中央寄せ
+                justify-content: center; // 水平方向に中央寄
                 padding: 10px 0;
                 position: relative;
                 color: currentColor;
@@ -435,6 +437,8 @@
     }
 }
 
+// sp　ハンバーガーメニュー
+
 // pc current
 .l-menu .current_page_item,
 .l-menu .current-menu-item {
@@ -447,11 +451,8 @@
 }
 
 // sp current
-.home .l-sp__menu > .l-menu__item:nth-child(1),
-.category-news .l-sp__menu > .l-menu__item:nth-child(2),
-.page-id-28 .l-sp__menu > .l-menu__item:nth-child(3),
-.post-type-archive-gallery .l-sp__menu > .l-menu__item:nth-child(4),
-.page-id-31 .l-sp__menu > .l-menu__item:nth-child(5) {
+.l-sp__menu .current_page_item,
+.l-sp__menu .current-menu-item {
     background: rgba($c-accent, 0.8);
     color: $c-white;
 }
