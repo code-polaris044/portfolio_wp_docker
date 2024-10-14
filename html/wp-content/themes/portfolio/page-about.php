@@ -27,7 +27,12 @@
                     </div>
                     <p class="p-about__text u-mb__50">
                         詳細は、<a href="https://github.com/code-polaris044/portfolio_wp_docker?tab=readme-ov-file" target="_blank" rel="noopener noreferrer">こちら</a>のGithubのreadme.mdに記載しております。また、コードもご確認いただけます。<br><br>
-
+                        ※ドメイン管理は、お名前.comで管理しており、ネームサーバーのみシン・vpsに向けてます。<br><br>
+                        ホスティングは、シン・vpsを使用<br><br>
+                        OSは、AlmaLinux ver.9.3を使用<br><br>
+                        実行環境は、kusanagi ver.9.5.4-1.el9を使用<br><br>
+                        webサーバーは、nginx ver1.24.0を使用<br><br>
+                        メールサーバーは、postfixを使用していますが、SPFレコードまでしか登録しておりません。DKIM、DMARCの設定はしていないため、gmailの場合、「お問合せ」フォームからの自動返信が届かない確率が高いです。<br><br>                
                         Wordpressのローカル環境の構築には、Dockerを使用<br><br>
                         CSS設計は、BEM + SMACSS or FLOCSS + ユーティリティCSS(自作)を併用<br><br>
                         SASS(scss記法)を使用<br><br>
