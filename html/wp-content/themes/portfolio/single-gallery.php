@@ -36,7 +36,7 @@
             $gallery_img2 = get_field('gallery_img2', get_the_ID());
             $gallery_img3 = get_field('gallery_img3', get_the_ID());
             $gallery_img_sp = get_field('gallery_img_sp', get_the_ID());
-            if (!empty($gallery_img1 || !empty($gallery_img2) || !empty($gallery_img3))) : ?>
+            if (!empty($gallery_img1) || !empty($gallery_img2) || !empty($gallery_img3)) : ?>
               <div class="p-single__splideWrap">
                 <div class="splide u-mb__50">
                   <div class="splide__track">
