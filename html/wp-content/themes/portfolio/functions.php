@@ -344,7 +344,7 @@ function Change_menulabel()
 function Change_objectlabel()
 {
 	global $wp_post_types;
-	$name = '新着情報';
+	$name = 'news';
 	$labels = &$wp_post_types['post']->labels;
 	$labels->name = $name;
 	$labels->singular_name = $name;

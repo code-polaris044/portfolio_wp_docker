@@ -10,7 +10,7 @@ const ImageminMozjpeg = require("imagemin-mozjpeg");
 // 'production' か 'development' を指定
 
 module.exports = {
-    mode: "development",
+    mode: "production",
     entry: "./src/js/index.jsx",
     output: {
         path: path.resolve(__dirname, "./dist"),
