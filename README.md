@@ -12,7 +12,43 @@ https://github.com/code-polaris044/portfolio_wp_docker/tree/main/html/wp-content
 
 <br>
 
-・wordpressのテンプレート開発
+## ポートフォリオサイトについて
+
+こちらのポートフォリオサイトは、菅原俊哉が作成したwordpressのオリジナルテーマのサイトです。
+
+Shell Designという表記は、運用しているX(旧Twitter)及びGitHubのアカンウト名です。
+
+1年半程前に、就職活動のために制作したサイトで、現在の技術力よりも低いですが、実績紹介用のサイトとして今回使用させていただいてます。
+
+
+## 使用技術の概要
+
+ホスティングは、シン・vpsを使用
+※ドメイン管理は、お名前.comで管理しており、ネームサーバーのみシン・vpsに向けてます。
+
+OSは、AlmaLinux ver.9.3を使用
+
+実行環境は、kusanagi ver.9.5.4-1.el9を使用
+
+webサーバーは、nginx ver1.24.0を使用
+
+メールサーバーは、postfixを使用していますが、SPFレコードまでしか登録しておりません。DKIM、DMARCの設定はしていないため、gmailの場合、「お問合せ」フォームからの自動返信が届かない確率が高いです。
+
+Wordpressのローカル環境の構築には、Dockerを使用
+
+CSS設計は、BEM + SMACSS or FLOCSS + ユーティリティCSS(自作)を併用
+
+SASS(scss記法)を使用
+
+postCSSは、autoprefixer(ベンダープレフィックスの最適化)のみ使用
+
+JavaScriptは、基本vanilla.jsで、複雑なコードになりそうな実装や実力的に難しい時はその時々にあったライブラリーを探して使用
+
+フォームやカスタム投稿ポスト等には、プラグインを使用
+
+モジュールバンドルツールは、WebPack5を使用しており、基本的な画像の圧縮やトランスコンパイラ(babel)などをプリセットして使用
+
+## 使用技術の詳細
 
 インスタグラムセクションの表示は、InstagramグラフAPIを使用<br>
 ※githubで、トークンの公開ができないためgitignoreしています。<br>
