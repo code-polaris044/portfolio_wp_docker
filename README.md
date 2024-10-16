@@ -47,7 +47,7 @@ https://developers.facebook.com/docs/instagram-api/
 
 <br>
 使用しているWordpressのプラグイン<br>
-・Advanced Custom Fields (ACF)<br>
+・Secure Custom Fields(旧Advanced Custom Fields)<br>
 https://ja.wordpress.org/plugins/advanced-custom-fields/
 <br>
 ・All-in-One WP Migration<br>
