@@ -8,7 +8,9 @@ wordpressテーマフォルダです。<br>
 https://github.com/code-polaris044/portfolio_wp_docker/tree/main/html/wp-content/themes
 
 Webpack5(バンドル・ビルドツール)の設定ファイルです。<br>
-html/wp-content/themes/portfolio/webpack.config.js
+[html/wp-content/themes/portfolio/webpack.config.js](https://github.com/code-polaris044/portfolio_wp_docker/blob/main/html/wp-content/themes/portfolio/webpack.config.js)
+
+※ローカル環境で試す場合は、'production' (本番) or 'development'(開発) をmodeに適切に設定して下さい。
 
 <br>
 
