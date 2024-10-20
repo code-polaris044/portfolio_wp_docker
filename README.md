@@ -7,9 +7,6 @@
 wordpressテーマフォルダです。<br>
 https://github.com/code-polaris044/portfolio_wp_docker/tree/main/html/wp-content/themes
 
-sassのフォルダです。<br>
-https://github.com/code-polaris044/portfolio_wp_docker/tree/main/html/wp-content/themes/portfolio/src/sass
-
 <br>
 
 ## ポートフォリオサイトについて
