@@ -52,6 +52,8 @@ JavaScriptは、基本vanilla.jsで、複雑なコードになりそうな実装
 
 ## 使用技術の詳細
 
+使用ライブラリーとプラグインについて記載しています。
+
 インスタグラムセクションの表示は、InstagramグラフAPIを使用<br>
 ※githubで、トークンの公開ができないためgitignoreしています。<br>
 https://developers.facebook.com/docs/instagram-api/
