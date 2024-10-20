@@ -125,6 +125,6 @@ https://ja.wordpress.org/plugins/mw-wp-form/
 
 
 
-※ iPhone 12 mini(375×812)の実機でChrome・Safariの動作確認済み
+※ iPhone 12 miniの実機でChrome・Safariの動作確認済み
 
 以上です。
