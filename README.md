@@ -7,6 +7,9 @@
 wordpressテーマフォルダです。<br>
 https://github.com/code-polaris044/portfolio_wp_docker/tree/main/html/wp-content/themes
 
+Webpack5(バンドル・ビルドツール)の設定ファイルです。<br>
+html/wp-content/themes/portfolio/webpack.config.js
+
 <br>
 
 ## ポートフォリオサイトについて
