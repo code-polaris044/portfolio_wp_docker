@@ -56,11 +56,10 @@ https://developers.facebook.com/docs/instagram-api/
 使用スキル<br>
 ・ローカル環境:[Docker](https://www.docker.com/)<br>
 ・モジュールバンドルツール: [webpack5](https://webpack.js.org/)<br>
-・html<br>
 ・sass(scss)<br>
 ・post-css<br>
 ・javascript<br>
-・php(wordpress)<br>
+・php(wordpressの範囲)<br>
 
 使用jsライブラリー<br>
 ・tippy.js<br>
